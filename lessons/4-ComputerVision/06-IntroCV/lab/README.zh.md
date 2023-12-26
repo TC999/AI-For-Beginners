@@ -6,7 +6,9 @@
 
 考虑这个视频，在视频中一个人的手掌在稳定的背景下左右/上下移动。
 
-<img src="../images/palm-movement.png" width="30%" alt="Palm Movement Frame"/>**你的目标**是能够使用光流来确定视频中哪些部分包含上下/左右移动。
+<img src="../images/palm-movement.png" width="30%" alt="Palm Movement Frame"/>
+
+**你的目标**是能够使用光流来确定视频中哪些部分包含上下/左右移动。
 
 **追求目标**是使用肤色来实际跟踪手掌/手指的运动，如[这篇博客文章](https://dev.to/amarlearning/finger-detection-and-tracking-using-opencv-and-python-586m) 或者 [这里](http://www.benmeline.com/finger-tracking-with-opencv-and-python/) 所描述的。
 
