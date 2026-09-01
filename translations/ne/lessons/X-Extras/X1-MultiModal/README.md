@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-26T10:20:00+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "ne"
-}
--->
 # मल्टी-मोडल नेटवर्कहरू
 
 NLP कार्यहरू समाधान गर्न ट्रान्सफर्मर मोडेलहरूको सफलतापछि, त्यस्तै वा समान आर्किटेक्चरहरू कम्प्युटर भिजन कार्यहरूमा लागू गरिएको छ। भिजन र प्राकृतिक भाषाको क्षमता *जोड्ने* मोडेलहरू निर्माण गर्ने चासो बढ्दै गएको छ। यस्ता प्रयासहरू मध्ये एक OpenAI द्वारा गरिएको थियो, जसलाई CLIP र DALL.E भनिन्छ।
@@ -15,7 +6,7 @@ NLP कार्यहरू समाधान गर्न ट्रान्�
 
 CLIP को मुख्य विचार भनेको टेक्स्ट प्रम्प्टहरूलाई तस्बिरसँग तुलना गर्न र तस्बिरले प्रम्प्टसँग कत्तिको मेल खान्छ भनेर निर्धारण गर्न सक्षम हुनु हो।
 
-![CLIP आर्किटेक्चर](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.ne.png)
+![CLIP आर्किटेक्चर](../../../../../translated_images/ne/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *[यो ब्लग पोस्ट](https://openai.com/blog/clip/) बाट तस्बिर*
 
@@ -31,7 +22,7 @@ CLIP मोडेल/लाइब्रेरी [OpenAI GitHub](https://github.
 
 मानौं हामीलाई तस्बिरहरूलाई बिरालो, कुकुर र मानिसहरू बीच वर्गीकरण गर्नुपर्छ। यस अवस्थामा, हामी मोडेललाई तस्बिर र टेक्स्ट प्रम्प्टहरूको श्रृंखला दिन सक्छौं: "*बिरालोको तस्बिर*", "*कुकुरको तस्बिर*", "*मानिसको तस्बिर*"। परिणामस्वरूप 3 सम्भावनाहरूको भेक्टरमा हामीले सबैभन्दा उच्च मान भएको इन्डेक्स चयन गर्नुपर्छ।
 
-![इमेज क्लासिफिकेशनको लागि CLIP](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.ne.png)
+![इमेज क्लासिफिकेशनको लागि CLIP](../../../../../translated_images/ne/clip-class.3af42ef0b2b19369.webp)
 
 > *[यो ब्लग पोस्ट](https://openai.com/blog/clip/) बाट तस्बिर*
 
@@ -55,13 +46,13 @@ VQGAN को बारेमा थप जान्न [Taming Transformers](htt
 
 VQGAN र पारम्परिक GAN बीचको महत्त्वपूर्ण भिन्नता भनेको पछिल्लोले कुनै पनि इनपुट भेक्टरबाट राम्रो तस्बिर उत्पादन गर्न सक्छ, जबकि VQGAN ले सुसंगत तस्बिर उत्पादन गर्न सक्दैन। त्यसैले, हामीले तस्बिर निर्माण प्रक्रियालाई थप मार्गदर्शन गर्न आवश्यक छ, र त्यो CLIP प्रयोग गरेर गर्न सकिन्छ।
 
-![VQGAN+CLIP आर्किटेक्चर](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.ne.png)
+![VQGAN+CLIP आर्किटेक्चर](../../../../../translated_images/ne/vqgan.5027fe05051dfa31.webp)
 
 टेक्स्ट प्रम्प्टसँग मेल खाने तस्बिर निर्माण गर्न, हामी केही र्यान्डम इन्कोडिङ भेक्टरबाट सुरु गर्छौं जुन VQGAN मार्फत पास गरिन्छ र तस्बिर उत्पादन गरिन्छ। त्यसपछि CLIP प्रयोग गरेर लस फङ्क्सन उत्पादन गरिन्छ जसले तस्बिर टेक्स्ट प्रम्प्टसँग कत्तिको मेल खान्छ भनेर देखाउँछ। त्यसपछि यो लसलाई न्यूनतम बनाउने लक्ष्य राखिन्छ, ब्याक प्रोपोगेसन प्रयोग गरेर इनपुट भेक्टर प्यारामिटरहरू समायोजन गरिन्छ।
 
 VQGAN+CLIP कार्यान्वयन गर्ने उत्कृष्ट लाइब्रेरी [Pixray](http://github.com/pixray/pixray) हो।
 
-![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.ne.png) |  ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.ne.png) | ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.ne.png)
+![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/ne/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/ne/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/ne/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 प्रम्प्ट *साहित्यको युवा पुरुष शिक्षकको पुस्तकसहितको नजिकको वाटरकलर पोर्ट्रेट* बाट उत्पन्न तस्बिर | प्रम्प्ट *कम्प्युटर विज्ञानको युवा महिला शिक्षकको कम्प्युटरसहितको नजिकको तेल पोर्ट्रेट* बाट उत्पन्न तस्बिर | प्रम्प्ट *गणितको वृद्ध पुरुष शिक्षकको ब्ल्याकबोर्ड अगाडि नजिकको तेल पोर्ट्रेट* बाट उत्पन्न तस्बिर
 
@@ -77,7 +68,7 @@ CLIP भन्दा फरक, DALL-E ले टेक्स्ट र तस�
 DALL-E 1 र 2 बीचको मुख्य भिन्नता भनेको यसले थप यथार्थपरक तस्बिरहरू र कला निर्माण गर्दछ।
 
 DALL-E द्वारा तस्बिर निर्माणका उदाहरणहरू:
-![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.ne.png) |  ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.ne.png) | ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.ne.png)
+![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/ne/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/ne/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Pixray द्वारा उत्पादन गरिएको तस्बिर](../../../../../translated_images/ne/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 प्रम्प्ट *साहित्यको युवा पुरुष शिक्षकको पुस्तकसहितको नजिकको वाटरकलर पोर्ट्रेट* बाट उत्पन्न तस्बिर | प्रम्प्ट *कम्प्युटर विज्ञानको युवा महिला शिक्षकको कम्प्युटरसहितको नजिकको तेल पोर्ट्रेट* बाट उत्पन्न तस्बिर | प्रम्प्ट *गणितको वृद्ध पुरुष शिक्षकको ब्ल्याकबोर्ड अगाडि नजिकको तेल पोर्ट्रेट* बाट उत्पन्न तस्बिर
 

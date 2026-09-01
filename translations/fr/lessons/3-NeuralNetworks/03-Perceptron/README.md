@@ -1,25 +1,16 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0c37770bba4fff3c71dc00eb261ee61b",
-  "translation_date": "2025-08-24T20:56:40+00:00",
-  "source_file": "lessons/3-NeuralNetworks/03-Perceptron/README.md",
-  "language_code": "fr"
-}
--->
 # Introduction aux réseaux neuronaux : Perceptron
 
-## [Quiz avant le cours](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/103)
+## [Quiz pré-conférence](https://ff-quizzes.netlify.app/en/ai/quiz/5)
 
 L'une des premières tentatives pour mettre en œuvre quelque chose de similaire à un réseau neuronal moderne a été réalisée par Frank Rosenblatt du Cornell Aeronautical Laboratory en 1957. Il s'agissait d'une implémentation matérielle appelée "Mark-1", conçue pour reconnaître des figures géométriques primitives, telles que des triangles, des carrés et des cercles.
 
 |      |      |
 |--------------|-----------|
-|<img src='images/Rosenblatt-wikipedia.jpg' alt='Frank Rosenblatt'/> | <img src='images/Mark_I_perceptron_wikipedia.jpg' alt='Le Perceptron Mark 1' />|
+|<img src='../../../../../translated_images/fr/Rosenblatt-wikipedia.294821b285ac796d.webp' alt='Frank Rosenblatt'/> | <img src='../../../../../translated_images/fr/Mark_I_perceptron_wikipedia.1f84eaa2d4b76ec9.webp' alt='Le Perceptron Mark 1' />|
 
-> Images [de Wikipédia](https://en.wikipedia.org/wiki/Perceptron)
+> Images [tirées de Wikipédia](https://en.wikipedia.org/wiki/Perceptron)
 
-Une image d'entrée était représentée par une matrice de 20x20 photorésistances, de sorte que le réseau neuronal avait 400 entrées et une sortie binaire. Un réseau simple contenait un seul neurone, également appelé une **unité logique seuil**. Les poids du réseau neuronal fonctionnaient comme des potentiomètres nécessitant un ajustement manuel pendant la phase d'entraînement.
+Une image d'entrée était représentée par un tableau de 20x20 photorécepteurs, ce qui signifie que le réseau neuronal avait 400 entrées et une sortie binaire. Un réseau simple contenait un seul neurone, également appelé une **unité logique seuil**. Les poids du réseau neuronal fonctionnaient comme des potentiomètres nécessitant un réglage manuel pendant la phase d'entraînement.
 
 > ✅ Un potentiomètre est un dispositif qui permet à l'utilisateur d'ajuster la résistance d'un circuit.
 
@@ -34,13 +25,13 @@ y(x) = f(w<sup>T</sup>x)
 où f est une fonction d'activation en escalier.
 
 <!-- img src="http://www.sciweavers.org/tex2img.php?eq=f%28x%29%20%3D%20%5Cbegin%7Bcases%7D%0A%20%20%20%20%20%20%20%20%20%2B1%20%26%20x%20%5Cgeq%200%20%5C%5C%0A%20%20%20%20%20%20%20%20%20-1%20%26%20x%20%3C%200%0A%20%20%20%20%20%20%20%5Cend%7Bcases%7D%20%5C%5C%0A&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="f(x) = \begin{cases} +1 & x \geq 0 \\ -1 & x < 0 \end{cases} \\" width="154" height="50" / -->
-<img src="images/activation-func.png"/>
+<img src="../../../../../translated_images/fr/activation-func.b4924007c7ce7764.webp"/>
 
 ## Entraînement du Perceptron
 
 Pour entraîner un perceptron, nous devons trouver un vecteur de poids w qui classe correctement la plupart des valeurs, c'est-à-dire qui minimise l'**erreur**. Cette erreur E est définie par le **critère du perceptron** de la manière suivante :
 
-E(w) = -∑w<sup>T</sup>x<sub>i</sub>t<sub>i</sub>
+E(w) = -&sum;w<sup>T</sup>x<sub>i</sub>t<sub>i</sub>
 
 où :
 
@@ -49,11 +40,11 @@ où :
 
 Ce critère est considéré comme une fonction des poids w, et nous devons le minimiser. Souvent, une méthode appelée **descente de gradient** est utilisée, dans laquelle nous commençons avec des poids initiaux w<sup>(0)</sup>, puis à chaque étape, nous mettons à jour les poids selon la formule :
 
-w<sup>(t+1)</sup> = w<sup>(t)</sup> - η∇E(w)
+w<sup>(t+1)</sup> = w<sup>(t)</sup> - &eta;&nabla;E(w)
 
-Ici, η est le **taux d'apprentissage**, et ∇E(w) désigne le **gradient** de E. Après avoir calculé le gradient, nous obtenons :
+Ici, &eta; est le **taux d'apprentissage**, et &nabla;E(w) désigne le **gradient** de E. Après avoir calculé le gradient, nous obtenons :
 
-w<sup>(t+1)</sup> = w<sup>(t)</sup> + ∑ηx<sub>i</sub>t<sub>i</sub>
+w<sup>(t+1)</sup> = w<sup>(t)</sup> + &sum;&eta;x<sub>i</sub>t<sub>i</sub>
 
 L'algorithme en Python ressemble à ceci :
 
@@ -85,11 +76,11 @@ Dans cette leçon, vous avez appris ce qu'est un perceptron, un modèle de class
 
 Si vous souhaitez essayer de construire votre propre perceptron, essayez [ce laboratoire sur Microsoft Learn](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/two-class-averaged-perceptron?WT.mc_id=academic-77998-cacaste) qui utilise le [concepteur Azure ML](https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer?WT.mc_id=academic-77998-cacaste).
 
-## [Quiz après le cours](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/203)
+## [Quiz post-conférence](https://ff-quizzes.netlify.app/en/ai/quiz/6)
 
-## Révision et auto-apprentissage
+## Révision & Auto-apprentissage
 
-Pour voir comment nous pouvons utiliser un perceptron pour résoudre un problème simple ainsi que des problèmes réels, et pour continuer à apprendre, rendez-vous sur le notebook [Perceptron](../../../../../lessons/3-NeuralNetworks/03-Perceptron/Perceptron.ipynb).
+Pour voir comment nous pouvons utiliser un perceptron pour résoudre un problème simple ainsi que des problèmes réels, et pour continuer à apprendre, consultez le notebook [Perceptron](Perceptron.ipynb).
 
 Voici également un [article intéressant sur les perceptrons](https://towardsdatascience.com/what-is-a-perceptron-basics-of-neural-networks-c4cfea20c590).
 
@@ -98,7 +89,7 @@ Voici également un [article intéressant sur les perceptrons](https://towardsda
 Dans cette leçon, nous avons implémenté un perceptron pour une tâche de classification binaire, et nous l'avons utilisé pour classifier entre deux chiffres manuscrits. Dans ce laboratoire, vous êtes invité à résoudre entièrement le problème de classification des chiffres, c'est-à-dire déterminer quel chiffre correspond le plus probablement à une image donnée.
 
 * [Instructions](lab/README.md)
-* [Notebook](../../../../../lessons/3-NeuralNetworks/03-Perceptron/lab/PerceptronMultiClass.ipynb)
+* [Notebook](lab/PerceptronMultiClass.ipynb)
 
-**Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+---
+

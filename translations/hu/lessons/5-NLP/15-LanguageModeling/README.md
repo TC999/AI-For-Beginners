@@ -1,29 +1,20 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "31b46ba1f3aa78578134d4829f88be53",
-  "translation_date": "2025-08-25T21:55:17+00:00",
-  "source_file": "lessons/5-NLP/15-LanguageModeling/README.md",
-  "language_code": "hu"
-}
--->
 # Nyelvi Modellezés
 
-A szemantikus beágyazások, mint például a Word2Vec és a GloVe, valójában az első lépést jelentik a **nyelvi modellezés** felé – olyan modellek létrehozása felé, amelyek valamilyen módon *megértik* (vagy *reprezentálják*) a nyelv természetét.
+A szemantikai beágyazások, mint például a Word2Vec és a GloVe, valójában az első lépést jelentik a **nyelvi modellezés** felé – olyan modellek létrehozása felé, amelyek valamilyen módon *megértik* (vagy *reprezentálják*) a nyelv természetét.
 
-## [Előadás előtti kvíz](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/115)
+## [Előadás előtti kvíz](https://ff-quizzes.netlify.app/en/ai/quiz/29)
 
-A nyelvi modellezés fő gondolata az, hogy címkézetlen adathalmazokon tanítsuk őket felügyelet nélküli módon. Ez azért fontos, mert hatalmas mennyiségű címkézetlen szöveg áll rendelkezésünkre, míg a címkézett szövegek mennyiségét mindig korlátozza az a munka, amit a címkézésre fordíthatunk. Leggyakrabban olyan nyelvi modelleket építhetünk, amelyek képesek **hiányzó szavakat megjósolni** a szövegben, mivel egyszerűen ki lehet takarni egy véletlenszerű szót a szövegben, és azt használni tanítómintaként.
+A nyelvi modellezés mögött álló fő ötlet az, hogy ezeket modelleket felcímkézetlen adathalmazokon tanítjuk, felügyelet nélküli módon. Ez azért fontos, mert hatalmas mennyiségű felcímkézetlen szöveg áll rendelkezésünkre, míg a felcímkézett szövegek mennyisége mindig korlátozott lesz azzal az erőfeszítéssel, amit a címkézésre fordítani tudunk. Leggyakrabban olyan nyelvi modelleket építhetünk, amelyek képesek **hiányzó szavakat megjósolni** a szövegben, mivel könnyű véletlenszerűen kitakarni egy szót a szövegben, és azt mint tanítási mintát használni.
 
 ## Beágyazások tanítása
 
-Korábbi példáinkban előre betanított szemantikus beágyazásokat használtunk, de érdekes látni, hogyan lehet ezeket a beágyazásokat betanítani. Számos lehetséges ötlet létezik, amelyeket felhasználhatunk:
+Korábbi példáinkban előre betanított szemantikai beágyazásokat használtunk, de érdekes látni, hogyan lehet ezeket a beágyazásokat betanítani. Számos lehetséges ötlet létezik, amelyeket használhatunk:
 
-* **N-Gram** nyelvi modellezés, amikor egy tokent az előző N token alapján jósolunk meg (N-gram).
-* **Folytonos Szózsák** (CBoW), amikor a középső tokent $W_0$ jósoljuk meg egy token sorozatban $W_{-N}$, ..., $W_N$.
-* **Skip-gram**, ahol a középső tokenből $W_0$ egy szomszédos tokenhalmazt {$W_{-N},\dots, W_{-1}, W_1,\dots, W_N$} jósolunk meg.
+* **N-Gram** nyelvi modellezés, amikor egy token-t jósolunk meg az N előző token alapján (N-gram).
+* **Folytonos Szózsák** (CBoW), amikor a középső token-t $W_0$ jósoljuk meg egy token sorozatban $W_{-N}$, ..., $W_N$.
+* **Skip-gram**, ahol a középső token $W_0$ alapján egy szomszédos tokenek halmazát {$W_{-N},\dots, W_{-1}, W_1,\dots, W_N$} jósoljuk meg.
 
-![kép egy tanulmányból, amely a szavak vektorokká alakítását mutatja](../../../../../translated_images/example-algorithms-for-converting-words-to-vectors.fbe9207a726922f6f0f5de66427e8a6eda63809356114e28fb1fa5f4a83ebda7.hu.png)
+![kép a szavak vektorokká alakításáról szóló tanulmányból](../../../../../translated_images/hu/example-algorithms-for-converting-words-to-vectors.fbe9207a726922f6.webp)
 
 > Kép [ebből a tanulmányból](https://arxiv.org/pdf/1301.3781.pdf)
 
@@ -31,24 +22,24 @@ Korábbi példáinkban előre betanított szemantikus beágyazásokat használtu
 
 Folytasd a tanulást az alábbi jegyzetfüzetekben:
 
-* [CBoW Word2Vec tanítása TensorFlow-val](../../../../../lessons/5-NLP/15-LanguageModeling/CBoW-TF.ipynb)
-* [CBoW Word2Vec tanítása PyTorch-csal](../../../../../lessons/5-NLP/15-LanguageModeling/CBoW-PyTorch.ipynb)
+* [CBoW Word2Vec tanítása TensorFlow-val](CBoW-TF.ipynb)
+* [CBoW Word2Vec tanítása PyTorch-al](CBoW-PyTorch.ipynb)
 
-## Összegzés
+## Következtetés
 
-Az előző leckében láttuk, hogy a szóbeágyazások szinte varázslatosan működnek! Most már tudjuk, hogy a szóbeágyazások tanítása nem egy túl bonyolult feladat, és képesek lehetünk saját szóbeágyazásokat tanítani specifikus szakterületi szövegekhez, ha szükséges.
+Az előző leckében láttuk, hogy a szavak beágyazásai szinte varázslatosan működnek! Most már tudjuk, hogy a szavak beágyazásainak tanítása nem egy nagyon bonyolult feladat, és képesek vagyunk saját beágyazásokat tanítani specifikus szakterületi szövegekhez, ha szükséges. 
 
-## [Előadás utáni kvíz](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/215)
+## [Előadás utáni kvíz](https://ff-quizzes.netlify.app/en/ai/quiz/30)
 
 ## Áttekintés és Önálló Tanulás
 
 * [Hivatalos PyTorch oktatóanyag a nyelvi modellezésről](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html).
 * [Hivatalos TensorFlow oktatóanyag a Word2Vec modell tanításáról](https://www.TensorFlow.org/tutorials/text/word2vec).
-* A **gensim** keretrendszer használata a leggyakrabban használt beágyazások tanítására néhány kódsorral [ebben a dokumentációban](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html) van leírva.
+* A **gensim** keretrendszer használata a leggyakrabban használt beágyazások néhány sor kóddal történő tanításához [ebben a dokumentációban](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html) van leírva.
 
 ## 🚀 [Feladat: Skip-Gram Modell Tanítása](lab/README.md)
 
-A laborban arra hívunk ki, hogy módosítsd az órai kódot, és taníts Skip-Gram modellt a CBoW helyett. [Olvasd el a részleteket](lab/README.md).
+A laborban arra hívunk ki, hogy módosítsd az ebben a leckében szereplő kódot, és taníts Skip-Gram modellt a CBoW helyett. [Olvasd el a részleteket](lab/README.md)
 
-**Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+---
+

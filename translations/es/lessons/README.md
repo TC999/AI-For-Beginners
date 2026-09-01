@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5fef1a0b22498d7188959e2a2cb08af7",
-  "translation_date": "2025-08-24T09:11:15+00:00",
-  "source_file": "lessons/README.md",
-  "language_code": "es"
-}
--->
 # Descripción general
 
-![Descripción general en un dibujo](../../../lessons/sketchnotes/ai-overview.png)
+![Descripción general en un dibujo](https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/sketchnotes/ai-overview.png)
 
 > Dibujo por [Tomomi Imura](https://twitter.com/girlie_mac)
 

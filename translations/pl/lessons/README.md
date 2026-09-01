@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5fef1a0b22498d7188959e2a2cb08af7",
-  "translation_date": "2025-08-24T10:10:19+00:00",
-  "source_file": "lessons/README.md",
-  "language_code": "pl"
-}
--->
 # Przegląd
 
-![Przegląd w formie szkicu](../../../lessons/sketchnotes/ai-overview.png)
+![Przegląd w formie szkicu](https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/sketchnotes/ai-overview.png)
 
 > Szkic autorstwa [Tomomi Imura](https://twitter.com/girlie_mac)
 

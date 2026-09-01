@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0c37770bba4fff3c71dc00eb261ee61b",
-  "translation_date": "2025-08-28T15:39:18+00:00",
-  "source_file": "lessons/3-NeuralNetworks/03-Perceptron/README.md",
-  "language_code": "no"
-}
--->
 # Introduksjon til nevrale nettverk: Perceptron
 
-## [Quiz før forelesning](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/103)
+## [Quiz før forelesning](https://ff-quizzes.netlify.app/en/ai/quiz/5)
 
 En av de første forsøkene på å implementere noe som ligner på et moderne nevralt nettverk ble gjort av Frank Rosenblatt fra Cornell Aeronautical Laboratory i 1957. Det var en maskinvareimplementasjon kalt "Mark-1", designet for å gjenkjenne primitive geometriske figurer, som trekanter, firkanter og sirkler.
 
 |      |      |
 |--------------|-----------|
-|<img src='images/Rosenblatt-wikipedia.jpg' alt='Frank Rosenblatt'/> | <img src='images/Mark_I_perceptron_wikipedia.jpg' alt='The Mark 1 Perceptron' />|
+|<img src='../../../../../translated_images/no/Rosenblatt-wikipedia.294821b285ac796d.webp' alt='Frank Rosenblatt'/> | <img src='../../../../../translated_images/no/Mark_I_perceptron_wikipedia.1f84eaa2d4b76ec9.webp' alt='The Mark 1 Perceptron' />|
 
 > Bilder [fra Wikipedia](https://en.wikipedia.org/wiki/Perceptron)
 
@@ -34,26 +25,26 @@ y(x) = f(w<sup>T</sup>x)
 hvor f er en stegaktiveringsfunksjon
 
 <!-- img src="http://www.sciweavers.org/tex2img.php?eq=f%28x%29%20%3D%20%5Cbegin%7Bcases%7D%0A%20%20%20%20%20%20%20%20%20%2B1%20%26%20x%20%5Cgeq%200%20%5C%5C%0A%20%20%20%20%20%20%20%20%20-1%20%26%20x%20%3C%200%0A%20%20%20%20%20%20%20%5Cend%7Bcases%7D%20%5C%5C%0A&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="f(x) = \begin{cases} +1 & x \geq 0 \\ -1 & x < 0 \end{cases} \\" width="154" height="50" / -->
-<img src="images/activation-func.png"/>
+<img src="../../../../../translated_images/no/activation-func.b4924007c7ce7764.webp"/>
 
 ## Trening av perceptron
 
 For å trene en perceptron må vi finne en vektvektor w som klassifiserer flest mulig verdier korrekt, det vil si som resulterer i den minste **feilen**. Denne feilen E er definert av **perceptron-kriteriet** på følgende måte:
 
-E(w) = -∑w<sup>T</sup>x<sub>i</sub>t<sub>i</sub>
+E(w) = -&sum;w<sup>T</sup>x<sub>i</sub>t<sub>i</sub>
 
 hvor:
 
 * summen tas over de treningsdatapunktene i som resulterer i feil klassifisering
 * x<sub>i</sub> er inputdata, og t<sub>i</sub> er enten -1 eller +1 for henholdsvis negative og positive eksempler.
 
-Dette kriteriet betraktes som en funksjon av vektene w, og vi må minimere det. Ofte brukes en metode kalt **gradient descent**, der vi starter med noen initiale vekter w<sup>(0)</sup>, og deretter oppdaterer vektene ved hvert steg i henhold til formelen:
+Dette kriteriet betraktes som en funksjon av vektene w, og vi må minimere det. Ofte brukes en metode kalt **gradient descent**, der vi starter med noen initiale vekter w<sup>(0)</sup>, og deretter oppdaterer vektene ved hver steg i henhold til formelen:
 
-w<sup>(t+1)</sup> = w<sup>(t)</sup> - η∇E(w)
+w<sup>(t+1)</sup> = w<sup>(t)</sup> - &eta;&nabla;E(w)
 
-Her er η den såkalte **læringsraten**, og ∇E(w) betegner **gradienten** av E. Etter å ha beregnet gradienten, ender vi opp med
+Her er &eta; den såkalte **læringsraten**, og &nabla;E(w) betegner **gradienten** av E. Etter å ha beregnet gradienten, ender vi opp med
 
-w<sup>(t+1)</sup> = w<sup>(t)</sup> + ∑ηx<sub>i</sub>t<sub>i</sub>
+w<sup>(t+1)</sup> = w<sup>(t)</sup> + &sum;&eta;x<sub>i</sub>t<sub>i</sub>
 
 Algoritmen i Python ser slik ut:
 
@@ -85,13 +76,14 @@ I denne leksjonen lærte du om en perceptron, som er en binær klassifiseringsmo
 
 Hvis du vil prøve å bygge din egen perceptron, kan du prøve [dette laboratoriet på Microsoft Learn](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/two-class-averaged-perceptron?WT.mc_id=academic-77998-cacaste) som bruker [Azure ML designer](https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer?WT.mc_id=academic-77998-cacaste).
 
-## [Quiz etter forelesning](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/203)
+## [Quiz etter forelesning](https://ff-quizzes.netlify.app/en/ai/quiz/6)
 
 ## Gjennomgang & Selvstudium
 
-For å se hvordan vi kan bruke perceptron til å løse et enkelt problem samt virkelige problemer, og for å fortsette læringen - gå til [Perceptron](Perceptron.ipynb)-notatboken.
+For å se hvordan vi kan bruke perceptron til å løse et lekeproblem så vel som virkelige problemer, og for å fortsette læringen - gå til [Perceptron](Perceptron.ipynb)-notatboken.
 
-Her er en interessant [artikkel om perceptrons](https://towardsdatascience.com/what-is-a-perceptron-basics-of-neural-networks-c4cfea20c590).
+Her er en interessant [artikkel om perceptrons](https://towardsdatascience.com/what-is-a-perceptron-basics-of-neural-networks-c4cfea20c590
+) også.
 
 ## [Oppgave](lab/README.md)
 
@@ -102,5 +94,3 @@ I denne leksjonen har vi implementert en perceptron for en binær klassifisering
 
 ---
 
-**Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

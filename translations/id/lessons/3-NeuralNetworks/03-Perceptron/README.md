@@ -1,58 +1,50 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0c37770bba4fff3c71dc00eb261ee61b",
-  "translation_date": "2025-08-29T12:35:58+00:00",
-  "source_file": "lessons/3-NeuralNetworks/03-Perceptron/README.md",
-  "language_code": "id"
-}
--->
-# Pengantar Jaringan Saraf: Perceptron
+# Pengantar Jaringan Neural: Perceptron
 
-## [Kuis Pra-Pelajaran](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/103)
+## [Kuis Pra-Pelajaran](https://ff-quizzes.netlify.app/en/ai/quiz/5)
 
-Salah satu upaya pertama untuk mengimplementasikan sesuatu yang mirip dengan jaringan saraf modern dilakukan oleh Frank Rosenblatt dari Cornell Aeronautical Laboratory pada tahun 1957. Ini adalah implementasi perangkat keras yang disebut "Mark-1", dirancang untuk mengenali bentuk geometris sederhana, seperti segitiga, persegi, dan lingkaran.
+Salah satu upaya pertama untuk mengimplementasikan sesuatu yang mirip dengan jaringan neural modern dilakukan oleh Frank Rosenblatt dari Cornell Aeronautical Laboratory pada tahun 1957. Ini adalah implementasi perangkat keras yang disebut "Mark-1", dirancang untuk mengenali bentuk geometris sederhana, seperti segitiga, persegi, dan lingkaran.
 
 |      |      |
 |--------------|-----------|
-|<img src='images/Rosenblatt-wikipedia.jpg' alt='Frank Rosenblatt'/> | <img src='images/Mark_I_perceptron_wikipedia.jpg' alt='The Mark 1 Perceptron' />|
+|<img src='../../../../../translated_images/id/Rosenblatt-wikipedia.294821b285ac796d.webp' alt='Frank Rosenblatt'/> | <img src='../../../../../translated_images/id/Mark_I_perceptron_wikipedia.1f84eaa2d4b76ec9.webp' alt='The Mark 1 Perceptron' />|
 
 > Gambar [dari Wikipedia](https://en.wikipedia.org/wiki/Perceptron)
 
-Gambar input direpresentasikan oleh array fotocell 20x20, sehingga jaringan saraf memiliki 400 input dan satu output biner. Jaringan sederhana ini hanya memiliki satu neuron, yang juga disebut sebagai **threshold logic unit**. Bobot jaringan saraf bertindak seperti potensiometer yang memerlukan penyesuaian manual selama fase pelatihan.
+Gambar input direpresentasikan oleh array fotocell 20x20, sehingga jaringan neural memiliki 400 input dan satu output biner. Jaringan sederhana ini terdiri dari satu neuron, yang juga disebut sebagai **threshold logic unit**. Bobot jaringan neural berfungsi seperti potensiometer yang memerlukan penyesuaian manual selama fase pelatihan.
 
 > ✅ Potensiometer adalah perangkat yang memungkinkan pengguna untuk mengatur resistansi dalam sebuah rangkaian.
 
-> The New York Times menulis tentang perceptron pada waktu itu: *embrio dari komputer elektronik yang [Angkatan Laut] harapkan akan mampu berjalan, berbicara, melihat, menulis, mereproduksi dirinya sendiri, dan sadar akan keberadaannya.*
+> The New York Times menulis tentang perceptron pada saat itu: *embrio dari komputer elektronik yang [Angkatan Laut] harapkan akan dapat berjalan, berbicara, melihat, menulis, mereproduksi dirinya sendiri, dan sadar akan keberadaannya.*
 
 ## Model Perceptron
 
-Misalkan kita memiliki N fitur dalam model kita, sehingga vektor input akan menjadi vektor berukuran N. Perceptron adalah model **klasifikasi biner**, yaitu dapat membedakan antara dua kelas data input. Kita akan mengasumsikan bahwa untuk setiap vektor input x, output dari perceptron kita akan berupa +1 atau -1, tergantung pada kelasnya. Output dihitung menggunakan rumus:
+Misalkan kita memiliki N fitur dalam model kita, dalam hal ini vektor input akan menjadi vektor berukuran N. Perceptron adalah model **klasifikasi biner**, yaitu dapat membedakan antara dua kelas data input. Kita akan mengasumsikan bahwa untuk setiap vektor input x, output dari perceptron kita akan berupa +1 atau -1, tergantung pada kelasnya. Output akan dihitung menggunakan rumus:
 
 y(x) = f(w<sup>T</sup>x)
 
-di mana f adalah fungsi aktivasi step
+di mana f adalah fungsi aktivasi langkah.
 
-<img src="images/activation-func.png"/>
+<!-- img src="http://www.sciweavers.org/tex2img.php?eq=f%28x%29%20%3D%20%5Cbegin%7Bcases%7D%0A%20%20%20%20%20%20%20%20%20%2B1%20%26%20x%20%5Cgeq%200%20%5C%5C%0A%20%20%20%20%20%20%20%20%20-1%20%26%20x%20%3C%200%0A%20%20%20%20%20%20%20%5Cend%7Bcases%7D%20%5C%5C%0A&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="f(x) = \begin{cases} +1 & x \geq 0 \\ -1 & x < 0 \end{cases} \\" width="154" height="50" / -->
+<img src="../../../../../translated_images/id/activation-func.b4924007c7ce7764.webp"/>
 
 ## Melatih Perceptron
 
-Untuk melatih perceptron, kita perlu menemukan vektor bobot w yang mengklasifikasikan sebagian besar nilai dengan benar, yaitu menghasilkan **error** terkecil. Error E ini didefinisikan oleh **kriteria perceptron** sebagai berikut:
+Untuk melatih perceptron, kita perlu menemukan vektor bobot w yang mengklasifikasikan sebagian besar nilai dengan benar, yaitu menghasilkan **error** terkecil. Error E ini didefinisikan oleh **kriteria perceptron** dengan cara berikut:
 
-E(w) = -∑w<sup>T</sup>x<sub>i</sub>t<sub>i</sub>
+E(w) = -&sum;w<sup>T</sup>x<sub>i</sub>t<sub>i</sub>
 
 di mana:
 
-* Penjumlahan dilakukan pada titik data pelatihan i yang menghasilkan klasifikasi salah
+* jumlah diambil dari titik data pelatihan i yang menghasilkan klasifikasi yang salah
 * x<sub>i</sub> adalah data input, dan t<sub>i</sub> adalah -1 atau +1 untuk contoh negatif dan positif masing-masing.
 
-Kriteria ini dianggap sebagai fungsi dari bobot w, dan kita perlu meminimalkannya. Seringkali, metode yang disebut **gradient descent** digunakan, di mana kita memulai dengan bobot awal w<sup>(0)</sup>, dan kemudian pada setiap langkah memperbarui bobot sesuai dengan rumus:
+Kriteria ini dianggap sebagai fungsi dari bobot w, dan kita perlu meminimalkannya. Sering kali, metode yang disebut **gradient descent** digunakan, di mana kita memulai dengan bobot awal w<sup>(0)</sup>, dan kemudian pada setiap langkah memperbarui bobot sesuai dengan rumus:
 
-w<sup>(t+1)</sup> = w<sup>(t)</sup> - η∇E(w)
+w<sup>(t+1)</sup> = w<sup>(t)</sup> - &eta;&nabla;E(w)
 
-Di sini η disebut sebagai **learning rate**, dan ∇E(w) menunjukkan **gradien** dari E. Setelah kita menghitung gradien, kita mendapatkan:
+Di sini &eta; disebut sebagai **learning rate**, dan &nabla;E(w) menunjukkan **gradien** dari E. Setelah kita menghitung gradien, kita mendapatkan:
 
-w<sup>(t+1)</sup> = w<sup>(t)</sup> + ∑ηx<sub>i</sub>t<sub>i</sub>
+w<sup>(t+1)</sup> = w<sup>(t)</sup> + &sum;&eta;x<sub>i</sub>t<sub>i</sub>
 
 Algoritma dalam Python terlihat seperti ini:
 
@@ -78,19 +70,20 @@ def train(positive_examples, negative_examples, num_iterations = 100, eta = 1):
 
 ## Kesimpulan
 
-Dalam pelajaran ini, Anda telah mempelajari tentang perceptron, yang merupakan model klasifikasi biner, dan cara melatihnya menggunakan vektor bobot.
+Dalam pelajaran ini, Anda telah mempelajari tentang perceptron, yang merupakan model klasifikasi biner, dan cara melatihnya dengan menggunakan vektor bobot.
 
 ## 🚀 Tantangan
 
-Jika Anda ingin mencoba membangun perceptron Anda sendiri, coba [lab ini di Microsoft Learn](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/two-class-averaged-perceptron?WT.mc_id=academic-77998-cacaste) yang menggunakan [Azure ML designer](https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer?WT.mc_id=academic-77998-cacaste).
+Jika Anda ingin mencoba membangun perceptron sendiri, coba [lab ini di Microsoft Learn](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/two-class-averaged-perceptron?WT.mc_id=academic-77998-cacaste) yang menggunakan [Azure ML designer](https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer?WT.mc_id=academic-77998-cacaste).
 
-## [Kuis Pasca-Pelajaran](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/203)
+## [Kuis Pasca-Pelajaran](https://ff-quizzes.netlify.app/en/ai/quiz/6)
 
 ## Tinjauan & Studi Mandiri
 
-Untuk melihat bagaimana kita dapat menggunakan perceptron untuk menyelesaikan masalah sederhana maupun masalah dunia nyata, dan untuk melanjutkan pembelajaran - buka notebook [Perceptron](Perceptron.ipynb).
+Untuk melihat bagaimana kita dapat menggunakan perceptron untuk menyelesaikan masalah sederhana maupun masalah nyata, dan untuk melanjutkan pembelajaran - buka notebook [Perceptron](Perceptron.ipynb).
 
-Berikut adalah [artikel menarik tentang perceptron](https://towardsdatascience.com/what-is-a-perceptron-basics-of-neural-networks-c4cfea20c590) juga.
+Berikut adalah [artikel menarik tentang perceptron](https://towardsdatascience.com/what-is-a-perceptron-basics-of-neural-networks-c4cfea20c590
+) juga.
 
 ## [Tugas](lab/README.md)
 
@@ -101,5 +94,3 @@ Dalam pelajaran ini, kita telah mengimplementasikan perceptron untuk tugas klasi
 
 ---
 
-**Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

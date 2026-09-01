@@ -1,92 +1,83 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd10f434e444bce61b7f97eeb1ff6a55",
-  "translation_date": "2025-08-25T22:10:52+00:00",
-  "source_file": "lessons/5-NLP/19-NER/README.md",
-  "language_code": "sk"
-}
--->
 # Rozpoznávanie pomenovaných entít
 
-Doteraz sme sa väčšinou sústredili na jednu NLP úlohu - klasifikáciu. Existujú však aj iné NLP úlohy, ktoré je možné riešiť pomocou neurónových sietí. Jednou z týchto úloh je **[Rozpoznávanie pomenovaných entít](https://wikipedia.org/wiki/Named-entity_recognition)** (NER), ktoré sa zaoberá identifikáciou konkrétnych entít v texte, ako sú miesta, mená osôb, časové intervaly, chemické vzorce a podobne.
+Doteraz sme sa väčšinou sústredili na jednu úlohu NLP - klasifikáciu. Existujú však aj ďalšie úlohy NLP, ktoré je možné riešiť pomocou neurónových sietí. Jednou z týchto úloh je **[Rozpoznávanie pomenovaných entít](https://wikipedia.org/wiki/Named-entity_recognition)** (NER), ktoré sa zaoberá identifikáciou konkrétnych entít v texte, ako sú miesta, mená osôb, časové intervaly, chemické vzorce a podobne.
 
-## [Kvíz pred prednáškou](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/119)
+## [Kvíz pred prednáškou](https://ff-quizzes.netlify.app/en/ai/quiz/37)
 
 ## Príklad použitia NER
 
-Predstavte si, že chcete vyvinúť chatbot na spracovanie prirodzeného jazyka, podobný Amazon Alexe alebo Google Asistentovi. Inteligentné chatboty fungujú tak, že *rozumejú*, čo používateľ chce, prostredníctvom klasifikácie textu v zadanej vete. Výsledkom tejto klasifikácie je tzv. **intencia**, ktorá určuje, čo by mal chatbot vykonať.
+Predstavte si, že chcete vyvinúť chatbot na spracovanie prirodzeného jazyka, podobný Amazon Alexa alebo Google Assistant. Inteligentné chatboty fungujú tak, že *rozumejú* tomu, čo používateľ chce, prostredníctvom klasifikácie textu na vstupnej vete. Výsledkom tejto klasifikácie je tzv. **zámer**, ktorý určuje, čo by mal chatbot urobiť.
 
-<img alt="Bot NER" src="images/bot-ner.png" width="50%"/>
+<img alt="Bot NER" src="../../../../../translated_images/sk/bot-ner.4b09235dbb0ad275.webp" width="50%"/>
 
 > Obrázok od autora
 
-Používateľ však môže poskytnúť niektoré parametre ako súčasť frázy. Napríklad pri otázke na počasie môže špecifikovať miesto alebo dátum. Chatbot by mal byť schopný rozpoznať tieto entity a vyplniť príslušné parametre pred vykonaním akcie. A práve tu prichádza na rad NER.
+Používateľ však môže poskytnúť niektoré parametre ako súčasť frázy. Napríklad pri otázke na počasie môže špecifikovať lokalitu alebo dátum. Bot by mal byť schopný rozpoznať tieto entity a vyplniť príslušné parametre pred vykonaním akcie. Presne tu prichádza na rad NER.
 
-> ✅ Ďalším príkladom by mohlo byť [analyzovanie vedeckých lekárskych článkov](https://soshnikov.com/science/analyzing-medical-papers-with-azure-and-text-analytics-for-health/). Jednou z hlavných vecí, ktoré potrebujeme hľadať, sú konkrétne lekárske termíny, ako sú choroby a liečivá. Zatiaľ čo malý počet chorôb by sa pravdepodobne dal extrahovať pomocou vyhľadávania podreťazcov, zložitejšie entity, ako sú chemické zlúčeniny a názvy liekov, vyžadujú komplexnejší prístup.
+> ✅ Ďalším príkladom by mohlo byť [analyzovanie vedeckých medicínskych článkov](https://soshnikov.com/science/analyzing-medical-papers-with-azure-and-text-analytics-for-health/). Jednou z hlavných vecí, ktoré je potrebné hľadať, sú konkrétne medicínske termíny, ako sú choroby a medicínske látky. Zatiaľ čo malý počet chorôb je pravdepodobne možné extrahovať pomocou vyhľadávania podreťazcov, zložitejšie entity, ako chemické zlúčeniny a názvy liekov, vyžadujú komplexnejší prístup.
 
 ## NER ako klasifikácia tokenov
 
-NER modely sú v podstate **modely na klasifikáciu tokenov**, pretože pre každý vstupný token musíme rozhodnúť, či patrí k nejakej entite, a ak áno, do akej triedy entity.
+Modely NER sú v podstate **modely klasifikácie tokenov**, pretože pre každý vstupný token musíme rozhodnúť, či patrí k nejakej entite alebo nie, a ak áno - ku ktorej triede entít.
 
 Zvážte nasledujúci názov článku:
 
-**Regurgitácia trikuspidálnej chlopne** a **toxickosť lítia karbonátu** u novorodenca.
+**Regurgitácia trojcípej chlopne** a **toxickosť lítia karbonátu** u novorodenca.
 
-Entity v tomto texte sú:
+Entity sú tu:
 
-* Regurgitácia trikuspidálnej chlopne je choroba (`DIS`)
+* Regurgitácia trojcípej chlopne je choroba (`DIS`)
 * Lítium karbonát je chemická látka (`CHEM`)
 * Toxicita je tiež choroba (`DIS`)
 
-Všimnite si, že jedna entita môže pozostávať z viacerých tokenov. A ako v tomto prípade, musíme rozlíšiť medzi dvoma po sebe idúcimi entitami. Preto je bežné používať dve triedy pre každú entitu - jednu, ktorá špecifikuje prvý token entity (často sa používa predpona `B-` pre **začiatok**), a druhú pre pokračovanie entity (`I-`, pre **vnútorný token**). Triedu `O` používame na označenie všetkých **ostatných** tokenov. Takéto označovanie tokenov sa nazýva [BIO označovanie](https://en.wikipedia.org/wiki/Inside%E2%80%93outside%E2%80%93beginning_(tagging)) (alebo IOB). Po označení bude náš názov vyzerať takto:
+Všimnite si, že jedna entita môže zahŕňať niekoľko tokenov. A, ako v tomto prípade, musíme rozlíšiť medzi dvoma po sebe nasledujúcimi entitami. Preto je bežné používať dve triedy pre každú entitu - jednu, ktorá špecifikuje prvý token entity (často sa používa predpona `B-` pre **začiatok**), a druhú - pokračovanie entity (`I-`, pre **vnútorný token**). Používame tiež `O` ako triedu na reprezentáciu všetkých **ostatných** tokenov. Takéto označovanie tokenov sa nazýva [BIO označovanie](https://en.wikipedia.org/wiki/Inside%E2%80%93outside%E2%80%93beginning_(tagging)) (alebo IOB). Po označení bude náš názov vyzerať takto:
 
-Token | Značka
-------|-------
-Trikuspidálnej | B-DIS  
-chlopne | I-DIS  
-regurgitácia | I-DIS  
-a | O  
-lítium | B-CHEM  
-karbonát | I-CHEM  
-toxickosť | B-DIS  
-u | O  
-novorodenca | O  
-. | O  
+Token | Tag
+------|-----
+Trojcípa | B-DIS
+chlopňa | I-DIS
+regurgitácia | I-DIS
+a | O
+lítium | B-CHEM
+karbonát | I-CHEM
+toxickosť | B-DIS
+u | O
+novorodenca | O
+. | O
 
-Keďže potrebujeme vytvoriť jednoznačnú korešpondenciu medzi tokenmi a triedami, môžeme trénovať pravostranný **many-to-many** model neurónovej siete podľa tohto obrázku:
+Keďže potrebujeme vytvoriť jednoznačnú korešpondenciu medzi tokenmi a triedami, môžeme trénovať pravú **mnoho-na-mnoho** neurónovú sieť z tohto obrázku:
 
-![Obrázok zobrazujúci bežné vzory rekurentných neurónových sietí.](../../../../../translated_images/unreasonable-effectiveness-of-rnn.541ead816778f42dce6c42d8a56c184729aa2378d059b851be4ce12b993033df.sk.jpg)
+![Obrázok zobrazujúci bežné vzory rekurentných neurónových sietí.](../../../../../translated_images/sk/unreasonable-effectiveness-of-rnn.541ead816778f42d.webp)
 
-> *Obrázok z [tohto blogového príspevku](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) od [Andreja Karpathyho](http://karpathy.github.io/). Modely na klasifikáciu tokenov pre NER zodpovedajú pravostrannému vzoru siete na tomto obrázku.*
+> *Obrázok z [tohto blogového príspevku](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) od [Andreja Karpathyho](http://karpathy.github.io/). Modely klasifikácie tokenov NER zodpovedajú najpravšej architektúre siete na tomto obrázku.*
 
-## Trénovanie NER modelov
+## Trénovanie modelov NER
 
-Keďže NER model je v podstate model na klasifikáciu tokenov, môžeme na túto úlohu použiť RNN, s ktorými sme sa už oboznámili. V tomto prípade každý blok rekurentnej siete vráti ID tokenu. Nasledujúci príkladový notebook ukazuje, ako trénovať LSTM na klasifikáciu tokenov.
+Keďže model NER je v podstate model klasifikácie tokenov, môžeme na túto úlohu použiť RNN, ktoré už poznáme. V tomto prípade každý blok rekurentnej siete vráti ID tokenu. Nasledujúci príkladový notebook ukazuje, ako trénovať LSTM na klasifikáciu tokenov.
 
 ## ✍️ Príkladové notebooky: NER
 
-Pokračujte v učení pomocou nasledujúceho notebooku:
+Pokračujte vo svojom učení v nasledujúcom notebooku:
 
-* [NER s TensorFlow](../../../../../lessons/5-NLP/19-NER/NER-TF.ipynb)
+* [NER s TensorFlow](NER-TF.ipynb)
 
 ## Záver
 
-NER model je **model na klasifikáciu tokenov**, čo znamená, že ho možno použiť na vykonávanie klasifikácie tokenov. Ide o veľmi bežnú úlohu v NLP, ktorá pomáha rozpoznávať konkrétne entity v texte vrátane miest, mien, dátumov a ďalších.
+Model NER je **model klasifikácie tokenov**, čo znamená, že ho možno použiť na vykonávanie klasifikácie tokenov. Ide o veľmi bežnú úlohu v NLP, ktorá pomáha rozpoznávať konkrétne entity v texte vrátane miest, mien, dátumov a ďalších.
 
 ## 🚀 Výzva
 
-Dokončite zadanie uvedené nižšie, aby ste vytrénovali model na rozpoznávanie pomenovaných entít pre lekárske termíny, a potom ho vyskúšajte na inom datasete.
+Dokončite úlohu uvedenú nižšie, aby ste vytrénovali model na rozpoznávanie pomenovaných entít pre medicínske termíny, a potom ho vyskúšajte na inom datasete.
 
-## [Kvíz po prednáške](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/219)
+## [Kvíz po prednáške](https://ff-quizzes.netlify.app/en/ai/quiz/38)
 
-## Prehľad a samoštúdium
+## Prehľad a samostatné štúdium
 
-Prečítajte si blog [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) a postupujte podľa sekcie Ďalšie čítanie v tomto článku, aby ste si prehĺbili svoje vedomosti.
+Prečítajte si blog [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) a prejdite si sekciu Ďalšie čítanie v tomto článku, aby ste si prehĺbili svoje vedomosti.
 
-## [Zadanie](lab/README.md)
+## [Úloha](lab/README.md)
 
-V zadaní pre túto lekciu budete musieť vytrénovať model na rozpoznávanie lekárskych entít. Môžete začať trénovaním LSTM modelu, ako je popísané v tejto lekcii, a pokračovať použitím modelu BERT. Prečítajte si [pokyny](lab/README.md), aby ste získali všetky podrobnosti.
+V úlohe k tejto lekcii budete musieť vytrénovať model na rozpoznávanie medicínskych entít. Môžete začať s trénovaním modelu LSTM, ako je popísané v tejto lekcii, a pokračovať použitím modelu transformátora BERT. Prečítajte si [pokyny](lab/README.md), aby ste získali všetky podrobnosti.
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby na automatický preklad [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie odporúčame profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+---
+

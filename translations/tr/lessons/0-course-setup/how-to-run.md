@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7df19702b8d2d3f7c4238c51bec2c8fc",
-  "translation_date": "2025-08-26T07:39:47+00:00",
-  "source_file": "lessons/0-course-setup/how-to-run.md",
-  "language_code": "tr"
-}
--->
-# Kodu Çalıştırma Yöntemleri
+# Kodu Nasıl Çalıştırılır
 
-Bu müfredat, çalıştırılabilir birçok örnek ve laboratuvar içermektedir ve bunları çalıştırmak isteyeceksiniz. Bunu yapmak için, bu müfredatın bir parçası olarak sağlanan Jupyter Notebooks'ta Python kodu çalıştırma yeteneğine ihtiyacınız var. Kodu çalıştırmak için birkaç seçeneğiniz var:
+Bu müfredat, çalıştırmak isteyeceğiniz birçok yürütülebilir örnek ve laboratuvar içermektedir. Bunu yapabilmek için, bu müfredatın bir parçası olarak sağlanan Jupyter Notebooks içinde Python kodu çalıştırma yeteneğine sahip olmanız gerekir. Kodu çalıştırmak için birkaç seçeneğiniz vardır:
 
-## Kendi Bilgisayarınızda Yerel Olarak Çalıştırma
+## Bilgisayarınızda Yerel Olarak Çalıştırma
 
-Kodu kendi bilgisayarınızda yerel olarak çalıştırmak için bir Python sürümünün yüklü olması gerekir. Şahsen, **[miniconda](https://conda.io/en/latest/miniconda.html)** yüklemenizi öneririm - bu, farklı Python **sanal ortamlarını** destekleyen `conda` paket yöneticisini içeren oldukça hafif bir kurulumdur.
+Kodu bilgisayarınızda yerel olarak çalıştırmak için, bir Python kurulumu gereklidir. Bir öneri **[miniconda](https://conda.io/en/latest/miniconda.html)** kurmaktır - bu, farklı Python **sanal ortamları** için `conda` paket yöneticisini destekleyen oldukça hafif bir kurulumdur.
 
-Miniconda'yı yükledikten sonra, bu kurs için kullanılacak bir sanal ortam oluşturmak ve depoyu klonlamak için şu adımları izleyin:
+Miniconda'yı kurduktan sonra, depo klonlayın ve bu kurs için kullanılacak bir sanal ortam oluşturun:
 
 ```bash
 git clone http://github.com/microsoft/ai-for-beginners
@@ -24,53 +15,57 @@ conda env create --name ai4beg --file .devcontainer/environment.yml
 conda activate ai4beg
 ```
 
-### Python Uzantısı ile Visual Studio Code Kullanımı
+### Visual Studio Code ve Python Eklentisi ile Kullanma
 
-Muhtemelen müfredatı kullanmanın en iyi yolu, [Visual Studio Code](http://code.visualstudio.com/?WT.mc_id=academic-77998-cacaste) ile [Python Uzantısı](https://marketplace.visualstudio.com/items?itemName=ms-python.python&WT.mc_id=academic-77998-cacaste) kullanarak açmaktır.
+Bu müfredat, [Visual Studio Code](http://code.visualstudio.com/?WT.mc_id=academic-77998-cacaste) ve [Python Eklentisi](https://marketplace.visualstudio.com/items?itemName=ms-python.python&WT.mc_id=academic-77998-cacaste) ile açıldığında en iyi şekilde kullanılır.
 
-> **Not**: Depoyu klonlayıp VS Code'da açtığınızda, Python uzantılarını yüklemenizi otomatik olarak önerecektir. Yukarıda açıklandığı gibi miniconda'yı da yüklemeniz gerekecektir.
+> **Not**: Depoyu klonlayıp dizini VS Code'da açtığınızda, Python uzantılarını yüklemenizi otomatik olarak önerir. Ayrıca yukarıda açıklandığı gibi miniconda'yı da kurmanız gerekir.
 
-> **Not**: VS Code, depoyu bir konteyner içinde yeniden açmanızı önerirse, yerel Python kurulumunu kullanmak için bunu reddetmeniz gerekir.
+> **Not**: VS Code, depoyu bir konteyner içinde yeniden açmanızı önerirse, yerel Python kurulumunu kullanmak için bunu reddetmelisiniz.
 
-### Tarayıcıda Jupyter Kullanımı
+### Tarayıcıda Jupyter Kullanma
 
-Jupyter ortamını kendi bilgisayarınızda tarayıcı üzerinden de kullanabilirsiniz. Aslında, hem klasik Jupyter hem de Jupyter Hub, otomatik tamamlama, kod vurgulama vb. özelliklerle oldukça kullanışlı bir geliştirme ortamı sunar.
+Kendi bilgisayarınızda tarayıcı üzerinden Jupyter ortamı da kullanabilirsiniz. Klasik Jupyter ve JupyterHub, otomatik tamamlama, kod vurgulama vb. özelliklerle kullanışlı bir geliştirme ortamı sunar.
 
-Jupyter'i yerel olarak başlatmak için, kursun dizinine gidin ve şu komutları çalıştırın:
+Jupyter'ı yerel olarak başlatmak için, kurs dizinine gidin ve şunu çalıştırın:
 
 ```bash
 jupyter notebook
-```  
-veya  
+```
+ veya
 ```bash
 jupyterhub
-```  
-Daha sonra herhangi bir `.ipynb` dosyasına gidip, açabilir ve çalışmaya başlayabilirsiniz.
+```
+ Ardından `.ipynb` dosyalarından herhangi birine gidip açabilir ve çalışmaya başlayabilirsiniz.
 
-### Konteynerde Çalıştırma
+### Konteyner İçinde Çalıştırma
 
-Python kurulumuna bir alternatif, kodu bir konteyner içinde çalıştırmaktır. Depomuz, bu depo için bir konteynerin nasıl oluşturulacağını açıklayan özel bir `.devcontainer` klasörü içerdiğinden, VS Code size kodu bir konteyner içinde yeniden açmayı teklif edecektir. Bu, Docker kurulumunu gerektirir ve daha karmaşık olabilir, bu nedenle bunu daha deneyimli kullanıcılara öneriyoruz.
+Python kurulumu yerine kodu bir konteyner içinde çalıştırmak da bir alternatiftir. Depomuz, bu depo için bir konteyner nasıl oluşturulacağını belirten özel bir `.devcontainer` klasörü sağladığından, VS Code kodu bir konteyner içinde yeniden açma olanağı sunar. Bu Docker kurulumu gerektirir ve daha karmaşık olabilir, bu yüzden daha deneyimli kullanıcılar için tavsiye ederiz.
 
 ## Bulutta Çalıştırma
 
-Python'u yerel olarak kurmak istemiyorsanız ve bazı bulut kaynaklarına erişiminiz varsa, kodu bulutta çalıştırmak iyi bir alternatif olabilir. Bunu yapmanın birkaç yolu vardır:
+Python'ı yerel olarak kurmak istemiyorsanız ve bazı bulut kaynaklarına erişiminiz varsa, kodu bulutta çalıştırmak iyi bir alternatif olacaktır. Bunu yapabileceğiniz birkaç yol vardır:
 
-* **[GitHub Codespaces](https://github.com/features/codespaces)** kullanarak. Bu, GitHub'da sizin için oluşturulan ve VS Code tarayıcı arayüzü üzerinden erişilebilen bir sanal ortamdır. Codespaces erişiminiz varsa, depodaki **Code** düğmesine tıklayıp bir codespace başlatabilir ve hemen çalışmaya başlayabilirsiniz.
-* **[Binder](https://mybinder.org/v2/gh/microsoft/ai-for-beginners/HEAD)** kullanarak. [Binder](https://mybinder.org), GitHub'daki bazı kodları test etmek isteyen kişiler için bulutta ücretsiz hesaplama kaynakları sağlar. Ana sayfada depoyu Binder'da açmak için bir düğme vardır - bu, sizi hızla Binder sitesine yönlendirecek, temel konteyneri oluşturacak ve Jupyter web arayüzünü sorunsuz bir şekilde başlatacaktır.
+* GitHub üzerinde sizin için oluşturulan ve VS Code tarayıcı arayüzüyle erişilen bir sanal ortam olan **[GitHub Codespaces](https://github.com/features/codespaces)** kullanmak. Eğer Codespaces erişiminiz varsa, depoda **Code** butonuna tıklayıp bir codespace başlatarak hemen çalışmaya başlayabilirsiniz.
+* **[Binder](https://mybinder.org/v2/gh/microsoft/ai-for-beginners/HEAD)** kullanmak. [Binder](https://mybinder.org), GitHub'daki bazı kodları test etmek isteyenler için bulut üzerinden ücretsiz hesaplama kaynakları sunar. Ana sayfada depoyu Binder'da açmak için bir buton vardır – bu sizi hızla binder sitesine götürür, arka planda bir konteyner oluşturur ve sorunsuz bir Jupyter web arayüzü başlatır.
 
-> **Not**: Kötüye kullanımı önlemek için, Binder bazı web kaynaklarına erişimi engellemiştir. Bu, modelleri ve/veya veri setlerini genel internetten çeken bazı kodların çalışmasını engelleyebilir. Bazı alternatif çözümler bulmanız gerekebilir. Ayrıca, Binder tarafından sağlanan hesaplama kaynakları oldukça temel düzeydedir, bu nedenle özellikle daha karmaşık derslerde eğitim yavaş olacaktır.
+> **Not**: Kötüye kullanımı engellemek için, Binder bazı web kaynaklarına erişimi engeller. Bu, modelleri ve/veya veri setlerini genel Internet'ten alan bazı kodların çalışmasını engelleyebilir. Bazı çözümler bulmanız gerekebilir. Ayrıca, Binder tarafından sağlanan hesaplama kaynakları oldukça basit olduğundan, özellikle sonraki daha karmaşık derslerde eğitim yavaş olacaktır.
 
 ## GPU ile Bulutta Çalıştırma
 
-Bu müfredattaki bazı ileri düzey dersler, GPU desteğinden büyük ölçüde faydalanacaktır, çünkü aksi takdirde eğitim süreci oldukça yavaş olacaktır. Özellikle [Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-77998-cacaste) veya kurumunuz aracılığıyla buluta erişiminiz varsa, aşağıdaki seçenekleri değerlendirebilirsiniz:
+Bu müfredattaki bazı ileri dersler GPU desteğinden büyük ölçüde faydalanacaktır. Örneğin model eğitimi, aksi takdirde çok yavaş olabilir. Özellikle [Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-77998-cacaste) veya kurumunuz vasıtasıyla buluta erişiminiz varsa, takip edebileceğiniz birkaç seçenek vardır:
 
-* [Data Science Virtual Machine](https://docs.microsoft.com/learn/modules/intro-to-azure-data-science-virtual-machine/?WT.mc_id=academic-77998-cacaste) oluşturun ve Jupyter üzerinden bağlanın. Daha sonra depoyu doğrudan makineye klonlayabilir ve öğrenmeye başlayabilirsiniz. NC serisi sanal makineler GPU desteğine sahiptir.
+* [Data Science Virtual Machine](https://docs.microsoft.com/learn/modules/intro-to-azure-data-science-virtual-machine/?WT.mc_id=academic-77998-cacaste) oluşturup Jupyter aracılığıyla bağlanmak. Ardından depoyu makineye klonlayıp öğrenmeye başlayabilirsiniz. NC-serisi VM'ler GPU desteğine sahiptir.
 
-> **Not**: Azure for Students dahil bazı abonelikler, GPU desteğini varsayılan olarak sağlamaz. Teknik destek talebiyle ek GPU çekirdekleri talep etmeniz gerekebilir.
+> **Not**: Azure for Students dahil bazı abonelikler kutudan çıkar çıkmaz GPU desteği sağlamaz. Ek GPU çekirdeği talebinde bulunmak için teknik destek isteğinde bulunmanız gerekebilir.
 
-* [Azure Machine Learning Workspace](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-77998-cacaste) oluşturun ve oradaki Notebook özelliğini kullanın. [Bu video](https://azure-for-academics.github.io/quickstart/azureml-papers/), bir depoyu Azure ML not defterine nasıl klonlayacağınızı ve kullanmaya başlayacağınızı gösterir.
+* [Azure Machine Learning Workspace](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-77998-cacaste) oluşturup oradaki Notebook özelliğini kullanmak. [Bu video](https://azure-for-academics.github.io/quickstart/azureml-papers/) Azure ML notebook içine depo klonlama ve kullanmaya başlama gösterir.
 
-Ayrıca, ücretsiz GPU desteği sunan Google Colab'i kullanabilir ve Jupyter Notebooks'u oraya yükleyerek tek tek çalıştırabilirsiniz.
+Ayrıca, biraz ücretsiz GPU desteği ile gelen Google Colab'i kullanabilir ve Jupyter Notebooks'ları oraya yükleyip tek tek çalıştırabilirsiniz.
 
-**Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalardan veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

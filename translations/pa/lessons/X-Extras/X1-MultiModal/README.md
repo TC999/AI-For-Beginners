@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-26T10:20:30+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "pa"
-}
--->
 # ਮਲਟੀ-ਮੋਡਲ ਨੈਟਵਰਕ
 
 NLP ਟਾਸਕਾਂ ਨੂੰ ਹੱਲ ਕਰਨ ਲਈ ਟ੍ਰਾਂਸਫਾਰਮਰ ਮਾਡਲਾਂ ਦੀ ਸਫਲਤਾ ਤੋਂ ਬਾਅਦ, ਉਹੀ ਜਾਂ ਇਸਦੇ ਸਮਾਨ ਆਰਕੀਟੈਕਚਰ ਕੰਪਿਊਟਰ ਵਿਜ਼ਨ ਟਾਸਕਾਂ 'ਤੇ ਲਾਗੂ ਕੀਤੇ ਗਏ। ਵਿਜ਼ਨ ਅਤੇ ਕੁਦਰਤੀ ਭਾਸ਼ਾ ਦੀਆਂ ਸਮਰਥਾਵਾਂ ਨੂੰ *ਮਿਲਾਉਣ* ਵਾਲੇ ਮਾਡਲ ਬਣਾਉਣ ਵਿੱਚ ਦਿਲਚਸਪੀ ਵਧ ਰਹੀ ਹੈ। ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਇੱਕ ਯਤਨ ਨੂੰ OpenAI ਦੁਆਰਾ ਕੀਤਾ ਗਿਆ ਸੀ, ਜਿਸਨੂੰ CLIP ਅਤੇ DALL.E ਕਿਹਾ ਜਾਂਦਾ ਹੈ।
@@ -15,7 +6,7 @@ NLP ਟਾਸਕਾਂ ਨੂੰ ਹੱਲ ਕਰਨ ਲਈ ਟ੍ਰਾਂਸ�
 
 CLIP ਦਾ ਮੁੱਖ ਵਿਚਾਰ ਇਹ ਹੈ ਕਿ ਟੈਕਸਟ ਪ੍ਰੌਮਪਟਸ ਨੂੰ ਇੱਕ ਚਿੱਤਰ ਨਾਲ ਤੁਲਨਾ ਕਰਨ ਅਤੇ ਇਹ ਨਿਰਧਾਰਤ ਕਰਨ ਦੀ ਸਮਰਥਾ ਹੋਵੇ ਕਿ ਚਿੱਤਰ ਪ੍ਰੌਮਪਟ ਨਾਲ ਕਿੰਨਾ ਚੰਗਾ ਮੇਲ ਖਾਂਦਾ ਹੈ।
 
-![CLIP ਆਰਕੀਟੈਕਚਰ](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.pa.png)
+![CLIP ਆਰਕੀਟੈਕਚਰ](../../../../../translated_images/pa/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *ਤਸਵੀਰ [ਇਸ ਬਲੌਗ ਪੋਸਟ](https://openai.com/blog/clip/) ਤੋਂ*
 
@@ -31,7 +22,7 @@ CLIP ਮਾਡਲ/ਲਾਇਬ੍ਰੇਰੀ [OpenAI GitHub](https://github.com
 
 ਮੰਨ ਲਓ ਕਿ ਸਾਨੂੰ ਚਿੱਤਰਾਂ ਨੂੰ ਬਿੱਲੀਆਂ, ਕੁੱਤੇ ਅਤੇ ਮਨੁੱਖਾਂ ਵਿੱਚ ਵਰਗੀਕਰਣ ਦੀ ਲੋੜ ਹੈ। ਇਸ ਮਾਮਲੇ ਵਿੱਚ, ਅਸੀਂ ਮਾਡਲ ਨੂੰ ਇੱਕ ਚਿੱਤਰ ਅਤੇ ਟੈਕਸਟ ਪ੍ਰੌਮਪਟਸ ਦੀ ਲੜੀ ਦੇ ਸਕਦੇ ਹਾਂ: "*ਬਿੱਲੀ ਦੀ ਤਸਵੀਰ*", "*ਕੁੱਤੇ ਦੀ ਤਸਵੀਰ*", "*ਮਨੁੱਖ ਦੀ ਤਸਵੀਰ*"। 3 ਸੰਭਾਵਨਾਵਾਂ ਦੇ ਨਤੀਜੇ ਵਾਲੇ ਵੈਕਟਰ ਵਿੱਚ ਸਿਰਫ ਸਭ ਤੋਂ ਉੱਚੇ ਮੁੱਲ ਵਾਲੇ ਇੰਡੈਕਸ ਨੂੰ ਚੁਣਨ ਦੀ ਲੋੜ ਹੈ।
 
-![ਚਿੱਤਰ ਵਰਗੀਕਰਨ ਲਈ CLIP](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.pa.png)
+![ਚਿੱਤਰ ਵਰਗੀਕਰਨ ਲਈ CLIP](../../../../../translated_images/pa/clip-class.3af42ef0b2b19369.webp)
 
 > *ਤਸਵੀਰ [ਇਸ ਬਲੌਗ ਪੋਸਟ](https://openai.com/blog/clip/) ਤੋਂ*
 
@@ -55,13 +46,13 @@ VQGAN ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ [Taming Transformers](https:/
 
 VQGAN ਅਤੇ ਪ੍ਰੰਪਰਾਗਤ GAN ਦੇ ਵਿਚਕਾਰ ਇੱਕ ਮਹੱਤਵਪੂਰਨ ਅੰਤਰ ਇਹ ਹੈ ਕਿ ਪੁਰਾਣਾ ਕਿਸੇ ਵੀ ਇਨਪੁਟ ਵੈਕਟਰ ਤੋਂ ਇੱਕ ਢੰਗ ਦਾ ਚਿੱਤਰ ਪੈਦਾ ਕਰ ਸਕਦਾ ਹੈ, ਜਦਕਿ VQGAN ਸੰਭਾਵਨਾ ਹੈ ਕਿ ਇੱਕ ਚਿੱਤਰ ਪੈਦਾ ਕਰੇ ਜੋ ਸੰਗਤਿ ਵਾਲਾ ਨਾ ਹੋਵੇ। ਇਸ ਲਈ, ਸਾਨੂੰ ਚਿੱਤਰ ਬਣਾਉਣ ਦੀ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਹੋਰ ਮਾਰਗਦਰਸ਼ਨ ਕਰਨ ਦੀ ਲੋੜ ਹੈ, ਅਤੇ ਇਹ CLIP ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।
 
-![VQGAN+CLIP ਆਰਕੀਟੈਕਚਰ](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.pa.png)
+![VQGAN+CLIP ਆਰਕੀਟੈਕਚਰ](../../../../../translated_images/pa/vqgan.5027fe05051dfa31.webp)
 
 ਟੈਕਸਟ ਪ੍ਰੌਮਪਟ ਦੇ ਅਨੁਕੂਲ ਚਿੱਤਰ ਬਣਾਉਣ ਲਈ, ਅਸੀਂ ਕੁਝ ਰੈਂਡਮ ਐਨਕੋਡਿੰਗ ਵੈਕਟਰ ਨਾਲ ਸ਼ੁਰੂ ਕਰਦੇ ਹਾਂ ਜੋ VQGAN ਦੁਆਰਾ ਚਿੱਤਰ ਪੈਦਾ ਕਰਨ ਲਈ ਪਾਸ ਕੀਤਾ ਜਾਂਦਾ ਹੈ। ਫਿਰ CLIP ਨੂੰ ਇੱਕ ਲੌਸ ਫੰਕਸ਼ਨ ਪੈਦਾ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ ਜੋ ਦਿਖਾਉਂਦਾ ਹੈ ਕਿ ਚਿੱਤਰ ਟੈਕਸਟ ਪ੍ਰੌਮਪਟ ਨਾਲ ਕਿੰਨਾ ਚੰਗਾ ਮੇਲ ਖਾਂਦਾ ਹੈ। ਫਿਰ ਉਦੇਸ਼ ਇਸ ਲੌਸ ਨੂੰ ਘਟਾਉਣਾ ਹੈ, ਬੈਕ ਪ੍ਰੋਪਾਗੇਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇਨਪੁਟ ਵੈਕਟਰ ਪੈਰਾਮੀਟਰਾਂ ਨੂੰ ਢਾਲਣਾ।
 
 VQGAN+CLIP ਨੂੰ ਲਾਗੂ ਕਰਨ ਵਾਲੀ ਇੱਕ ਸ਼ਾਨਦਾਰ ਲਾਇਬ੍ਰੇਰੀ [Pixray](http://github.com/pixray/pixray) ਹੈ।
 
-![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.pa.png) |  ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.pa.png) | ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.pa.png)
+![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/pa/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/pa/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/pa/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 ਪ੍ਰੌਮਪਟ ਤੋਂ ਬਣਾਈ ਗਈ ਤਸਵੀਰ *ਸਾਹਿਤ ਦੇ ਇੱਕ ਨੌਜਵਾਨ ਪੁਰਸ਼ ਅਧਿਆਪਕ ਦਾ ਇੱਕ ਜਲਰੰਗ ਪੋਰਟਰੇਟ ਜਿਸਦੇ ਕੋਲ ਇੱਕ ਕਿਤਾਬ ਹੈ* | ਪ੍ਰੌਮਪਟ ਤੋਂ ਬਣਾਈ ਗਈ ਤਸਵੀਰ *ਕੰਪਿਊਟਰ ਵਿਗਿਆਨ ਦੀ ਇੱਕ ਨੌਜਵਾਨ ਮਹਿਲਾ ਅਧਿਆਪਕ ਦਾ ਇੱਕ ਤੇਲ ਪੋਰਟਰੇਟ ਜਿਸਦੇ ਕੋਲ ਇੱਕ ਕੰਪਿਊਟਰ ਹੈ* | ਪ੍ਰੌਮਪਟ ਤੋਂ ਬਣਾਈ ਗਈ ਤਸਵੀਰ *ਗਣਿਤ ਦੇ ਇੱਕ ਬੁਜ਼ੁਰਗ ਪੁਰਸ਼ ਅਧਿਆਪਕ ਦਾ ਇੱਕ ਤੇਲ ਪੋਰਟਰੇਟ ਜੋ ਬਲੈਕਬੋਰਡ ਦੇ ਸਾਹਮਣੇ ਹੈ*
 
@@ -77,7 +68,7 @@ CLIP ਦੇ ਉਲਟ, DALL-E ਟੈਕਸਟ ਅਤੇ ਚਿੱਤਰ ਨੂ�
 DALL.E 1 ਅਤੇ 2 ਦੇ ਵਿਚਕਾਰ ਮੁੱਖ ਅੰਤਰ ਇਹ ਹੈ ਕਿ ਇਹ ਹੋਰ ਹਕੀਕਤਵਾਦੀ ਚਿੱਤਰ ਅਤੇ ਕਲਾ ਪੈਦਾ ਕਰਦਾ ਹੈ।
 
 DALL-E ਨਾਲ ਚਿੱਤਰ ਜਨਰੇਸ਼ਨ ਦੇ ਉਦਾਹਰਨ:
-![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.pa.png) |  ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.pa.png) | ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.pa.png)
+![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/pa/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/pa/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Pixray ਦੁਆਰਾ ਬਣਾਈ ਗਈ ਤਸਵੀਰ](../../../../../translated_images/pa/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 ਪ੍ਰੌਮਪਟ ਤੋਂ ਬਣਾਈ ਗਈ ਤਸਵੀਰ *ਸਾਹਿਤ ਦੇ ਇੱਕ ਨੌਜਵਾਨ ਪੁਰਸ਼ ਅਧਿਆਪਕ ਦਾ ਇੱਕ ਜਲਰੰਗ ਪੋਰਟਰੇਟ ਜਿਸਦੇ ਕੋਲ ਇੱਕ ਕਿਤਾਬ ਹੈ* | ਪ੍ਰੌਮਪਟ ਤੋਂ ਬਣਾਈ ਗਈ ਤਸਵੀਰ *ਕੰਪਿਊਟਰ ਵਿਗਿਆਨ ਦੀ ਇੱਕ ਨੌਜਵਾਨ ਮਹਿਲਾ ਅਧਿਆਪਕ ਦਾ ਇੱਕ ਤੇਲ ਪੋਰਟਰੇਟ ਜਿਸਦੇ ਕੋਲ ਇੱਕ ਕੰਪਿਊਟਰ ਹੈ* | ਪ੍ਰੌਮਪਟ ਤੋਂ ਬਣਾਈ ਗਈ ਤਸਵੀਰ *ਗਣਿਤ ਦੇ ਇੱਕ ਬੁਜ਼ੁਰਗ ਪੁਰਸ਼ ਅਧਿਆਪਕ ਦਾ ਇੱਕ ਤੇਲ ਪੋਰਟਰੇਟ ਜੋ ਬਲੈਕਬੋਰਡ ਦੇ ਸਾਹਮਣੇ ਹੈ*
 

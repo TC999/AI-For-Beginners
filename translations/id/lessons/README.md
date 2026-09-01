@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5fef1a0b22498d7188959e2a2cb08af7",
-  "translation_date": "2025-08-29T12:12:09+00:00",
-  "source_file": "lessons/README.md",
-  "language_code": "id"
-}
--->
 # Gambaran Umum
 
-![Gambaran Umum dalam sebuah sketsa](../../../translated_images/ai-overview.0857791951d19500d0ef8b803d77110c738dcafc52306e6d68724742cd4af167.id.png)
+![Gambaran Umum dalam sebuah sketsa](https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/sketchnotes/ai-overview.png)
 
 > Sketsa oleh [Tomomi Imura](https://twitter.com/girlie_mac)
 

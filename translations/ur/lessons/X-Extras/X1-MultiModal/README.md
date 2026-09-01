@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-26T10:17:57+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "ur"
-}
--->
 # ملٹی موڈل نیٹ ورکس
 
 ٹرانسفارمر ماڈلز کی NLP ٹاسکس میں کامیابی کے بعد، وہی یا ملتے جلتے آرکیٹیکچرز کمپیوٹر وژن ٹاسکس کے لیے بھی استعمال کیے گئے۔ اب ایسے ماڈلز بنانے میں دلچسپی بڑھ رہی ہے جو وژن اور نیچرل لینگویج کی صلاحیتوں کو *یکجا* کر سکیں۔ ان کوششوں میں سے ایک OpenAI کی جانب سے کی گئی، جسے CLIP اور DALL.E کہا جاتا ہے۔
@@ -15,7 +6,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 CLIP کا بنیادی خیال یہ ہے کہ ٹیکسٹ پرامپٹس کو کسی تصویر کے ساتھ موازنہ کیا جا سکے اور یہ معلوم کیا جا سکے کہ تصویر پرامپٹ سے کتنی مطابقت رکھتی ہے۔
 
-![CLIP آرکیٹیکچر](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.ur.png)
+![CLIP آرکیٹیکچر](../../../../../translated_images/ur/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *تصویر [اس بلاگ پوسٹ](https://openai.com/blog/clip/) سے لی گئی ہے*
 
@@ -31,7 +22,7 @@ CLIP ماڈل/لائبریری [OpenAI GitHub](https://github.com/openai/CLIP) �
 
 فرض کریں ہمیں تصاویر کو بلیوں، کتوں اور انسانوں کے درمیان کلاسیفائی کرنا ہے۔ اس صورت میں، ہم ماڈل کو ایک تصویر اور ٹیکسٹ پرامپٹس کی ایک سیریز دیتے ہیں: "*بلی کی تصویر*", "*کتے کی تصویر*", "*انسان کی تصویر*۔" نتیجے میں ملنے والے 3 پروبیبلیٹیز کے ویکٹر میں ہمیں صرف سب سے زیادہ ویلیو والے انڈیکس کو منتخب کرنا ہوگا۔
 
-![امیج کلاسیفکیشن کے لیے CLIP](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.ur.png)
+![امیج کلاسیفکیشن کے لیے CLIP](../../../../../translated_images/ur/clip-class.3af42ef0b2b19369.webp)
 
 > *تصویر [اس بلاگ پوسٹ](https://openai.com/blog/clip/) سے لی گئی ہے*
 
@@ -55,13 +46,13 @@ VQGAN کے بارے میں مزید جاننے کے لیے [Taming Transformers]
 
 VQGAN اور روایتی GAN کے درمیان ایک اہم فرق یہ ہے کہ روایتی GAN کسی بھی ان پٹ ویکٹر سے ایک معقول تصویر بنا سکتا ہے، جبکہ VQGAN ممکنہ طور پر ایک غیر مربوط تصویر بنا سکتا ہے۔ لہذا، ہمیں امیج کریشن کے عمل کو مزید گائیڈ کرنے کی ضرورت ہوتی ہے، اور یہ CLIP کے ذریعے کیا جا سکتا ہے۔
 
-![VQGAN+CLIP آرکیٹیکچر](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.ur.png)
+![VQGAN+CLIP آرکیٹیکچر](../../../../../translated_images/ur/vqgan.5027fe05051dfa31.webp)
 
 کسی ٹیکسٹ پرامپٹ سے مطابقت رکھنے والی تصویر بنانے کے لیے، ہم کسی رینڈم انکوڈنگ ویکٹر سے شروع کرتے ہیں، جو VQGAN کے ذریعے ایک تصویر تیار کرتا ہے۔ پھر CLIP ایک لاس فنکشن تیار کرتا ہے جو یہ ظاہر کرتا ہے کہ تصویر ٹیکسٹ پرامپٹ سے کتنی مطابقت رکھتی ہے۔ اس کے بعد مقصد یہ ہوتا ہے کہ اس لاس کو کم سے کم کیا جائے، بیک پروپیگیشن کے ذریعے ان پٹ ویکٹر کے پیرامیٹرز کو ایڈجسٹ کرتے ہوئے۔
 
 VQGAN+CLIP کو نافذ کرنے والی ایک بہترین لائبریری [Pixray](http://github.com/pixray/pixray) ہے۔
 
-![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.ur.png) |  ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.ur.png) | ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.ur.png)
+![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/ur/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/ur/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/ur/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 پرامپٹ سے تیار کردہ تصویر *ایک نوجوان مرد ادب کے استاد کی کتاب کے ساتھ واٹر کلر پورٹریٹ* | پرامپٹ سے تیار کردہ تصویر *ایک نوجوان خاتون کمپیوٹر سائنس کی استاد کا آئل پورٹریٹ کمپیوٹر کے ساتھ* | پرامپٹ سے تیار کردہ تصویر *ایک بوڑھے مرد ریاضی کے استاد کا آئل پورٹریٹ بلیک بورڈ کے سامنے*
 
@@ -77,7 +68,7 @@ CLIP کے برعکس، DALL-E ٹیکسٹ اور تصویر دونوں کو ای�
 DALL-E 1 اور 2 کے درمیان بنیادی فرق یہ ہے کہ DALL-E 2 زیادہ حقیقت پسندانہ تصاویر اور آرٹ تیار کرتا ہے۔
 
 DALL-E کے ساتھ تصاویر کی مثالیں:
-![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.ur.png) |  ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.ur.png) | ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.ur.png)
+![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/ur/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/ur/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Pixray کے ذریعے تیار کردہ تصویر](../../../../../translated_images/ur/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 پرامپٹ سے تیار کردہ تصویر *ایک نوجوان مرد ادب کے استاد کی کتاب کے ساتھ واٹر کلر پورٹریٹ* | پرامپٹ سے تیار کردہ تصویر *ایک نوجوان خاتون کمپیوٹر سائنس کی استاد کا آئل پورٹریٹ کمپیوٹر کے ساتھ* | پرامپٹ سے تیار کردہ تصویر *ایک بوڑھے مرد ریاضی کے استاد کا آئل پورٹریٹ بلیک بورڈ کے سامنے*
 

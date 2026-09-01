@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-25T23:40:38+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "uk"
-}
--->
 # Мультимодальні мережі
 
 Після успіху моделей трансформерів у вирішенні завдань обробки природної мови (NLP), ті ж або схожі архітектури були застосовані до завдань комп'ютерного зору. Зростає інтерес до створення моделей, які б *поєднували* можливості зору та природної мови. Одним із таких підходів є моделі CLIP та DALL.E, розроблені OpenAI.
@@ -15,7 +6,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Основна ідея CLIP полягає в тому, щоб порівнювати текстові запити із зображеннями та визначати, наскільки добре зображення відповідає запиту.
 
-![Архітектура CLIP](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.uk.png)
+![Архітектура CLIP](../../../../../translated_images/uk/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *Зображення з [цього блогу](https://openai.com/blog/clip/)*
 
@@ -29,7 +20,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Припустимо, нам потрібно класифікувати зображення, наприклад, між котами, собаками та людьми. У цьому випадку ми можемо надати моделі зображення та серію текстових запитів: "*зображення кота*", "*зображення собаки*", "*зображення людини*". У результатуючому векторі з 3 ймовірностей нам потрібно вибрати індекс із найвищим значенням.
 
-![CLIP для класифікації зображень](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.uk.png)
+![CLIP для класифікації зображень](../../../../../translated_images/uk/clip-class.3af42ef0b2b19369.webp)
 
 > *Зображення з [цього блогу](https://openai.com/blog/clip/)*
 
@@ -53,13 +44,13 @@ CLIP також можна використовувати для **генера�
 
 Однією з важливих відмінностей між VQGAN і традиційним GAN є те, що останній може створити пристойне зображення з будь-якого вхідного вектора, тоді як VQGAN, ймовірно, створить зображення, яке не буде узгодженим. Тому нам потрібно додатково керувати процесом створення зображення, і це можна зробити за допомогою CLIP.
 
-![Архітектура VQGAN+CLIP](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.uk.png)
+![Архітектура VQGAN+CLIP](../../../../../translated_images/uk/vqgan.5027fe05051dfa31.webp)
 
 Щоб створити зображення, яке відповідає текстовому запиту, ми починаємо з випадкового вектора кодування, який передається через VQGAN для створення зображення. Потім CLIP використовується для створення функції втрат, яка показує, наскільки добре зображення відповідає текстовому запиту. Мета полягає в тому, щоб мінімізувати цю втрату, використовуючи зворотне поширення для коригування параметрів вхідного вектора.
 
 Чудова бібліотека, яка реалізує VQGAN+CLIP, — це [Pixray](http://github.com/pixray/pixray).
 
-![Зображення, створене Pixray](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.uk.png) |  ![Зображення, створене Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.uk.png) | ![Зображення, створене Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.uk.png)
+![Зображення, створене Pixray](../../../../../translated_images/uk/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Зображення, створене Pixray](../../../../../translated_images/uk/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Зображення, створене Pixray](../../../../../translated_images/uk/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 Зображення, створене за запитом *акварельний портрет молодого чоловіка-вчителя літератури з книгою* | Зображення, створене за запитом *масляний портрет молодої жінки-вчителя інформатики з комп'ютером* | Зображення, створене за запитом *масляний портрет старого чоловіка-вчителя математики перед дошкою*
 
@@ -75,7 +66,7 @@ DALL-E — це версія GPT-3, навчена створювати зобр
 Основна відмінність між DALL-E 1 і 2 полягає в тому, що друга версія генерує більш реалістичні зображення та мистецтво.
 
 Приклади генерації зображень за допомогою DALL-E:
-![Зображення, створене DALL-E](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.uk.png) |  ![Зображення, створене DALL-E](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.uk.png) | ![Зображення, створене DALL-E](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.uk.png)
+![Зображення, створене DALL-E](../../../../../translated_images/uk/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Зображення, створене DALL-E](../../../../../translated_images/uk/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Зображення, створене DALL-E](../../../../../translated_images/uk/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 Зображення, створене за запитом *акварельний портрет молодого чоловіка-вчителя літератури з книгою* | Зображення, створене за запитом *масляний портрет молодої жінки-вчителя інформатики з комп'ютером* | Зображення, створене за запитом *масляний портрет старого чоловіка-вчителя математики перед дошкою*
 

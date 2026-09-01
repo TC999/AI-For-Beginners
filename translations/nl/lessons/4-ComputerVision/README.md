@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a52f000089c1d8906a4daa4ab1169b",
-  "translation_date": "2025-08-28T19:23:25+00:00",
-  "source_file": "lessons/4-ComputerVision/README.md",
-  "language_code": "nl"
-}
--->
 # Computer Vision
 
-![Samenvatting van Computer Vision-inhoud in een schets](../../../../translated_images/ai-computervision.6506ebebac3fbf76cdb78989d7d3dfea87e88285c0feaade53aa7804a22b248f.nl.png)
+![Samenvatting van Computer Vision-inhoud in een schets](../../../../translated_images/nl/ai-computervision.6506ebebac3fbf76.webp)
 
 In deze sectie leren we over:
 

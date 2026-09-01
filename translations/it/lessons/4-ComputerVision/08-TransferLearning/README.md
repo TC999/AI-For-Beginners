@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "717775c4050ccbffbe0c961ad8bf7bf7",
-  "translation_date": "2025-08-26T07:04:12+00:00",
-  "source_file": "lessons/4-ComputerVision/08-TransferLearning/README.md",
-  "language_code": "it"
-}
--->
-# Reti Pre-addestrate e Apprendimento per Trasferimento
+# Reti Pre-addestrate e Transfer Learning
 
 Addestrare le CNN può richiedere molto tempo e una grande quantità di dati. Tuttavia, gran parte del tempo viene speso per imparare i migliori filtri di basso livello che una rete può utilizzare per estrarre schemi dalle immagini. Sorge una domanda naturale: possiamo utilizzare una rete neurale addestrata su un dataset e adattarla per classificare immagini diverse senza dover eseguire un processo di addestramento completo?
 
-## [Quiz pre-lezione](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/108)
+## [Quiz pre-lezione](https://ff-quizzes.netlify.app/en/ai/quiz/15)
 
-Questo approccio è chiamato **apprendimento per trasferimento**, perché trasferiamo alcune conoscenze da un modello di rete neurale a un altro. Nell'apprendimento per trasferimento, di solito si parte da un modello pre-addestrato, che è stato addestrato su un grande dataset di immagini, come **ImageNet**. Questi modelli sono già in grado di estrarre diverse caratteristiche da immagini generiche e, in molti casi, costruire un classificatore sopra queste caratteristiche estratte può portare a buoni risultati.
+Questo approccio si chiama **transfer learning**, perché trasferiamo alcune conoscenze da un modello di rete neurale a un altro. Nel transfer learning, di solito si parte da un modello pre-addestrato, che è stato addestrato su un grande dataset di immagini, come **ImageNet**. Questi modelli sono già in grado di estrarre diverse caratteristiche da immagini generiche, e in molti casi costruire semplicemente un classificatore sopra queste caratteristiche estratte può portare a buoni risultati.
 
-> ✅ L'apprendimento per trasferimento è un termine che si trova anche in altri campi accademici, come l'Educazione. Si riferisce al processo di trasferire conoscenze da un dominio e applicarle a un altro.
+> ✅ Il Transfer Learning è un termine che si trova anche in altri campi accademici, come l'Educazione. Si riferisce al processo di trasferire conoscenze da un dominio e applicarle a un altro.
 
 ## Modelli Pre-addestrati come Estrattori di Caratteristiche
 
@@ -23,60 +14,60 @@ Le reti convoluzionali di cui abbiamo parlato nella sezione precedente contengon
 
 Sia Keras che PyTorch contengono funzioni per caricare facilmente i pesi di reti neurali pre-addestrate per alcune architetture comuni, la maggior parte delle quali è stata addestrata su immagini di ImageNet. Le più utilizzate sono descritte nella pagina [Architetture CNN](../07-ConvNets/CNN_Architectures.md) della lezione precedente. In particolare, potresti considerare di utilizzare una delle seguenti:
 
-* **VGG-16/VGG-19**, che sono modelli relativamente semplici ma che offrono comunque una buona accuratezza. Spesso utilizzare VGG come primo tentativo è una buona scelta per vedere come funziona l'apprendimento per trasferimento.
+* **VGG-16/VGG-19**, che sono modelli relativamente semplici ma che offrono comunque una buona accuratezza. Spesso utilizzare VGG come primo tentativo è una buona scelta per vedere come funziona il transfer learning.
 * **ResNet**, una famiglia di modelli proposta da Microsoft Research nel 2015. Hanno più livelli e quindi richiedono più risorse.
 * **MobileNet**, una famiglia di modelli con dimensioni ridotte, adatti per dispositivi mobili. Usali se hai risorse limitate e puoi sacrificare un po' di accuratezza.
 
 Ecco alcune caratteristiche estratte da un'immagine di un gatto dalla rete VGG-16:
 
-![Caratteristiche estratte da VGG-16](../../../../../translated_images/features.6291f9c7ba3a0b951af88fc9864632b9115365410765680680d30c927dd67354.it.png)
+![Caratteristiche estratte da VGG-16](../../../../../translated_images/it/features.6291f9c7ba3a0b95.webp)
 
 ## Dataset Gatti vs. Cani
 
 In questo esempio, utilizzeremo un dataset di [Gatti e Cani](https://www.microsoft.com/download/details.aspx?id=54765&WT.mc_id=academic-77998-cacaste), che è molto vicino a uno scenario reale di classificazione di immagini.
 
-## ✍️ Esercizio: Apprendimento per Trasferimento
+## ✍️ Esercizio: Transfer Learning
 
-Vediamo l'apprendimento per trasferimento in azione nei notebook corrispondenti:
+Vediamo il transfer learning in azione nei notebook corrispondenti:
 
-* [Apprendimento per Trasferimento - PyTorch](../../../../../lessons/4-ComputerVision/08-TransferLearning/TransferLearningPyTorch.ipynb)
-* [Apprendimento per Trasferimento - TensorFlow](../../../../../lessons/4-ComputerVision/08-TransferLearning/TransferLearningTF.ipynb)
+* [Transfer Learning - PyTorch](TransferLearningPyTorch.ipynb)
+* [Transfer Learning - TensorFlow](TransferLearningTF.ipynb)
 
 ## Visualizzare il Gatto Avversario
 
-Una rete neurale pre-addestrata contiene diversi schemi al suo interno, inclusi concetti di **gatto ideale** (così come cane ideale, zebra ideale, ecc.). Sarebbe interessante **visualizzare questa immagine**. Tuttavia, non è semplice, perché gli schemi sono distribuiti in tutti i pesi della rete e organizzati in una struttura gerarchica.
+Una rete neurale pre-addestrata contiene diversi schemi all'interno del suo *cervello*, inclusi concetti di **gatto ideale** (così come cane ideale, zebra ideale, ecc.). Sarebbe interessante in qualche modo **visualizzare questa immagine**. Tuttavia, non è semplice, perché gli schemi sono distribuiti in tutti i pesi della rete e organizzati in una struttura gerarchica.
 
-Un approccio che possiamo adottare è partire da un'immagine casuale e poi utilizzare la tecnica di **ottimizzazione con discesa del gradiente** per modificare quell'immagine in modo tale che la rete inizi a pensare che sia un gatto.
+Un approccio che possiamo adottare è partire da un'immagine casuale e poi cercare di utilizzare la tecnica di **ottimizzazione con discesa del gradiente** per modificare quell'immagine in modo tale che la rete inizi a pensare che sia un gatto.
 
-![Ciclo di Ottimizzazione dell'Immagine](../../../../../translated_images/ideal-cat-loop.999fbb8ff306e044f997032f4eef9152b453e6a990e449bbfb107de2493cc37e.it.png)
+![Ciclo di Ottimizzazione dell'Immagine](../../../../../translated_images/it/ideal-cat-loop.999fbb8ff306e044.webp)
 
 Tuttavia, se facciamo questo, otterremo qualcosa di molto simile a un rumore casuale. Questo perché *ci sono molti modi per far pensare alla rete che l'immagine di input sia un gatto*, inclusi alcuni che non hanno senso visivamente. Sebbene queste immagini contengano molti schemi tipici di un gatto, non c'è nulla che le vincoli a essere visivamente distintive.
 
-Per migliorare il risultato, possiamo aggiungere un altro termine alla funzione di perdita, chiamato **perdita di variazione**. È una metrica che mostra quanto siano simili i pixel vicini dell'immagine. Minimizzare la perdita di variazione rende l'immagine più fluida e elimina il rumore, rivelando così schemi più visivamente accattivanti. Ecco un esempio di immagini "ideali", classificate come gatto e zebra con alta probabilità:
+Per migliorare il risultato, possiamo aggiungere un altro termine alla funzione di perdita, chiamato **variation loss**. È una metrica che mostra quanto sono simili i pixel vicini dell'immagine. Minimizzare la variation loss rende l'immagine più liscia e elimina il rumore, rivelando così schemi più visivamente piacevoli. Ecco un esempio di queste immagini "ideali", classificate come gatto e zebra con alta probabilità:
 
-![Gatto Ideale](../../../../../translated_images/ideal-cat.203dd4597643d6b0bd73038b87f9c0464322725e3a06ab145d25d4a861c70592.it.png) | ![Zebra Ideale](../../../../../translated_images/ideal-zebra.7f70e8b54ee15a7a314000bb5df38a6cfe086ea04d60df4d3ef313d046b98a2b.it.png)
+![Gatto Ideale](../../../../../translated_images/it/ideal-cat.203dd4597643d6b0.webp) | ![Zebra Ideale](../../../../../translated_images/it/ideal-zebra.7f70e8b54ee15a7a.webp)
 -----|-----
  *Gatto Ideale* | *Zebra Ideale*
 
 Un approccio simile può essere utilizzato per eseguire i cosiddetti **attacchi avversari** su una rete neurale. Supponiamo di voler ingannare una rete neurale e far sembrare un cane un gatto. Se prendiamo l'immagine di un cane, che è riconosciuta dalla rete come un cane, possiamo modificarla leggermente utilizzando l'ottimizzazione con discesa del gradiente, fino a quando la rete inizia a classificarla come un gatto:
 
-![Immagine di un Cane](../../../../../translated_images/original-dog.8f68a67d2fe0911f33041c0f7fce8aa4ea919f9d3917ec4b468298522aeb6356.it.png) | ![Immagine di un cane classificata come gatto](../../../../../translated_images/adversarial-dog.d9fc7773b0142b89752539bfbf884118de845b3851c5162146ea0b8809fc820f.it.png)
+![Immagine di un Cane](../../../../../translated_images/it/original-dog.8f68a67d2fe0911f.webp) | ![Immagine di un cane classificata come gatto](../../../../../translated_images/it/adversarial-dog.d9fc7773b0142b89.webp)
 -----|-----
 *Immagine originale di un cane* | *Immagine di un cane classificata come gatto*
 
 Consulta il codice per riprodurre i risultati sopra nel seguente notebook:
 
-* [Gatto Ideale e Avversario - TensorFlow](../../../../../lessons/4-ComputerVision/08-TransferLearning/AdversarialCat_TF.ipynb)
+* [Gatto Ideale e Avversario - TensorFlow](AdversarialCat_TF.ipynb)
 
 ## Conclusione
 
-Utilizzando l'apprendimento per trasferimento, puoi rapidamente mettere insieme un classificatore per un compito di classificazione di oggetti personalizzato e ottenere un'alta accuratezza. Puoi vedere che i compiti più complessi che stiamo risolvendo ora richiedono una maggiore potenza computazionale e non possono essere facilmente risolti sulla CPU. Nell'unità successiva, proveremo a utilizzare un'implementazione più leggera per addestrare lo stesso modello utilizzando risorse computazionali inferiori, con una riduzione minima dell'accuratezza.
+Utilizzando il transfer learning, puoi rapidamente mettere insieme un classificatore per un compito di classificazione di oggetti personalizzato e ottenere un'alta accuratezza. Puoi vedere che i compiti più complessi che stiamo risolvendo ora richiedono una maggiore potenza computazionale e non possono essere facilmente risolti sulla CPU. Nell'unità successiva, proveremo a utilizzare un'implementazione più leggera per addestrare lo stesso modello utilizzando risorse computazionali inferiori, con una riduzione minima dell'accuratezza.
 
 ## 🚀 Sfida
 
-Nei notebook allegati, ci sono note in fondo su come l'apprendimento per trasferimento funzioni meglio con dati di addestramento relativamente simili (ad esempio, un nuovo tipo di animale). Fai qualche esperimento con tipi di immagini completamente nuovi per vedere quanto bene o male i tuoi modelli di apprendimento per trasferimento funzionano.
+Nei notebook allegati, ci sono note in fondo su come il trasferimento di conoscenze funzioni meglio con dati di addestramento relativamente simili (ad esempio, un nuovo tipo di animale). Fai qualche esperimento con tipi di immagini completamente nuovi per vedere quanto bene o male funzionano i tuoi modelli di trasferimento di conoscenze.
 
-## [Quiz post-lezione](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/208)
+## [Quiz post-lezione](https://ff-quizzes.netlify.app/en/ai/quiz/16)
 
 ## Revisione e Studio Autonomo
 
@@ -84,7 +75,7 @@ Leggi [TrainingTricks.md](TrainingTricks.md) per approfondire la tua conoscenza 
 
 ## [Compito](lab/README.md)
 
-In questo laboratorio, utilizzeremo il dataset reale [Oxford-IIIT](https://www.robots.ox.ac.uk/~vgg/data/pets/) di animali domestici con 35 razze di gatti e cani, e costruiremo un classificatore basato sull'apprendimento per trasferimento.
+In questo laboratorio, utilizzeremo il dataset reale [Oxford-IIIT](https://www.robots.ox.ac.uk/~vgg/data/pets/) di animali domestici con 35 razze di gatti e cani, e costruiremo un classificatore di transfer learning.
 
-**Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+---
+

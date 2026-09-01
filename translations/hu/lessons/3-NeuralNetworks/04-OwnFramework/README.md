@@ -1,98 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "186bf7eeab776b36f557357ea56d4751",
-  "translation_date": "2025-08-25T23:44:27+00:00",
-  "source_file": "lessons/3-NeuralNetworks/04-OwnFramework/README.md",
-  "language_code": "hu"
-}
--->
-# Bevezetés a neurális hálózatokba. Többrétegű perceptron
+# Bevezetés a Neurális Hálózatokba. Többrétegű Perceptron
 
-Az előző részben megismerkedtél a legegyszerűbb neurális hálózati modellel – az egyrétegű perceptronnal, amely egy lineáris kétosztályos osztályozási modell.
+Az előző részben megismerkedtél a legegyszerűbb neurális hálózati modellel - az egyrétegű perceptronnal, amely egy lineáris kétosztályos osztályozási modell.
 
-Ebben a részben kiterjesztjük ezt a modellt egy rugalmasabb keretrendszerré, amely lehetővé teszi számunkra, hogy:
+Ebben a részben kiterjesztjük ezt a modellt egy rugalmasabb keretrendszerre, amely lehetővé teszi számunkra:
 
-* **többosztályos osztályozást** végezzünk a kétosztályos osztályozás mellett
-* **regressziós problémákat** oldjunk meg az osztályozás mellett
-* olyan osztályokat különítsünk el, amelyek nem lineárisan elválaszthatók
+* **többosztályos osztályozás** végrehajtását a kétosztályos osztályozás mellett
+* **regressziós problémák** megoldását az osztályozás mellett
+* nem lineárisan szeparálható osztályok elkülönítését
 
-Ezenkívül kifejlesztünk egy saját moduláris keretrendszert Pythonban, amely lehetővé teszi számunkra különböző neurális hálózati architektúrák létrehozását.
+Ezenkívül saját moduláris keretrendszert fejlesztünk Pythonban, amely lehetővé teszi különböző neurális hálózati architektúrák létrehozását.
 
-## [Előadás előtti kvíz](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/104)
+## [Előadás előtti kvíz](https://ff-quizzes.netlify.app/en/ai/quiz/7)
 
-## A gépi tanulás formalizálása
+## Gépi Tanulás Formalizálása
 
-Kezdjük a gépi tanulási probléma formalizálásával. Tegyük fel, hogy van egy **X** edzési adathalmazunk címkékkel **Y**, és egy olyan modellt kell építenünk, *f*, amely a lehető legpontosabb előrejelzéseket adja. Az előrejelzések minőségét a **veszteségfüggvény** ℒ méri. Az alábbi veszteségfüggvényeket gyakran használják:
+Kezdjük a gépi tanulási probléma formalizálásával. Tegyük fel, hogy van egy **X** tanító adathalmazunk címkékkel **Y**, és egy olyan modellt kell építenünk (*f*), amely a lehető legpontosabb előrejelzéseket adja. Az előrejelzések minőségét a **veszteségfüggvény** (&lagran;) méri. Gyakran használt veszteségfüggvények:
 
-* Regressziós problémák esetén, amikor egy számot kell megjósolnunk, használhatjuk az **abszolút hibát** ∑<sub>i</sub>|f(x<sup>(i)</sup>)-y<sup>(i)</sup>|, vagy a **négyzetes hibát** ∑<sub>i</sub>(f(x<sup>(i)</sup>)-y<sup>(i)</sup>)<sup>2</sup>
-* Osztályozás esetén használjuk a **0-1 veszteséget** (ami lényegében a modell **pontosságával** egyenértékű), vagy a **logisztikus veszteséget**.
+* Regressziós problémák esetén, amikor egy számot kell előre jeleznünk, használhatjuk az **abszolút hibát** &sum;<sub>i</sub>|f(x<sup>(i)</sup>)-y<sup>(i)</sup>|, vagy a **négyzetes hibát** &sum;<sub>i</sub>(f(x<sup>(i)</sup>)-y<sup>(i)</sup>)<sup>2</sup>.
+* Osztályozás esetén használjuk a **0-1 veszteséget** (ami lényegében a modell **pontossága**), vagy a **logisztikus veszteséget**.
 
 Az egyszintű perceptron esetében az *f* függvényt lineáris függvényként definiáltuk: *f(x)=wx+b* (ahol *w* a súlymátrix, *x* a bemeneti jellemzők vektora, és *b* az eltolási vektor). Különböző neurális hálózati architektúrák esetén ez a függvény bonyolultabb formát ölthet.
 
-> Osztályozás esetén gyakran kívánatos, hogy a hálózat kimenete az osztályok valószínűségeit adja meg. Az önkényes számok valószínűségekké alakításához (pl. a kimenet normalizálásához) gyakran használjuk a **softmax** függvényt σ, és az *f* függvény *f(x)=σ(wx+b)* formát ölt.
+> Osztályozás esetén gyakran kívánatos, hogy a hálózat kimenete az adott osztályok valószínűségeit adja meg. Az értékek valószínűségekké történő átalakításához (pl. a kimenet normalizálásához) gyakran használjuk a **softmax** függvényt (&sigma;), így az *f* függvény *f(x)=&sigma;(wx+b)* formát ölt.
 
-Az *f* fenti definíciójában *w* és *b* az úgynevezett **paraméterek**, θ=⟨*w,b*⟩. Az ⟨**X**,**Y**⟩ adathalmaz alapján kiszámíthatjuk az egész adathalmazra vonatkozó összesített hibát a paraméterek θ függvényében.
+Az *f* definíciójában *w* és *b* az úgynevezett **paraméterek** (&theta;=⟨*w,b*⟩). Az ⟨**X**,**Y**⟩ adathalmaz alapján kiszámíthatjuk az egész adathalmazra vonatkozó összesített hibát a paraméterek (&theta;) függvényében.
 
-> ✅ **A neurális hálózat tanításának célja a hiba minimalizálása a paraméterek θ változtatásával**
+> ✅ **A neurális hálózat tanításának célja a hiba minimalizálása a paraméterek (&theta;) változtatásával.**
 
-## Gradiensalapú optimalizálás
+## Gradiens Descent Optimalizálás
 
-Létezik egy jól ismert függvényoptimalizálási módszer, az úgynevezett **gradiensmódszer**. Az ötlet az, hogy kiszámíthatjuk a veszteségfüggvény deriváltját (többdimenziós esetben **gradiensnek** nevezzük) a paraméterekre vonatkozóan, és úgy változtathatjuk a paramétereket, hogy a hiba csökkenjen. Ez a következőképpen formalizálható:
+Van egy jól ismert függvényoptimalizálási módszer, az úgynevezett **gradiens descent**. Az ötlet az, hogy kiszámíthatjuk a veszteségfüggvény deriváltját (többdimenziós esetben **gradiensnek** nevezzük) a paraméterekre vonatkozóan, és úgy változtathatjuk a paramétereket, hogy a hiba csökkenjen. Ez a következőképpen formalizálható:
 
-* Inicializáljuk a paramétereket véletlenszerű értékekkel: w<sup>(0)</sup>, b<sup>(0)</sup>
+* Inicializáljuk a paramétereket véletlenszerű értékekkel: w<sup>(0)</sup>, b<sup>(0)</sup>.
 * Ismételjük meg az alábbi lépést sokszor:
-    - w<sup>(i+1)</sup> = w<sup>(i)</sup>-η∂ℒ/∂w
-    - b<sup>(i+1)</sup> = b<sup>(i)</sup>-η∂ℒ/∂b
+    - w<sup>(i+1)</sup> = w<sup>(i)</sup>-&eta;&part;&lagran;/&part;w
+    - b<sup>(i+1)</sup> = b<sup>(i)</sup>-&eta;&part;&lagran;/&part;b
 
-A tanítás során az optimalizálási lépéseket az egész adathalmaz figyelembevételével kellene kiszámítani (emlékezzünk, hogy a veszteséget az összes edzési minta összegzéseként számítjuk ki). Azonban a valóságban az adathalmaz kis részeit, úgynevezett **minibatch-eket** vesszük, és a gradienseket az adatok egy részhalmazán alapulva számítjuk ki. Mivel a részhalmazt minden alkalommal véletlenszerűen választjuk ki, ezt a módszert **sztochasztikus gradiensmódszernek** (SGD) nevezzük.
+A tanítás során az optimalizálási lépéseket az egész adathalmaz figyelembevételével kellene kiszámítani (emlékezzünk, hogy a veszteséget az összes tanító minta összegzésével számítjuk). Azonban a valóságban az adathalmaz kis részeit, úgynevezett **minibatch-eket** használunk, és a gradienseket az adatok egy részhalmazán alapulva számítjuk ki. Mivel a részhalmazt minden alkalommal véletlenszerűen választjuk ki, ezt a módszert **stochasztikus gradiens descentnek** (SGD) nevezzük.
 
-## Többrétegű perceptronok és visszaterjesztés
+## Többrétegű Perceptronok és Backpropagation
 
-Az egyrétegű hálózat, ahogy fentebb láttuk, képes lineárisan elválasztható osztályokat osztályozni. Gazdagabb modell létrehozásához több réteget kombinálhatunk a hálózatban. Matematikailag ez azt jelenti, hogy az *f* függvény bonyolultabb formát ölt, és több lépésben számítódik ki:
+Az egyrétegű hálózat, ahogy fentebb láttuk, képes lineárisan szeparálható osztályok osztályozására. Gazdagabb modellt építhetünk, ha több réteget kombinálunk a hálózatban. Matematikailag ez azt jelenti, hogy az *f* függvény bonyolultabb formát ölt, és több lépésben számítjuk ki:
 * z<sub>1</sub>=w<sub>1</sub>x+b<sub>1</sub>
-* z<sub>2</sub>=w<sub>2</sub>α(z<sub>1</sub>)+b<sub>2</sub>
-* f = σ(z<sub>2</sub>)
+* z<sub>2</sub>=w<sub>2</sub>&alpha;(z<sub>1</sub>)+b<sub>2</sub>
+* f = &sigma;(z<sub>2</sub>)
 
-Itt α egy **nemlineáris aktivációs függvény**, σ egy softmax függvény, és a paraméterek θ=<*w<sub>1</sub>,b<sub>1</sub>,w<sub>2</sub>,b<sub>2</sub>*>.
+Itt &alpha; egy **nemlineáris aktivációs függvény**, &sigma; egy softmax függvény, és a paraméterek &theta;=<*w<sub>1</sub>,b<sub>1</sub>,w<sub>2</sub>,b<sub>2</sub>*>.
 
-A gradiensmódszer algoritmusa változatlan marad, de a gradiens kiszámítása bonyolultabbá válik. A láncszabály alapján a deriváltak a következőképpen számíthatók:
+A gradiens descent algoritmus ugyanaz marad, de a gradiensek kiszámítása bonyolultabbá válik. A láncszabály alapján a deriváltakat a következőképpen számíthatjuk ki:
 
-* ∂ℒ/∂w<sub>2</sub> = (∂ℒ/∂σ)(∂σ/∂z<sub>2</sub>)(∂z<sub>2</sub>/∂w<sub>2</sub>)
-* ∂ℒ/∂w<sub>1</sub> = (∂ℒ/∂σ)(∂σ/∂z<sub>2</sub>)(∂z<sub>2</sub>/∂α)(∂α/∂z<sub>1</sub>)(∂z<sub>1</sub>/∂w<sub>1</sub>)
+* &part;&lagran;/&part;w<sub>2</sub> = (&part;&lagran;/&part;&sigma;)(&part;&sigma;/&part;z<sub>2</sub>)(&part;z<sub>2</sub>/&part;w<sub>2</sub>)
+* &part;&lagran;/&part;w<sub>1</sub> = (&part;&lagran;/&part;&sigma;)(&part;&sigma;/&part;z<sub>2</sub>)(&part;z<sub>2</sub>/&part;&alpha;)(&part;&alpha;/&part;z<sub>1</sub>)(&part;z<sub>1</sub>/&part;w<sub>1</sub>)
 
 > ✅ A láncszabályt használjuk a veszteségfüggvény paraméterekre vonatkozó deriváltjainak kiszámításához.
 
-Figyeljük meg, hogy ezeknek a kifejezéseknek a bal szélső része ugyanaz, így hatékonyan kiszámíthatjuk a deriváltakat a veszteségfüggvénytől kiindulva, és "visszafelé" haladva a számítási gráfon. Ezért a többrétegű perceptron tanításának módszerét **visszaterjesztésnek** (backpropagation), vagy röviden 'backprop'-nak nevezzük.
+Figyeljük meg, hogy ezeknek a kifejezéseknek a bal szélső része ugyanaz, így hatékonyan kiszámíthatjuk a deriváltakat a veszteségfüggvénytől kiindulva, "visszafelé" haladva a számítási gráfon. Ezért a többrétegű perceptron tanításának módszerét **backpropagationnek**, vagy röviden 'backprop'-nak nevezzük.
 
-<img alt="számítási gráf" src="images/ComputeGraphGrad.png"/>
+<img alt="számítási gráf" src="../../../../../translated_images/hu/ComputeGraphGrad.4626252c0de03507.webp"/>
 
 > TODO: kép forrásmegjelölés
 
-> ✅ A visszaterjesztést sokkal részletesebben tárgyaljuk a notebook példánkban.  
+> ✅ A backpropagation-t sokkal részletesebben fogjuk tárgyalni a notebook példánkban.  
 
 ## Összegzés
 
-Ebben a leckében létrehoztuk saját neurális hálózati könyvtárunkat, és egy egyszerű kétdimenziós osztályozási feladatra használtuk.
+Ebben a leckében saját neurális hálózati könyvtárat építettünk, és egy egyszerű kétdimenziós osztályozási feladatra használtuk.
 
 ## 🚀 Kihívás
 
-A mellékelt notebookban megvalósítod saját keretrendszeredet többrétegű perceptronok építésére és tanítására. Részletesen megismerheted, hogyan működnek a modern neurális hálózatok.
+A mellékelt notebookban saját keretrendszert fogsz megvalósítani többrétegű perceptronok építésére és tanítására. Részletesen megismerheted, hogyan működnek a modern neurális hálózatok.
 
-Haladj tovább az [OwnFramework](../../../../../lessons/3-NeuralNetworks/04-OwnFramework/OwnFramework.ipynb) notebookhoz, és dolgozd át.
+Lépj tovább az [OwnFramework](OwnFramework.ipynb) notebookra, és dolgozd ki.
 
-## [Előadás utáni kvíz](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/204)
+## [Előadás utáni kvíz](https://ff-quizzes.netlify.app/en/ai/quiz/8)
 
-## Áttekintés és önálló tanulás
+## Áttekintés és Önálló Tanulás
 
-A visszaterjesztés egy gyakori algoritmus az AI és ML területén, érdemes [részletesebben tanulmányozni](https://wikipedia.org/wiki/Backpropagation).
+A backpropagation egy gyakori algoritmus az AI és ML területén, érdemes [részletesebben tanulmányozni](https://wikipedia.org/wiki/Backpropagation).
 
 ## [Feladat](lab/README.md)
 
-Ebben a laborban arra kérünk, hogy használd a leckében létrehozott keretrendszert az MNIST kézzel írt számjegyek osztályozásának megoldására.
+Ebben a laborban arra kérünk, hogy használd az ebben a leckében megépített keretrendszert az MNIST kézzel írott számjegyek osztályozásának megoldására.
 
 * [Útmutató](lab/README.md)
-* [Notebook](../../../../../lessons/3-NeuralNetworks/04-OwnFramework/lab/MyFW_MNIST.ipynb)
+* [Notebook](lab/MyFW_MNIST.ipynb)
 
-**Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+---
+

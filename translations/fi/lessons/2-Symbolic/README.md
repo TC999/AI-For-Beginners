@@ -1,114 +1,107 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "98c5222ff9556b55223fed2337145e18",
-  "translation_date": "2025-08-28T19:38:06+00:00",
-  "source_file": "lessons/2-Symbolic/README.md",
-  "language_code": "fi"
-}
--->
 # Tiedon esittäminen ja asiantuntijajärjestelmät
 
-![Symbolisen AI:n sisällön yhteenveto](../../../../translated_images/ai-symbolic.715a30cb610411a6964d2e2f23f24364cb338a07cb4844c1f97084d366e586c3.fi.png)
+![Yhteenveto symbolisen tekoälyn sisällöstä](../../../../translated_images/fi/ai-symbolic.715a30cb610411a6.webp)
 
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> Luonnos [Tomomi Imura](https://twitter.com/girlie_mac)
 
-Tekoälyn tavoite perustuu tiedon etsintään, pyrkimykseen ymmärtää maailmaa samalla tavalla kuin ihmiset. Mutta miten tämä voidaan toteuttaa?
+Tekoälyn tavoittelu perustuu tiedon etsimiseen, jotta maailmaa voitaisiin ymmärtää samalla tavalla kuin ihmiset. Mutta miten tähän voisi ryhtyä?
 
-## [Ennakkokysely ennen luentoa](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/102)
+## [Esiluentokysely](https://ff-quizzes.netlify.app/en/ai/quiz/3)
 
-Tekoälyn alkuvaiheessa suosittiin ylhäältä alas -lähestymistapaa älykkäiden järjestelmien luomisessa (käsitelty edellisessä oppitunnissa). Ajatuksena oli siirtää ihmisten tieto koneelle koneen ymmärtämässä muodossa ja käyttää sitä ongelmien automaattiseen ratkaisemiseen. Tämä lähestymistapa perustui kahteen suureen ideaan:
+Tekoälyn alkuaikoina yleinen lähestymistapa älykkäiden järjestelmien luomiseksi (joka käsiteltiin edellisessä oppitunnissa) oli ylhäältä alas -menetelmä. Ajatus oli poimia tieto ihmisiltä koneen lukemassa muodossa ja käyttää sitä ongelmien automaattiseen ratkaisuun. Tämä lähestymistapa perustui kahteen suureen ideaan:
 
 * Tiedon esittäminen
 * Päättely
 
 ## Tiedon esittäminen
 
-Yksi symbolisen tekoälyn tärkeistä käsitteistä on **tieto**. On tärkeää erottaa tieto *informaatiosta* tai *datasta*. Esimerkiksi voidaan sanoa, että kirjat sisältävät tietoa, koska niiden avulla voi oppia ja tulla asiantuntijaksi. Todellisuudessa kirjat sisältävät kuitenkin *dataa*, ja lukemalla kirjoja ja integroimalla tämä data maailmankuvaamme muutamme datan tiedoksi.
+Symbolisen tekoälyn tärkeimpiin käsitteisiin kuuluu **tieto**. On tärkeää erottaa tieto *tiedosta* tai *datasta*. Esimerkiksi voi sanoa, että kirjat sisältävät tietoa, koska kirjoja lukemalla voi tulla asiantuntijaksi. Todellisuudessa kirjat sisältävät *dataa*, ja lukemalla ja integroimalla tätä dataa maailmankuvaamme muutamme datan tiedoksi.
 
-> ✅ **Tieto** on jotain, joka on päässämme ja edustaa ymmärrystämme maailmasta. Se saadaan aktiivisen **oppimisprosessin** kautta, joka yhdistää vastaanottamamme informaation osaksi aktiivista maailmankuvaamme.
+> ✅ **Tieto** on jotain, mikä on meidän päässämme ja edustaa ymmärrystämme maailmasta. Se saadaan aktiivisella **oppimisprosessilla**, joka integroi saamamme tiedon osat aktiiviseen maailmankuvaamme.
 
-Usein emme määrittele tietoa tiukasti, vaan yhdistämme sen muihin siihen liittyviin käsitteisiin käyttämällä [DIKW-pyramidia](https://en.wikipedia.org/wiki/DIKW_pyramid). Pyramidissa on seuraavat käsitteet:
+Useimmiten emme määrittele tietoa tarkasti, vaan sovitamme sen muihin siihen liittyviin käsitteisiin käyttäen [DIKW-pyramidia](https://en.wikipedia.org/wiki/DIKW_pyramid). Se sisältää seuraavat käsitteet:
 
-* **Data** on jotain, joka on esitetty fyysisessä mediassa, kuten kirjoitetussa tekstissä tai puhutuissa sanoissa. Data on riippumatonta ihmisistä ja sitä voidaan siirtää henkilöltä toiselle.
-* **Informaatio** on tapa, jolla tulkitsemme dataa päässämme. Esimerkiksi kun kuulemme sanan *tietokone*, meillä on jonkinlainen käsitys siitä, mitä se on.
-* **Tieto** on informaatiota, joka on integroitu maailmankuvaamme. Esimerkiksi kun opimme, mitä tietokone on, alamme ymmärtää, miten se toimii, kuinka paljon se maksaa ja mihin sitä voidaan käyttää. Tämä toisiinsa liittyvien käsitteiden verkosto muodostaa tietomme.
-* **Viisaus** on vielä yksi taso ymmärryksessämme maailmasta, ja se edustaa *metatietoa*, esimerkiksi käsitystä siitä, miten ja milloin tietoa tulisi käyttää.
+* **Data** on jotain, joka on esitetty fyysisessä muodossa, kuten kirjoitettuna tekstinä tai puhuttuina sanoina. Data on olemassa ihmisten ulkopuolella ja voi siirtyä ihmiseltä toiselle.
+* **Informaatio** on tapa, jolla tulkitsemme dataa päässämme. Esimerkiksi kuullessamme sanan *tietokone*, ymmärrämme jonkin verran, mitä se tarkoittaa.
+* **Tieto** on informaation integroimista maailmankuvaamme. Esimerkiksi kun opimme, mikä tietokone on, alamme saada käsityksiä siitä, miten se toimii, kuinka paljon se maksaa ja mihin sitä voi käyttää. Tämä verkosto keskenään liittyviä käsitteitä muodostaa tietomme.
+* **Viisaus** on vielä korkeampi taso ymmärryksestämme maailmasta ja se edustaa *metatietoa*, esim. käsityksen siitä, miten ja milloin tietoa tulisi käyttää.
 
-*Image [from Wikipedia](https://commons.wikimedia.org/w/index.php?curid=37705247), By Longlivetheux - Own work, CC BY-SA 4.0*
+<img src="../../../../translated_images/fi/DIKW_Pyramid.94126f7d2bd8db5b.webp" width="30%"/>
 
-Näin ollen **tiedon esittämisen** ongelma on löytää tehokas tapa esittää tieto tietokoneessa datan muodossa, jotta sitä voidaan käyttää automaattisesti. Tämä voidaan nähdä spektrinä:
+*Kuva [Wikipediasta](https://commons.wikimedia.org/w/index.php?curid=37705247), tekijä Longlivetheux - oma työ, CC BY-SA 4.0*
 
-![Tiedon esittämisen spektri](../../../../translated_images/knowledge-spectrum.b60df631852c0217e941485b79c9eee40ebd574f15f18609cec5758fcb384bf3.fi.png)
+Näin ollen **tiedon esittämisen** ongelmana on löytää jokin tehokas tapa edustaa tietoa tietokoneen sisällä datamuodossa, jotta se olisi automaattisesti hyödynnettävissä. Tätä voidaan tarkastella spektrinä:
+
+![Tiedon esittämisen spektri](../../../../translated_images/fi/knowledge-spectrum.b60df631852c0217.webp)
 
 > Kuva: [Dmitry Soshnikov](http://soshnikov.com)
 
-* Vasemmalla ovat hyvin yksinkertaiset tiedon esittämistavat, joita tietokoneet voivat käyttää tehokkaasti. Yksinkertaisin tapa on algoritminen, jossa tieto esitetään tietokoneohjelmana. Tämä ei kuitenkaan ole paras tapa esittää tietoa, koska se ei ole joustava. Päässämme oleva tieto on usein ei-algoritmista.
-* Oikealla ovat esitykset, kuten luonnollinen teksti. Se on voimakkain, mutta sitä ei voida käyttää automaattiseen päättelyyn.
+* Vasemmalla on hyvin yksinkertaisia tiedon esityksen tyyppejä, joita tietokoneet voivat tehokkaasti käyttää. Yksinkertaisin on algoritminen, jossa tieto esitetään tietokoneohjelmana. Tämä ei kuitenkaan ole paras tapa esittää tietoa, koska se ei ole joustava. Tieto päässämme on usein ei-algoritmista.
+* Oikealla ovat esitykset kuten luonnollinen teksti. Se on voimakkain, mutta ei sovellu automaattiseen päättelyyn.
 
-> ✅ Mieti hetki, miten esität tietoa päässäsi ja muutat sen muistiinpanoiksi. Onko jokin tietty muoto, joka auttaa sinua muistamaan paremmin?
+> ✅ Mieti hetki, miten esität tietoa päässäsi ja miten muutat sen muistiinpanoiksi. Onko sinulle jokin tietty muoto, joka tukee hyvin muistamista?
 
-## Tietokoneen tiedon esittämistapojen luokittelu
+## Tietokoneen tiedon esittämisen luokittelu
 
-Voimme luokitella erilaisia tietokoneen tiedon esittämistapoja seuraaviin kategorioihin:
+Voimme luokitella eri tietokoneen tiedon esitystavat seuraaviin kategorioihin:
 
-* **Verkkoesitykset** perustuvat siihen, että päässämme on verkosto toisiinsa liittyviä käsitteitä. Voimme yrittää jäljentää samanlaisia verkostoja graafina tietokoneessa - niin sanottu **semanttinen verkko**.
+* **Verkkopohjaiset esitykset** perustuvat siihen, että meillä on päässämme verkosto keskenään liittyviä käsitteitä. Voimme yrittää rekonstruoida saman verkoston graafina tietokoneessa - ns. **semanttinen verkosto**.
 
-1. **Objekti-Attribuutti-Arvo -kolmikot** tai **attribuutti-arvo -parit**. Koska graafi voidaan esittää tietokoneessa solmujen ja reunojen listana, voimme esittää semanttisen verkon listana kolmikoita, jotka sisältävät objektit, attribuutit ja arvot. Esimerkiksi voimme rakentaa seuraavat kolmikot ohjelmointikielistä:
+1. **Objekti-Attribuutti-Arvo -kolmikot** tai **attribuutti-arvoparit**. Koska graafi voidaan esittää tietokoneessa listana solmuista ja kaarista, voimme esittää semanttisen verkoston kolmikolistana, joka sisältää objektit, attribuutit ja arvot. Esimerkiksi rakennamme seuraavat kolmikot ohjelmointikielistä:
 
 Objekti | Attribuutti | Arvo
---------|------------|-----
-Python | on | Tyypittämätön kieli
-Python | keksijä | Guido van Rossum
-Python | lohko-syntaksi | sisennys
-Tyypittämätön kieli | ei sisällä | tyyppimäärityksiä
+--------|-------------|-----
+Python  | on          | Typetön-kieli
+Python  | kehittänyt  | Guido van Rossum
+Python  | lohko-syntaksi | sisennys
+Typetön-kieli | ei sisällä | tyyppimääritelmiä
 
-> ✅ Mieti, miten kolmikoita voidaan käyttää muun tyyppisen tiedon esittämiseen.
+> ✅ Mieti, miten kolmikot voidaan käyttää muiden tiedontyyppien esittämiseen.
 
-2. **Hierarkkiset esitykset** korostavat sitä, että usein luomme hierarkian objekteista päässämme. Esimerkiksi tiedämme, että kanarialintu on lintu, ja kaikilla linnuilla on siivet. Meillä on myös käsitys siitä, minkä värinen kanarialintu yleensä on ja mikä on sen lentonopeus.
+2. **Hierarkkiset esitykset** korostavat sitä, että usein luomme päässämme hierarkian objekteista. Esimerkiksi tiedämme, että kanaria on lintu, ja kaikilla linnuilla on siivet. Meillä on myös käsitys siitä, minkä värinen kanarian yleensä on ja mikä on sen lentonopeus.
 
-   - **Kehysesitys** perustuu siihen, että jokainen objekti tai objektien luokka esitetään **kehyksenä**, joka sisältää **paikkoja**. Paikoilla voi olla oletusarvoja, arvorajoituksia tai tallennettuja proseduureja, joita voidaan kutsua paikan arvon saamiseksi. Kaikki kehykset muodostavat hierarkian, joka on samanlainen kuin objektihierarkia olio-ohjelmointikielissä.
-   - **Skenaariot** ovat erityinen kehysten tyyppi, joka edustaa monimutkaisia tilanteita, jotka voivat kehittyä ajan myötä.
+   - **Kehysesitys** perustuu siihen, että jokainen kohde tai kohdeluokka esitetään **kehyksenä**, joka sisältää **paikat**. Paikoilla voi olla oletusarvot, arvorajoitukset tai tallennettuja käsittelyohjeita, joita voidaan kutsua paikan arvon saamiseksi. Kaikki kehykset muodostavat hierarkian, joka muistuttaa olio-ohjelmointikielten olin hierarkiaa.
+   - **Skenaariot** ovat erityislaatuinen kehyksen laji, joka esittää monimutkaisia tilanteita, jotka voivat avautua ajan myötä.
 
 **Python**
 
 Paikka | Arvo | Oletusarvo | Väli |
--------|------|------------|------|
-Nimi | Python | | |
-On | Tyypittämätön kieli | | |
-Muuttujan tapaus | | CamelCase | |
+-------|-------|------------|-------|
+Nimi   | Python | | |
+On    | Typetön-kieli | | |
+Muuttujan kirjoitusasu | | CamelCase | |
 Ohjelman pituus | | | 5-5000 riviä |
 Lohko-syntaksi | Sisennys | | |
 
-3. **Proseduraaliset esitykset** perustuvat tiedon esittämiseen toimintojen listana, jotka voidaan suorittaa, kun tietty ehto täyttyy.
-   - Tuotantosäännöt ovat jos-niin -lauseita, jotka mahdollistavat johtopäätösten tekemisen. Esimerkiksi lääkärillä voi olla sääntö, joka sanoo, että **JOS** potilaalla on korkea kuume **TAI** korkea C-reaktiivisen proteiinin taso verikokeessa **NIIN** hänellä on tulehdus. Kun kohtaamme jonkin ehdon, voimme tehdä johtopäätöksen tulehduksesta ja käyttää sitä edelleen päättelyssä.
-   - Algoritmeja voidaan pitää toisena proseduraalisen esityksen muotona, vaikka niitä ei lähes koskaan käytetä suoraan tietopohjaisissa järjestelmissä.
+3. **Menettelylliset esitykset** perustuvat tiedon esittämiseen toimintojen listana, joita voidaan suorittaa, kun tietty ehto täyttyy.
+   - Tuotantosäännöt ovat jos-niin -lauseita, jotka mahdollistavat päätelmien teon. Esimerkiksi lääkärillä voi olla sääntö, jossa **JOS** potilaalla on korkea kuume **TAI** korkea C-reaktiivisen proteiinin arvo verikokeessa, **NIIN** hänellä on tulehdus. Kun täytämme jonkin ehdon, voimme tehdä päätelmän tulehduksesta ja käyttää tätä päättelyssä eteenpäin.
+   - Algoritmit voidaan katsoa toiseksi menettelylliseksi esitykseksi, vaikka niitä käytetään melkein koskaan suoraan tietopohjaisissa järjestelmissä.
 
-4. **Logiikka** ehdotettiin alun perin Aristoteleen toimesta universaalin ihmistiedon esittämiseksi.
-   - Predikaattilogiikka matemaattisena teoriana on liian rikas ollakseen laskettavissa, joten siitä käytetään yleensä jotakin osajoukkoa, kuten Prologissa käytettyjä Horn-lauseita.
-   - Kuvaileva logiikka on joukko loogisia järjestelmiä, joita käytetään hierarkioiden ja hajautettujen tiedon esitysten, kuten *semanttisen webin*, esittämiseen ja päättelyyn.
+4. **Logiikka** esitettiin alun perin Aristoteleen toimesta universaalin ihmistiedon esittämiseen.
+   - Predikaattilogiikka matemaattisena teoriayhtenä on liian rikas laskettavaksi, siksi yleensä käytetään jotain sen osajoukkoa, kuten Prologissa käytettyjä Hornin klausuleita.
+   - Deskriptiivinen logiikka on loogisten järjestelmien perhe, jota käytetään hierarkioiden ja jakaantuneiden tiedon esitysten, kuten *semanttisen webin*, esittämiseen ja päättelyyn.
 
 ## Asiantuntijajärjestelmät
 
-Symbolisen tekoälyn varhaisia menestyksiä olivat niin sanotut **asiantuntijajärjestelmät** - tietokonejärjestelmät, jotka suunniteltiin toimimaan asiantuntijana jollakin rajatulla ongelma-alueella. Ne perustuivat **tietokantaan**, joka oli kerätty yhdeltä tai useammalta ihmisasiantuntijalta, ja ne sisälsivät **päättelymoottorin**, joka suoritti päättelyä sen pohjalta.
+Yksi symbolisen tekoälyn varhaisista menestyksistä olivat ns. **asiantuntijajärjestelmät** – tietokonejärjestelmät, jotka oli suunniteltu toimimaan asiantuntijana rajatussa ongelma-alueessa. Ne perustuivat **tietokantaan**, joka oli kerätty yhdeltä tai useammalta ihmisasiantuntijalta, ja ne sisälsivät **päätöksentekomoottorin**, joka suoritti jonkinlaista päättelyä sen päällä.
 
-![Ihmisen arkkitehtuuri](../../../../translated_images/arch-human.5d4d35f1bba3ab1cdfda96af2f10b89574eb31e9796d0e3011cd9beda1c35112.fi.png) | ![Tietopohjaisen järjestelmän arkkitehtuuri](../../../../translated_images/arch-kbs.3ec5c150b09fa8dadc2beb0931a4983c9e2b03913a89eebcc103b5bb841b0212.fi.png)
+![Ihmisen arkkitehtuuri](../../../../translated_images/fi/arch-human.5d4d35f1bba3ab1c.webp) | ![Tietopohjaisen järjestelmän arkkitehtuuri](../../../../translated_images/fi/arch-kbs.3ec5c150b09fa8da.webp)
 ---------------------------------------------|------------------------------------------------
 Ihmisen hermojärjestelmän yksinkertaistettu rakenne | Tietopohjaisen järjestelmän arkkitehtuuri
 
-Asiantuntijajärjestelmät rakennetaan ihmisen päättelyjärjestelmän tapaan, joka sisältää **lyhytkestoisen muistin** ja **pitkäkestoisen muistin**. Vastaavasti tietopohjaisissa järjestelmissä erotamme seuraavat komponentit:
+Asiantuntijajärjestelmät rakennetaan kuten ihmisen päättelyjärjestelmä, joka sisältää **lyhytaikaisen muistin** ja **pitkäaikaisen muistin**. Samalla tavalla tietopohjaisissa järjestelmissä erotamme seuraavat komponentit:
 
-* **Ongelman muisti**: sisältää tiedon parhaillaan ratkaistavasta ongelmasta, kuten potilaan lämpötilan tai verenpaineen, onko hänellä tulehdus vai ei jne. Tätä tietoa kutsutaan myös **staattiseksi tiedoksi**, koska se sisältää hetkellisen tilannekuvan siitä, mitä tiedämme ongelmasta - niin sanotun *ongelman tilan*.
-* **Tietokanta**: edustaa pitkäkestoista tietoa ongelma-alueesta. Se kerätään manuaalisesti ihmisasiantuntijoilta eikä muutu konsultoinnista toiseen. Koska sen avulla voidaan navigoida ongelman tilasta toiseen, sitä kutsutaan myös **dynaamiseksi tiedoksi**.
-* **Päättelymoottori**: ohjaa koko prosessia ongelman tilan avaruudessa etsimisessä, kysyy tarvittaessa käyttäjältä kysymyksiä ja löytää oikeat säännöt, joita sovelletaan jokaiseen tilaan.
+* **Ongelman muisti**: sisältää tiedon ongelmasta, jota parhaillaan ratkaistaan, eli potilaan lämpötila tai verenpaine, onko hänellä tulehdusta vai ei jne. Tätä tietoa kutsutaan myös **staattiseksi tiedoksi**, koska se sisältää kuvan siitä, mitä ongelmasta tällä hetkellä tiedetään – ns. *ongelman tila*.
+* **Tietokanta**: edustaa pitkäaikaista tietoa ongelma-alueesta. Se on manuaalisesti poimittu ihmisasiantuntijoilta eikä muutu konsultoinneista toisiin. Koska sen avulla voidaan navigoida ongelmatilasta toiseen, sitä kutsutaan myös **dynaamiseksi tiedoksi**.
+* **Päätöksentekomoottori**: ohjaa koko prosessia ongelmatilatilan haussa, esittää käyttäjälle kysymyksiä tarvittaessa. Se on myös vastuussa sopivien sääntöjen löytämisestä, joita sovelletaan kuhunkin tilaan.
 
-Esimerkkinä tarkastellaan seuraavaa asiantuntijajärjestelmää, joka määrittää eläimen sen fyysisten ominaisuuksien perusteella:
+Esimerkkinä otetaan seuraava asiantuntijajärjestelmä eläimen tunnistamiseen sen fyysisten ominaisuuksien perusteella:
 
-![AND-OR-puu](../../../../translated_images/AND-OR-Tree.5592d2c70187f283703c8e9c0d69d6a786eb370f4ace67f9a7aae5ada3d260b0.fi.png)
+![AND-OR puu](../../../../translated_images/fi/AND-OR-Tree.5592d2c70187f283.webp)
 
 > Kuva: [Dmitry Soshnikov](http://soshnikov.com)
 
-Tätä kaaviota kutsutaan **AND-OR-puuksi**, ja se on graafinen esitys tuotantosääntöjen joukosta. Puun piirtäminen on hyödyllistä asiantuntijalta tiedon keräämisen alkuvaiheessa. Tiedon esittämiseksi tietokoneessa on kuitenkin kätevämpää käyttää sääntöjä:
+Tätä kaaviota kutsutaan **AND-OR -puuksi**, ja se on graafinen esitys joukosta tuotantosääntöjä. Puun piirtäminen on hyödyllistä alussa, kun tieto poimitaan asiantuntijalta. Tiedon edustamiseksi tietokoneessa on kätevämpää käyttää sääntöjä:
 
 ```
 IF the animal eats meat
@@ -119,76 +112,78 @@ OR (animal has sharp teeth
 THEN the animal is a carnivore
 ```
 
-Huomaat, että jokainen ehto säännön vasemmalla puolella ja toiminto ovat pohjimmiltaan objekti-attribuutti-arvo (OAV) -kolmikoita. **Työmuisti** sisältää joukon OAV-kolmikoita, jotka vastaavat parhaillaan ratkaistavaa ongelmaa. **Sääntömoottori** etsii sääntöjä, joiden ehdot täyttyvät, ja soveltaa niitä, lisäten uuden kolmikon työmuistiin.
+Voit huomata, että jokainen sääntöjen vasemman puolen ehto ja toiminto ovat pohjimmiltaan objekti-attribuutti-arvo (OAV) -kolmikot. **Työmuisti** sisältää OAV-kolmikot, jotka vastaavat parhaillaan ratkaistavaa ongelmaa. **Sääntömoottori** etsii sääntöjä, joiden ehto täyttyy, ja soveltaa niitä lisäämällä uuden kolmikon työmuistiin.
 
-> ✅ Piirrä oma AND-OR-puu aiheesta, joka kiinnostaa sinua!
+> ✅ Kirjoita oma AND-OR -puusi aiheesta, josta pidät!
 
-### Eteenpäin vs. taaksepäin päättely
+### Eteenpäin- vs. Taaksepäin-päättely
 
-Edellä kuvattu prosessi kutsutaan **eteenpäin päättelyksi**. Se alkaa ongelman alkuperäisistä tiedoista, jotka ovat saatavilla työmuistissa, ja suorittaa seuraavan päättelysilmukan:
+Edellä kuvattu prosessi on nimeltään **eteenpäin-päättely**. Se alkaa jostain ongelman alkuperäisestä tiedosta työmuistissa ja suorittaa seuraavan päättelysilmukan:
 
-1. Jos kohdeattribuutti on työmuistissa - lopeta ja anna tulos
-2. Etsi kaikki säännöt, joiden ehdot täyttyvät - muodosta **konfliktijoukko** säännöistä.
-3. Suorita **konfliktin ratkaisu** - valitse yksi sääntö, joka suoritetaan tällä askeleella. Konfliktinratkaisustrategioita voi olla erilaisia:
-   - Valitse ensimmäinen sovellettava sääntö tietokannasta
+1. Jos tavoiteattribuutti on työmuistissa - lopeta ja anna tulos
+2. Etsi kaikki säännöt, joiden ehto tällä hetkellä täyttyy - saadaan **konfliktijoukko** sääntöjä
+3. Suorita **konfliktinratkaisu** - valitse yksi sääntö, jota sovelletaan tässä vaiheessa. Konfliktinratkaisuun voi olla erilaisia strategioita:
+   - Valitse ensimmäinen soveltuva sääntö tietokannasta
    - Valitse satunnainen sääntö
-   - Valitse *tarkempi* sääntö, eli se, joka täyttää eniten ehtoja "vasemmalla puolella" (LHS)
-4. Sovella valittua sääntöä ja lisää uusi tieto ongelman tilaan
-5. Toista vaiheesta 1.
+   - Valitse *tarkempi* sääntö, eli sellainen, joka täyttää eniten ehtoja vasemmalla puolella (LHS)
+4. Sovella valittua sääntöä ja lisää uusi tieto ongelmatilaan
+5. Toista kohdasta 1
 
-Joissakin tapauksissa saatamme kuitenkin haluta aloittaa tyhjällä tiedolla ongelmasta ja esittää kysymyksiä, jotka auttavat meitä pääsemään johtopäätökseen. Esimerkiksi lääketieteellisessä diagnostiikassa emme yleensä tee kaikkia lääketieteellisiä analyyseja etukäteen ennen potilaan diagnosointia. Sen sijaan haluamme tehdä analyyseja, kun päätös on tehtävä.
+Joissakin tapauksissa saatamme haluta aloittaa ongelmasta tyhjällä tiedolla ja esittää kysymyksiä, jotka auttavat meitä pääsemään johtopäätökseen. Esimerkiksi lääketieteellisessä diagnoosissa emme yleensä tee kaikkia tutkimuksia ennakkoon, vaan teemme ne tarpeen mukaan.
 
-Tämä prosessi voidaan mallintaa **taaksepäin päättelyllä**. Se ohjautuu **tavoitteesta** - attribuuttiarvosta, jota etsimme:
+Tästä voidaan mallintaa prosessi **taaksepäin-päättelyllä**. Se ohjautuu **tavoitteesta** – etsimämme attribuuttiarvosta:
 
-1. Valitse kaikki säännöt, jotka voivat antaa meille tavoitteen arvon (eli tavoite oikealla puolella (RHS)) - konfliktijoukko
-1. Jos attribuutille ei ole sääntöjä tai on sääntö, joka sanoo, että arvo tulisi kysyä käyttäjältä - kysy se, muuten:
-1. Käytä konfliktinratkaisustrategiaa valitaksesi yksi sääntö, jota käytämme *hypoteesina* - yritämme todistaa sen
-1. Toista prosessi rekursiivisesti kaikille säännön vasemmalla puolella oleville attribuuteille yrittäen todistaa ne tavoitteina
-1. Jos prosessi epäonnistuu jossain vaiheessa - käytä toista sääntöä vaiheessa 3.
+1. Valitse kaikki säännöt, jotka voivat antaa tavoitteen arvon (eli joissa tavoite on oikealla puolella (RHS)) – konfliktijoukko
+1. Jos tälle attribuutille ei ole sääntöjä tai on sääntö, että arvo kysytään käyttäjältä – kysy arvo käyttäjältä, muutoin:
+1. Käytä konfliktinratkaisustrategiaa valitaksesi yhden säännön, jota käytämme *hypoteesina* – yritämme todistaa sen
+1. Toista rekursiivisesti prosessi kaikille säännön vasemman puolen attribuuteille tavoitteina
+1. Jos prosessi epäonnistuu jossain vaiheessa – käytä toista sääntöä kohdassa 3
 
-> ✅ Missä tilanteissa eteenpäin päättely on sopivampaa? Entä taaksepäin päättely?
+> ✅ Millaisissa tilanteissa eteenpäin-päättely on sopivampi? Entä taaksepäin-päättely?
 
-### Asiantuntijajärjestelmien toteuttaminen
+### Asiantuntijajärjestelmien toteutus
 
-Asiantuntijajärjestelmiä voidaan toteuttaa eri työkaluilla:
+Asiantuntijajärjestelmät voidaan toteuttaa erilaisin työkaluin:
 
-* Ohjelmoimalla ne suoraan jollakin korkean tason ohjelmointikielellä. Tämä ei ole paras idea, koska tietopohjaisen järjestelmän pääasiallinen etu on, että tieto on erotettu päättelystä, ja ongelma-alueen asiantuntijan tulisi pystyä kirjoittamaan sääntöjä ymmärtämättä päättelyprosessin yksityiskohtia.
-* Käyttämällä **asiantuntijajärjestelmän kuorta**, eli järjestelmää, joka on erityisesti suunniteltu täytettäväksi tiedolla käyttämällä jotakin tiedon esityskieltä.
+* Ohjelmoimalla ne suoraan jollain korkean tason ohjelmointikielellä. Tämä ei ole paras ratkaisu, koska tietopohjaisen järjestelmän tärkein etu on, että tieto on erotettu päättelystä, ja ongelma-alueen asiantuntija voisi periaatteessa kirjoittaa sääntöjä ymmärtämättä päättelyprosessin yksityiskohtia.
+* Käyttämällä **asiantuntijajärjestelmäkuorta**, eli järjestelmää, joka on erityisesti suunniteltu täytettäväksi tiedolla jonkin tiedon esityskielen avulla.
 
-## ✍️ Harjoitus: Eläinten päättely
+## ✍️ Harjoitus: Eläimen tunnistus
 
-Katso [Animals.ipynb](https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/2-Symbolic/Animals.ipynb) esimerkki eteenpäin ja taaksepäin päättelyä käyttävän asiantuntijajärjestelmän toteuttamisesta.
-> **Huomio**: Tämä esimerkki on melko yksinkertainen ja antaa vain käsityksen siitä, miltä asiantuntijajärjestelmä näyttää. Kun alat luoda tällaista järjestelmää, huomaat *älykkään* käyttäytymisen vasta, kun sääntöjen määrä saavuttaa tietyn rajan, noin 200+. Jossain vaiheessa säännöistä tulee niin monimutkaisia, että kaikkia ei voi pitää mielessä, ja saatat alkaa ihmetellä, miksi järjestelmä tekee tiettyjä päätöksiä. Tärkeä piirre tietopohjaisissa järjestelmissä on kuitenkin se, että voit aina *selittää* tarkalleen, miten mikä tahansa päätös tehtiin.
-## Ontologiat ja semanttinen verkko
+Katso [Animals.ipynb](https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/2-Symbolic/Animals.ipynb) esimerkki eteen- ja taaksepäin-päättelyä käyttävän asiantuntijajärjestelmän toteutuksesta.
 
-1900-luvun lopulla käynnistettiin hanke, jossa pyrittiin käyttämään tiedon esitystä Internet-resurssien annotointiin, jotta olisi mahdollista löytää resursseja, jotka vastaavat hyvin tarkkoja kyselyitä. Tätä hanketta kutsuttiin **semanttiseksi verkoksi**, ja se perustui useisiin käsitteisiin:
+> **Huomio**: Tämä esimerkki on melko yksinkertainen ja antaa vain käsityksen siitä, miltä asiantuntijajärjestelmä näyttää. Kun alat luoda tällaista järjestelmää, huomaat *älykkään* käyttäytymisen vasta, kun sääntöjä on käytössä noin 200+. Tällöin säännöistä tulee liian monimutkaisia muistaa kokonaisuudessaan, ja alat ihmetellä järjestelmän tekemiä päätöksiä. Tietopohjaisen järjestelmän tärkeä ominaisuus on kuitenkin se, että voit aina *selittää* tarkalleen, miten mikä tahansa päätös on tehty.
 
-- Erityinen tiedon esitystapa, joka perustuu **[kuvauslogiikkaan](https://en.wikipedia.org/wiki/Description_logic)** (DL). Se muistuttaa kehystiedon esitystä, koska se rakentaa hierarkian objekteista ja niiden ominaisuuksista, mutta siinä on muodollinen looginen semantiikka ja päättely. DL:stä on olemassa kokonainen perhe, joka tasapainottelee ilmaisukyvyn ja päättelyn algoritmisen monimutkaisuuden välillä.
-- Hajautettu tiedon esitys, jossa kaikki käsitteet esitetään globaalilla URI-tunnisteella, mikä mahdollistaa tiedon hierarkioiden luomisen, jotka kattavat koko internetin.
+## Ontologiat ja semanttinen web
+
+20. vuosisadan lopulla käynnistettiin aloite käyttää tiedon esittämistä merkitsemään Internet-resursseja siten, että olisi mahdollista löytää hyvin spesifeihin kyselyihin vastaavia resursseja. Tätä liikettä kutsuttiin **semanttiseksi webiksi** ja se perustui useisiin käsitteisiin:
+
+- Erityinen tiedon esitys perustuen **[deskriptiiviseen logiikkaan](https://en.wikipedia.org/wiki/Description_logic)** (DL). Se on samankaltainen kuin kehystieto, koska rakentaa hierarkian objekteista ominaisuuksineen, mutta sillä on muodolliset loogiset semantiikat ja päättely. DL:llä on kokonainen perhe, joka tasapainottaa ilmaisukykyä ja päättelyn algoritmista monimutkaisuutta.
+- Hajautettu tiedon esitys, jossa kaikki käsitteet esitetään globaalilla URI-tunnisteella, mahdollistaen internetin laajuiset tiedon hierarkiat.
 - XML-pohjaisten kielten perhe tiedon kuvaamiseen: RDF (Resource Description Framework), RDFS (RDF Schema), OWL (Ontology Web Language).
 
-Semanttisen verkon ydinajatus on **ontologian** käsite. Se viittaa ongelma-alueen eksplisiittiseen määrittelyyn käyttäen jotakin muodollista tiedon esitystä. Yksinkertaisin ontologia voi olla vain hierarkia objekteista ongelma-alueella, mutta monimutkaisemmat ontologiat sisältävät sääntöjä, joita voidaan käyttää päättelyyn.
+Yksi keskeinen käsite semanttisessa webissä on **ontologia**. Se tarkoittaa eksplisiittistä ongelma-alueen määrittelyä jonkin muodollisen tiedon esityksen avulla. Yksinkertaisin ontologia voi olla pelkkä hierarkia ongelma-alueen objekteista, mutta monimutkaisemmissa ontologioissa on sääntöjä, joita voidaan käyttää päättelyyn.
 
-Semanttisessa verkossa kaikki esitykset perustuvat kolmikoihin. Jokainen objekti ja jokainen suhde tunnistetaan yksilöllisesti URI:lla. Esimerkiksi, jos haluamme ilmaista, että tämä AI Curriculum on kehitetty Dmitry Soshnikovin toimesta 1. tammikuuta 2022, voimme käyttää seuraavia kolmikoita:
+Semanttisessa webissä kaikki esitykset perustuvat tripletteihin. Jokainen objekti ja jokainen suhde tunnistetaan yksiselitteisesti URI:n avulla. Esimerkiksi, jos haluamme ilmaista, että tämä AI Curriculum on kehittänyt Dmitry Soshnikov 1. tammikuuta 2022 – käytämme seuraavia triplettejä:
 
-<img src="images/triplet.png" width="30%"/>
+<img src="../../../../translated_images/fi/triplet.4b9b332587593298.webp" width="30%"/>
 
 ```
-http://github.com/microsoft/ai-for-beginners http://www.example.com/terms/creation-date “Jan 13, 2007”
+http://github.com/microsoft/ai-for-beginners http://www.example.com/terms/creation-date “Jan 1, 2022”
 http://github.com/microsoft/ai-for-beginners http://purl.org/dc/elements/1.1/creator http://soshnikov.com
 ```
 
-> ✅ Tässä `http://www.example.com/terms/creation-date` ja `http://purl.org/dc/elements/1.1/creator` ovat joitakin tunnettuja ja yleisesti hyväksyttyjä URI-tunnisteita, jotka ilmaisevat käsitteet *luoja* ja *luomispäivämäärä*.
+> ✅ Tässä `http://www.example.com/terms/creation-date` ja `http://purl.org/dc/elements/1.1/creator` ovat joitakin tunnettuja ja yleisesti hyväksyttyjä URI:ita, jotka kuvaavat käsitteitä *tekijä* ja *luontipäivä*.
 
-Monimutkaisemmassa tapauksessa, jos haluamme määritellä luojien listan, voimme käyttää RDF:ssä määriteltyjä tietorakenteita.
+Monimutkaisemmassa tapauksessa, jos haluamme määritellä listan tekijöistä, voimme käyttää RDF:ssä määriteltyjä tietorakenteita.
 
-<img src="images/triplet-complex.png" width="40%"/>
+<img src="../../../../translated_images/fi/triplet-complex.32094972c7b4441b.webp" width="40%"/>
 
 > Yllä olevat kaaviot: [Dmitry Soshnikov](http://soshnikov.com)
 
-Semanttisen verkon kehitystä hidasti jossain määrin hakukoneiden ja luonnollisen kielen käsittelytekniikoiden menestys, jotka mahdollistavat rakenteellisen tiedon poimimisen tekstistä. Kuitenkin joillakin alueilla ontologioiden ja tietokantojen ylläpitoon panostetaan edelleen merkittävästi. Muutamia huomionarvoisia projekteja:
+Semanttisen webin rakentamisen edistyminen hidastui jossain määrin hakukoneiden ja luonnollisen kielen käsittelytekniikoiden menestyksen myötä, jotka mahdollistavat jäsennellyn tiedon poimimisen tekstistä. Kuitenkin joillakin alueilla tehdään edelleen merkittäviä ponnistuksia ontologioiden ja tietokantojen ylläpitämiseksi. Muutamia huomionarvoisia projekteja:
 
-* [WikiData](https://wikidata.org/) on kokoelma koneellisesti luettavia tietokantoja, jotka liittyvät Wikipediaan. Suurin osa tiedoista on louhittu Wikipedian *InfoBoxeista*, rakenteellisista sisällöistä Wikipedia-sivujen sisällä. Voit [kysellä](https://query.wikidata.org/) WikiDataa SPARQL:lla, semanttisen verkon erityisellä kyselykielellä. Tässä on esimerkkikysely, joka näyttää ihmisten yleisimmät silmien värit:
+* [WikiData](https://wikidata.org/) on koneellisesti luettava tietokantojen kokoelma, joka liittyy Wikipediaan. Suurin osa tiedoista on louhittu Wikipedia *InfoBoxeista*, Wikipedia-sivujen sisäisistä rakenteellisista sisällöistä. Voit [tehdä hakuja](https://query.wikidata.org/) wikidataan SPARQL-kyselykielellä, joka on semanttisen webin erikoiskieli. Tässä on esimerkkikysely, joka näyttää ihmisten yleisimmät silmien värit:
 
 ```sparql
 #defaultView:BubbleChart
@@ -204,47 +199,49 @@ GROUP BY ?eyeColorLabel
 
 * [DBpedia](https://www.dbpedia.org/) on toinen WikiDataa vastaava hanke.
 
-> ✅ Jos haluat kokeilla omien ontologioiden rakentamista tai olemassa olevien avaamista, on olemassa erinomainen visuaalinen ontologiaeditori nimeltä [Protégé](https://protege.stanford.edu/). Lataa se tai käytä sitä verkossa.
+> ✅ Jos haluat kokeilla oman ontologian rakentamista tai olemassa olevan avaamista, on olemassa erinomainen visuaalinen ontologian muokkaustyökalu nimeltä [Protégé](https://protege.stanford.edu/). Lataa se tai käytä sitä verkossa.
 
-<img src="images/protege.png" width="70%"/>
+<img src="../../../../translated_images/fi/protege.274177ceeac13b38.webp" width="70%"/>
 
-*Web Protégé -editori avoinna Romanov-suvun ontologialla. Kuvakaappaus: Dmitry Soshnikov*
+*Web Protégé -editori auki Romanovien perheen ontologian kanssa. Kuvakaappaus Dmitry Soshnikov*
 
 ## ✍️ Harjoitus: Perheontologia
 
-Katso [FamilyOntology.ipynb](https://github.com/Ezana135/AI-For-Beginners/blob/main/lessons/2-Symbolic/FamilyOntology.ipynb) esimerkki semanttisen verkon tekniikoiden käytöstä perhesuhteiden päättelyyn. Käytämme yleisessä GEDCOM-muodossa esitettyä sukupuuta ja perhesuhteiden ontologiaa rakentaaksemme graafin kaikista perhesuhteista tietylle henkilöjoukolle.
+Katso [FamilyOntology.ipynb](https://github.com/Ezana135/AI-For-Beginners/blob/main/lessons/2-Symbolic/FamilyOntology.ipynb) esimerkki semanttisen webin tekniikoiden käytöstä perhesuhteiden päättelyssä. Otamme perheen sukupuun, joka on esitetty yleisessä GEDCOM-muodossa, ja perhesuhteiden ontologian, ja rakennamme kaavion kaikista perhesuhteista annetulle yksilöjoukolle.
 
 ## Microsoft Concept Graph
 
-Useimmissa tapauksissa ontologiat luodaan huolellisesti käsin. On kuitenkin myös mahdollista **louhia** ontologioita jäsentämättömästä tiedosta, esimerkiksi luonnollisen kielen teksteistä.
+Useimmissa tapauksissa ontologiat luodaan huolellisesti käsin. On kuitenkin mahdollista myös **louhia** ontologioita rakenteettomasta datasta, esimerkiksi luonnollisen kielen teksteistä.
 
-Yksi tällainen yritys tehtiin Microsoft Researchin toimesta, ja sen tuloksena syntyi [Microsoft Concept Graph](https://blogs.microsoft.com/ai/microsoft-researchers-release-graph-that-helps-machines-conceptualize/?WT.mc_id=academic-77998-cacaste).
+Tällainen yritys tehtiin Microsoft Researchin toimesta, mikä johti [Microsoft Concept Graphiin](https://blogs.microsoft.com/ai/microsoft-researchers-release-graph-that-helps-machines-conceptualize/?WT.mc_id=academic-77998-cacaste).
 
-Se on suuri kokoelma entiteettejä, jotka on ryhmitelty `is-a`-perintäsuhteen avulla. Se mahdollistaa kysymyksiin vastaamisen, kuten "Mikä on Microsoft?" - vastauksena esimerkiksi "yritys todennäköisyydellä 0,87 ja brändi todennäköisyydellä 0,75".
+Se on suuri joukko käsitteitä, jotka on ryhmitelty `on-tyyppiä`-perintäsuhteen avulla. Se mahdollistaa kysymyksiin kuten "Mikä on Microsoft?" vastaamisen: vastaus voi olla esimerkiksi "yritys todennäköisyydellä 0,87 ja brändi todennäköisyydellä 0,75".
 
-Graafi on saatavilla joko REST API:n kautta tai suurena ladattavana tekstitiedostona, joka listaa kaikki entiteettiparit.
+Grafi on saatavilla REST-rajapintana tai suurena ladattavana tekstinä, joka listaa kaikki käsiteparit.
 
-## ✍️ Harjoitus: Konseptigraafi
+## ✍️ Harjoitus: Käsitegrafi
 
-Kokeile [MSConceptGraph.ipynb](https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/2-Symbolic/MSConceptGraph.ipynb) -muistikirjaa nähdäksesi, kuinka voimme käyttää Microsoft Concept Graphia ryhmittelemään uutisartikkeleita useisiin kategorioihin.
+Kokeile [MSConceptGraph.ipynb](https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/2-Symbolic/MSConceptGraph.ipynb) -muistikirjaa nähdäksesi, kuinka voimme käyttää Microsoft Concept Graphia ryhmittelemään uutisartikkeleita eri kategorioihin.
 
 ## Yhteenveto
 
-Nykyään tekoälyä pidetään usein *koneoppimisen* tai *neuroverkkojen* synonyymina. Kuitenkin ihminen osoittaa myös eksplisiittistä päättelyä, joka on jotain, mitä neuroverkot eivät tällä hetkellä käsittele. Todellisissa projekteissa eksplisiittistä päättelyä käytetään edelleen tehtävissä, jotka vaativat selityksiä tai järjestelmän käyttäytymisen muokkaamista hallitulla tavalla.
+Nykyään tekoäly mielletään usein lähinnä *koneoppimisen* tai *neuroverkkojen* synonyymiksi. Ihmisellä on kuitenkin myös eksplisiittinen päättelykyky, jota neuroverkot eivät vielä käsittele. Käytännön projekteissa eksplisiittistä päättelyä käytetään edelleen tehtävissä, jotka vaativat selityksiä tai järjestelmän käyttäytymisen hallittua muuttamista.
 
 ## 🚀 Haaste
 
-Family Ontology -muistikirjassa, joka liittyy tähän oppituntiin, on mahdollisuus kokeilla muita perhesuhteita. Yritä löytää uusia yhteyksiä ihmisten välillä sukupuussa.
+Perheontologian muistikirjassa tämän oppitunnin yhteydessä on mahdollisuus kokeilla muita perhesuhteita. Yritä löytää uusia yhteyksiä ihmisten välillä sukupuussa.
 
-## [Luennon jälkeinen kysely](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/202)
+## [Luentojälkeinen tietovisa](https://ff-quizzes.netlify.app/en/ai/quiz/4)
 
-## Kertaus ja itseopiskelu
+## Kertaaminen & Itsenäinen opiskelu
 
-Tutki internetistä alueita, joissa ihmiset ovat yrittäneet kvantifioida ja koodata tietoa. Tutustu Bloom'n taksonomiaan ja palaa historiaan oppiaksesi, kuinka ihmiset ovat yrittäneet ymmärtää maailmaansa. Tarkastele Linnaeuksen työtä organismien taksonomian luomisessa ja havainnoi, kuinka Dmitri Mendelejev loi tavan kuvata ja ryhmitellä kemiallisia alkuaineita. Mitä muita mielenkiintoisia esimerkkejä löydät?
+Tee hieman tutkimusta internetissä ja tutustu alueisiin, joissa ihmiset ovat yrittäneet kvantifioida ja koodata tietoa. Tutustu Bloomin taksonomiaan ja palaa historiaan oppiaksesi, kuinka ihmiset ovat yrittäneet ymmärtää maailmaansa. Tutki Linnaeuksen työtä eliöiden taksonomian luomiseksi ja seuraa, miten Dmitri Mendeleev loi tavan kemiallisten alkuaineiden kuvaamiseen ja ryhmittelyyn. Mitä muita mielenkiintoisia esimerkkejä löydät?
 
 **Tehtävä**: [Rakenna ontologia](assignment.md)
 
 ---
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastuuvapauslauseke**:
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattisissa käännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen omalla kielellä tulee pitää virallisena lähteenä. Tärkeässä tiedossa suositellaan ammattimaista ihmiskääntäjän tekemää käännöstä. Emme ota vastuuta tämän käännöksen käytöstä mahdollisesti aiheutuvista väärinymmärryksistä tai tulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

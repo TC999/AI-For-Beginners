@@ -1,71 +1,62 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e40b47ac3fd48f71304ede1474e66293",
-  "translation_date": "2025-08-26T07:20:38+00:00",
-  "source_file": "lessons/5-NLP/14-Embeddings/README.md",
-  "language_code": "tr"
-}
--->
 # Gömülü Temsiller
 
-## [Ders Öncesi Test](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/114)
+## [Ders Öncesi Test](https://ff-quizzes.netlify.app/en/ai/quiz/27)
 
-BoW veya TF/IDF tabanlı sınıflandırıcılar eğitirken, `vocab_size` uzunluğunda yüksek boyutlu kelime torbası vektörleri üzerinde çalışıyorduk ve düşük boyutlu konumsal temsil vektörlerini seyrek tekil temsil vektörlerine açıkça dönüştürüyorduk. Ancak, bu tekil temsil bellek açısından verimli değildir. Ayrıca, her kelime birbirinden bağımsız olarak ele alınır, yani tekil kodlanmış vektörler kelimeler arasındaki herhangi bir anlamsal benzerliği ifade etmez.
+BoW veya TF/IDF tabanlı sınıflandırıcılar eğitirken, `vocab_size` uzunluğunda yüksek boyutlu kelime torbası vektörleri üzerinde çalıştık ve düşük boyutlu konumsal temsil vektörlerinden seyrek tekil temsil vektörlerine açıkça dönüştürme yapıyorduk. Ancak, bu tekil temsil bellek açısından verimli değildir. Ayrıca, her kelime birbirinden bağımsız olarak ele alınır, yani tekil kodlanmış vektörler kelimeler arasındaki herhangi bir anlamsal benzerliği ifade etmez.
 
-**Gömülü temsil** fikri, kelimeleri bir şekilde bir kelimenin anlamsal anlamını yansıtan daha düşük boyutlu yoğun vektörlerle temsil etmektir. Daha sonra anlamlı kelime gömülü temsillerinin nasıl oluşturulacağını tartışacağız, ancak şimdilik gömülü temsilleri bir kelime vektörünün boyutunu düşürmenin bir yolu olarak düşünebiliriz.
+**Gömülü temsil** fikri, kelimeleri bir şekilde kelimenin anlamsal anlamını yansıtan daha düşük boyutlu yoğun vektörlerle temsil etmektir. Daha sonra anlamlı kelime gömülü temsillerinin nasıl oluşturulacağını tartışacağız, ancak şimdilik gömülü temsilleri bir kelime vektörünün boyutunu düşürmenin bir yolu olarak düşünelim.
 
-Bu nedenle, gömülü katman bir kelimeyi giriş olarak alır ve belirtilen `embedding_size` boyutunda bir çıktı vektörü üretir. Bir anlamda, bu bir `Linear` katmana çok benzer, ancak tekil kodlanmış bir vektör almak yerine, bir kelime numarasını giriş olarak alabilir, böylece büyük tekil kodlanmış vektörler oluşturmaktan kaçınmamızı sağlar.
+Bu nedenle, gömülü temsil katmanı bir kelimeyi giriş olarak alır ve belirli bir `embedding_size` boyutunda bir çıktı vektörü üretir. Bir anlamda, bir `Linear` katmana çok benzer, ancak tekil kodlanmış bir vektör almak yerine, bir kelime numarasını giriş olarak alabilir, böylece büyük tekil kodlanmış vektörler oluşturmaktan kaçınabiliriz.
 
-Sınıflandırıcı ağımızda ilk katman olarak bir gömülü katman kullanarak, kelime torbasından **gömülü torba** modeline geçebiliriz. Bu modelde, önce metnimizdeki her kelimeyi ilgili gömülü temsile dönüştürürüz ve ardından bu gömülü temsillerin tümü üzerinde `sum`, `average` veya `max` gibi bir toplama fonksiyonu hesaplarız.  
+Sınıflandırıcı ağımızda ilk katman olarak bir gömülü temsil katmanı kullanarak, kelime torbasından **gömülü torba** modeline geçebiliriz. Bu modelde, önce metnimizdeki her kelimeyi ilgili gömülü temsile dönüştürürüz ve ardından bu gömülü temsillerin tümü üzerinde `sum`, `average` veya `max` gibi bir toplama fonksiyonu hesaplarız.
 
-![Beş kelimelik bir dizi için bir gömülü sınıflandırıcıyı gösteren görsel.](../../../../../translated_images/embedding-classifier-example.b77f021a7ee67eeec8e68bfe11636c5b97d6eaa067515a129bfb1d0034b1ac5b.tr.png)
+![Beş kelimelik bir dizinin gömülü temsil sınıflandırıcısını gösteren görsel.](../../../../../translated_images/tr/embedding-classifier-example.b77f021a7ee67eee.webp)
 
 > Görsel yazar tarafından oluşturulmuştur
 
 ## ✍️ Alıştırmalar: Gömülü Temsiller
 
 Aşağıdaki defterlerde öğrenmeye devam edin:
-* [PyTorch ile Gömülü Temsiller](../../../../../lessons/5-NLP/14-Embeddings/EmbeddingsPyTorch.ipynb)
-* [TensorFlow ile Gömülü Temsiller](../../../../../lessons/5-NLP/14-Embeddings/EmbeddingsTF.ipynb)
+* [PyTorch ile Gömülü Temsiller](EmbeddingsPyTorch.ipynb)
+* [TensorFlow ile Gömülü Temsiller](EmbeddingsTF.ipynb)
 
 ## Anlamsal Gömülü Temsiller: Word2Vec
 
-Gömülü katman kelimeleri vektör temsiline eşlemeyi öğrenirken, bu temsilin mutlaka çok fazla anlamsal anlamı olmayabilir. Benzer kelimelerin veya eşanlamlıların, bazı vektör mesafeleri (ör. Öklid mesafesi) açısından birbirine yakın olan vektörlere karşılık geldiği bir vektör temsili öğrenmek güzel olurdu.
+Gömülü temsil katmanı kelimeleri vektör temsiline eşlemeyi öğrenmiş olsa da, bu temsil mutlaka çok fazla anlamsal anlam taşımıyor olabilir. Kelimelerin vektör temsillerini öyle bir şekilde öğrenmek güzel olurdu ki, benzer kelimeler veya eş anlamlılar, bazı vektör mesafelerine (örneğin Öklid mesafesi) göre birbirine yakın olan vektörlere karşılık gelsin.
 
-Bunu yapmak için, gömülü modelimizi büyük bir metin koleksiyonu üzerinde belirli bir şekilde önceden eğitmemiz gerekir. Anlamsal gömülü temsilleri eğitmenin bir yolu [Word2Vec](https://en.wikipedia.org/wiki/Word2vec) olarak adlandırılır. Bu yöntem, kelimelerin dağıtılmış bir temsilini üretmek için kullanılan iki ana mimariye dayanır:
+Bunu yapmak için, gömülü temsil modelimizi büyük bir metin koleksiyonu üzerinde belirli bir şekilde önceden eğitmemiz gerekir. Anlamsal gömülü temsilleri eğitmenin bir yolu [Word2Vec](https://en.wikipedia.org/wiki/Word2vec) olarak adlandırılır. Bu yöntem, kelimelerin dağıtılmış temsillerini üretmek için kullanılan iki ana mimariye dayanır:
 
- - **Sürekli kelime torbası** (CBoW) — Bu mimaride, model çevredeki bağlamdan bir kelime tahmin etmek için eğitilir. $$(W_{-2},W_{-1},W_0,W_1,W_2)$$ ngram'ı verildiğinde, modelin amacı $W_0$'ı $$(W_{-2},W_{-1},W_1,W_2)$$'den tahmin etmektir.
+ - **Sürekli kelime torbası** (CBoW) — Bu mimaride, model çevresindeki bağlamdan bir kelimeyi tahmin etmek için eğitilir. $(W_{-2},W_{-1},W_0,W_1,W_2)$ ngrami verildiğinde, modelin amacı $(W_{-2},W_{-1},W_1,W_2)$'den $W_0$'ı tahmin etmektir.
  - **Sürekli atlama-gram** CBoW'un tersidir. Model, bağlam kelimelerinin çevresindeki pencereyi kullanarak mevcut kelimeyi tahmin eder.
 
-CBoW daha hızlıdır, ancak atlama-gram daha yavaştır ve nadir kelimeleri temsil etmede daha iyidir.
+CBoW daha hızlıdır, ancak atlama-gram daha yavaş olmasına rağmen nadir kelimeleri temsil etmede daha iyi bir iş çıkarır.
 
-![Kelimeleri vektörlere dönüştürmek için hem CBoW hem de Skip-Gram algoritmalarını gösteren görsel.](../../../../../translated_images/example-algorithms-for-converting-words-to-vectors.fbe9207a726922f6f0f5de66427e8a6eda63809356114e28fb1fa5f4a83ebda7.tr.png)
+![Kelimeyi vektöre dönüştürmek için kullanılan CBoW ve Skip-Gram algoritmalarını gösteren görsel.](../../../../../translated_images/tr/example-algorithms-for-converting-words-to-vectors.fbe9207a726922f6.webp)
 
 > Görsel [bu makaleden](https://arxiv.org/pdf/1301.3781.pdf) alınmıştır
 
-Word2Vec önceden eğitilmiş gömülü temsilleri (GloVe gibi diğer benzer modellerle birlikte) sinir ağlarındaki gömülü katman yerine de kullanılabilir. Ancak, kelime dağarcıklarıyla başa çıkmamız gerekir, çünkü Word2Vec/GloVe'yi önceden eğitmek için kullanılan kelime dağarcığı, metin korpusumuzdaki kelime dağarcığından farklı olabilir. Bu sorunun nasıl çözülebileceğini görmek için yukarıdaki defterlere göz atın.
+Word2Vec önceden eğitilmiş gömülü temsiller (GloVe gibi diğer benzer modellerle birlikte) sinir ağlarında gömülü temsil katmanı yerine kullanılabilir. Ancak, kelime dağarcıklarıyla başa çıkmamız gerekir, çünkü Word2Vec/GloVe ile önceden eğitilmiş kelime dağarcığı, metin corpusumuzdaki kelime dağarcığından farklı olabilir. Yukarıdaki defterlere göz atarak bu sorunun nasıl çözülebileceğini görebilirsiniz.
 
-## Bağlama Dayalı Gömülü Temsiller
+## Bağlamsal Gömülü Temsiller
 
-Word2Vec gibi geleneksel önceden eğitilmiş gömülü temsil yöntemlerinin temel sınırlamalarından biri, kelime anlamı ayrımı problemidir. Önceden eğitilmiş gömülü temsiller, kelimelerin bağlamdaki anlamlarının bir kısmını yakalayabilse de, bir kelimenin her olası anlamı aynı gömülü temsile kodlanır. Bu, 'play' gibi birçok kelimenin kullanıldıkları bağlama bağlı olarak farklı anlamlara sahip olması nedeniyle, aşağı akış modellerinde sorunlara neden olabilir.
+Word2Vec gibi geleneksel önceden eğitilmiş gömülü temsil modellerinin temel sınırlamalarından biri kelime anlamı ayrımının problemidir. Önceden eğitilmiş gömülü temsiller kelimelerin bağlamdaki anlamlarının bir kısmını yakalayabilse de, bir kelimenin her olası anlamı aynı gömülü temsile kodlanır. Bu, 'play' gibi birçok kelimenin kullanıldıkları bağlama bağlı olarak farklı anlamlara sahip olması nedeniyle aşağı akış modellerinde sorunlara yol açabilir.
 
 Örneğin, 'play' kelimesi şu iki farklı cümlede oldukça farklı anlamlara sahiptir:
 
 - Tiyatroda bir **oyun** izledim.
 - John arkadaşlarıyla **oynamak** istiyor.
 
-Yukarıdaki önceden eğitilmiş gömülü temsiller, 'play' kelimesinin her iki anlamını da aynı gömülü temsilde ifade eder. Bu sınırlamayı aşmak için, büyük bir metin korpusu üzerinde eğitilmiş ve kelimelerin farklı bağlamlarda nasıl bir araya getirilebileceğini *bilen* bir **dil modeli** temelinde gömülü temsiller oluşturmamız gerekir. Bağlama dayalı gömülü temsilleri tartışmak bu dersin kapsamı dışındadır, ancak kursun ilerleyen bölümlerinde dil modellerini ele alırken bu konuya geri döneceğiz.
+Yukarıdaki önceden eğitilmiş gömülü temsiller, 'play' kelimesinin her iki anlamını da aynı gömülü temsilde temsil eder. Bu sınırlamayı aşmak için, büyük bir metin corpusunda eğitilmiş ve kelimelerin farklı bağlamlarda nasıl bir araya gelebileceğini *bilen* bir **dil modeli** temelinde gömülü temsiller oluşturmamız gerekir. Bağlamsal gömülü temsilleri tartışmak bu dersin kapsamı dışında, ancak kursun ilerleyen bölümlerinde dil modellerini ele alırken bu konuya geri döneceğiz.
 
 ## Sonuç
 
-Bu derste, kelimelerin anlamsal anlamlarını daha iyi yansıtmak için TensorFlow ve PyTorch'ta gömülü katmanların nasıl oluşturulacağını ve kullanılacağını keşfettiniz.
+Bu derste, kelimelerin anlamsal anlamlarını daha iyi yansıtmak için TensorFlow ve PyTorch'ta gömülü temsil katmanları oluşturmayı ve kullanmayı öğrendiniz.
 
 ## 🚀 Meydan Okuma
 
-Word2Vec, şarkı sözleri ve şiir oluşturma gibi ilginç uygulamalar için kullanılmıştır. Yazarın Word2Vec'i kullanarak şiir oluşturma sürecini anlattığı [bu makaleye](https://www.politetype.com/blog/word2vec-color-poems) göz atın. Ayrıca, bu tekniğin farklı bir açıklamasını keşfetmek için Dan Shiffmann'ın [bu videosunu](https://www.youtube.com/watch?v=LSS_bos_TPI&ab_channel=TheCodingTrain) izleyin. Ardından, bu teknikleri kendi metin korpusunuza uygulamayı deneyin, belki Kaggle'dan bir kaynak kullanabilirsiniz.
+Word2Vec, şarkı sözleri ve şiir oluşturma gibi ilginç uygulamalarda kullanılmıştır. [Bu makaleye](https://www.politetype.com/blog/word2vec-color-poems) göz atarak yazarın Word2Vec'i şiir oluşturmak için nasıl kullandığını öğrenin. Ayrıca [Dan Shiffmann'ın bu videosunu](https://www.youtube.com/watch?v=LSS_bos_TPI&ab_channel=TheCodingTrain) izleyerek bu tekniğin farklı bir açıklamasını keşfedin. Ardından, bu teknikleri Kaggle'dan alınmış bir metin corpusunda kendi metinlerinize uygulamayı deneyin.
 
-## [Ders Sonrası Test](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/214)
+## [Ders Sonrası Test](https://ff-quizzes.netlify.app/en/ai/quiz/28)
 
 ## Gözden Geçirme ve Kendi Kendine Çalışma
 
@@ -73,5 +64,5 @@ Word2Vec ile ilgili bu makaleyi okuyun: [Efficient Estimation of Word Representa
 
 ## [Ödev: Defterler](assignment.md)
 
-**Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+---
+

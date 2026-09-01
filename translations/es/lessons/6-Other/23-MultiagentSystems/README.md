@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1ddf651d7681b4449f9d09ea3b17911e",
-  "translation_date": "2025-08-24T09:20:19+00:00",
-  "source_file": "lessons/6-Other/23-MultiagentSystems/README.md",
-  "language_code": "es"
-}
--->
 # Sistemas Multi-Agente
 
-Una de las posibles formas de lograr inteligencia es el enfoque llamado **emergente** (o **sinérgico**), que se basa en el hecho de que el comportamiento combinado de muchos agentes relativamente simples puede resultar en un comportamiento más complejo (o inteligente) del sistema en su conjunto. Teóricamente, esto se basa en los principios de [Inteligencia Colectiva](https://en.wikipedia.org/wiki/Collective_intelligence), [Emergentismo](https://en.wikipedia.org/wiki/Global_brain) y [Cibernética Evolutiva](https://en.wikipedia.org/wiki/Global_brain), que afirman que los sistemas de nivel superior obtienen algún tipo de valor añadido cuando se combinan adecuadamente a partir de sistemas de nivel inferior (el llamado *principio de transición de metasistema*).
+Una de las posibles formas de lograr inteligencia es el enfoque llamado **emergente** (o **sinérgico**), que se basa en el hecho de que el comportamiento combinado de muchos agentes relativamente simples puede resultar en un comportamiento general más complejo (o inteligente) del sistema en su conjunto. Teóricamente, esto se basa en los principios de [Inteligencia Colectiva](https://en.wikipedia.org/wiki/Collective_intelligence), [Emergentismo](https://en.wikipedia.org/wiki/Global_brain) y [Cibernética Evolutiva](https://en.wikipedia.org/wiki/Global_brain), que afirman que los sistemas de nivel superior obtienen algún tipo de valor añadido cuando se combinan adecuadamente a partir de sistemas de nivel inferior (el llamado *principio de transición de metasistema*).
 
-## [Cuestionario previo a la clase](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/123)
+## [Cuestionario previo a la clase](https://ff-quizzes.netlify.app/en/ai/quiz/45)
 
 La dirección de los **Sistemas Multi-Agente** surgió en la IA en la década de 1990 como respuesta al crecimiento de Internet y los sistemas distribuidos. Uno de los libros de texto clásicos de IA, [Artificial Intelligence: A Modern Approach](https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach), se centra en la visión de la IA clásica desde el punto de vista de los sistemas multi-agente.
 
-El concepto central del enfoque multi-agente es la noción de **Agente**: una entidad que vive en algún **entorno**, que puede percibir y actuar sobre él. Esta es una definición muy amplia, y puede haber muchos tipos y clasificaciones diferentes de agentes:
+El concepto central del enfoque multi-agente es la noción de **Agente**: una entidad que vive en algún **entorno**, que puede percibir y sobre el cual puede actuar. Esta es una definición muy amplia, y puede haber muchos tipos y clasificaciones diferentes de agentes:
 
 * Según su capacidad para razonar:
    - Los agentes **reactivos** suelen tener un comportamiento simple de tipo solicitud-respuesta.
@@ -28,12 +19,12 @@ El concepto central del enfoque multi-agente es la noción de **Agente**: una en
    - Los agentes **activos** tienen algunos objetivos que persiguen.
    - Los agentes **cognitivos** implican planificación y razonamiento complejos.
 
-Hoy en día, los sistemas multi-agente se utilizan en varias aplicaciones:
+Hoy en día, los sistemas multi-agente se utilizan en una serie de aplicaciones:
 
 * En juegos, muchos personajes no jugadores emplean algún tipo de IA y pueden considerarse agentes inteligentes.
-* En la producción de video, la renderización de escenas 3D complejas que involucran multitudes generalmente se realiza mediante simulación multi-agente.
-* En la modelización de sistemas, el enfoque multi-agente se utiliza para simular el comportamiento de un modelo complejo. Por ejemplo, el enfoque multi-agente se ha utilizado con éxito para predecir la propagación de la enfermedad COVID-19 en todo el mundo. Un enfoque similar puede usarse para modelar el tráfico en una ciudad y ver cómo reacciona a los cambios en las reglas de tráfico.
-* En sistemas de automatización complejos, cada dispositivo puede actuar como un agente independiente, lo que hace que todo el sistema sea menos monolítico y más robusto.
+* En la producción de video, el renderizado de escenas 3D complejas que involucran multitudes se realiza típicamente mediante simulación multi-agente.
+* En la modelización de sistemas, el enfoque multi-agente se utiliza para simular el comportamiento de un modelo complejo. Por ejemplo, el enfoque multi-agente se ha utilizado con éxito para predecir la propagación de la enfermedad COVID-19 a nivel mundial. Un enfoque similar puede usarse para modelar el tráfico en una ciudad y ver cómo reacciona a los cambios en las reglas de tráfico.
+* En sistemas de automatización complejos, cada dispositivo puede actuar como un agente independiente, lo que hace que el sistema completo sea menos monolítico y más robusto.
 
 No dedicaremos mucho tiempo a profundizar en los sistemas multi-agente, pero consideraremos un ejemplo de **Modelado Multi-Agente**.
 
@@ -50,27 +41,27 @@ ask turtles [
 ]
 ```
 
-Por supuesto, no es interesante cuando todas las tortugas hacen lo mismo, por lo que podemos `ask` a grupos de tortugas, por ejemplo, aquellas que están en las cercanías de un cierto punto. También podemos crear tortugas de diferentes *razas* utilizando el comando `breed [cats cat]`. Aquí `cat` es el nombre de una raza, y necesitamos especificar tanto la palabra en singular como en plural, porque diferentes comandos usan diferentes formas para mayor claridad.
+Por supuesto, no es interesante cuando todas las tortugas hacen lo mismo, así que podemos `ask` a grupos de tortugas, por ejemplo, aquellas que están en las cercanías de un cierto punto. También podemos crear tortugas de diferentes *razas* utilizando el comando `breed [cats cat]`. Aquí `cat` es el nombre de una raza, y necesitamos especificar tanto la palabra en singular como en plural, porque diferentes comandos usan diferentes formas para mayor claridad.
 
-> ✅ No profundizaremos en el aprendizaje del lenguaje NetLogo en sí: puedes visitar el brillante recurso [Beginner's Interactive NetLogo Dictionary](https://ccl.northwestern.edu/netlogo/bind/) si estás interesado en aprender más.
+> ✅ No profundizaremos en el aprendizaje del lenguaje NetLogo en sí: puedes visitar el excelente recurso [Beginner's Interactive NetLogo Dictionary](https://ccl.northwestern.edu/netlogo/bind/) si estás interesado en aprender más.
 
 Puedes [descargar](https://ccl.northwestern.edu/netlogo/download.shtml) e instalar NetLogo para probarlo.
 
 ### Biblioteca de Modelos
 
-Una gran ventaja de NetLogo es que contiene una biblioteca de modelos funcionales que puedes probar. Ve a **File → Models Library**, y tendrás muchas categorías de modelos para elegir.
+Una gran ventaja de NetLogo es que contiene una biblioteca de modelos funcionales que puedes probar. Ve a **File &rightarrow; Models Library**, y tendrás muchas categorías de modelos para elegir.
 
-<img alt="Biblioteca de Modelos de NetLogo" src="images/NetLogo-ModelLib.png" width="60%"/>
+<img alt="Biblioteca de Modelos de NetLogo" src="../../../../../translated_images/es/NetLogo-ModelLib.efe023afb4763c05.webp" width="60%"/>
 
 > Una captura de pantalla de la biblioteca de modelos por Dmitry Soshnikov
 
-Puedes abrir uno de los modelos, por ejemplo **Biology → Flocking**.
+Puedes abrir uno de los modelos, por ejemplo **Biology &rightarrow; Flocking**.
 
 ### Principios Básicos
 
 Después de abrir el modelo, serás llevado a la pantalla principal de NetLogo. Aquí hay un modelo de ejemplo que describe la población de lobos y ovejas, dadas recursos finitos (hierba).
 
-![Pantalla Principal de NetLogo](../../../../../lessons/6-Other/23-MultiagentSystems/images/NetLogo-Main.png)
+![Pantalla Principal de NetLogo](../../../../../translated_images/es/NetLogo-Main.32653711ec1a01b3.webp)
 
 > Captura de pantalla por Dmitry Soshnikov
 
@@ -96,11 +87,11 @@ El mundo de NetLogo consiste en los siguientes objetos:
 * **Parches** son áreas cuadradas del campo, en las que viven los agentes. Puedes referirte a todos los agentes en el mismo parche, o puedes cambiar los colores del parche y algunas otras propiedades. También puedes `ask patches` que hagan algo.
 * **Observador** es un agente único que controla el mundo. Todos los controladores de botones se ejecutan en *modo observador*.
 
-> ✅ La belleza de un entorno multi-agente es que el código que se ejecuta en modo tortuga o en modo parche es ejecutado al mismo tiempo por todos los agentes en paralelo. Por lo tanto, al escribir un poco de código y programar el comportamiento de un agente individual, puedes crear un comportamiento complejo del sistema de simulación en su conjunto.
+> ✅ La belleza de un entorno multi-agente es que el código que se ejecuta en modo tortuga o en modo parche es ejecutado al mismo tiempo por todos los agentes en paralelo. Así, al escribir un poco de código y programar el comportamiento de un agente individual, puedes crear un comportamiento complejo del sistema de simulación en su conjunto.
 
 ### Flocking
 
-Como ejemplo de comportamiento multi-agente, consideremos el **[Flocking](https://en.wikipedia.org/wiki/Flocking_(behavior))**. Flocking es un patrón complejo que es muy similar a cómo vuelan las bandadas de aves. Al observarlas volar, podrías pensar que siguen algún tipo de algoritmo colectivo o que poseen alguna forma de *inteligencia colectiva*. Sin embargo, este comportamiento complejo surge cuando cada agente individual (en este caso, un *pájaro*) solo observa a otros agentes a corta distancia y sigue tres reglas simples:
+Como ejemplo de comportamiento multi-agente, consideremos el **[Flocking](https://en.wikipedia.org/wiki/Flocking_(behavior))**. Flocking es un patrón complejo que es muy similar a cómo vuelan las bandadas de aves. Al observarlas volar, podrías pensar que siguen algún tipo de algoritmo colectivo, o que poseen alguna forma de *inteligencia colectiva*. Sin embargo, este comportamiento complejo surge cuando cada agente individual (en este caso, un *pájaro*) solo observa a algunos otros agentes a corta distancia de él y sigue tres reglas simples:
 
 * **Alineación**: se dirige hacia la dirección promedio de los agentes vecinos.
 * **Cohesión**: intenta dirigirse hacia la posición promedio de los vecinos (*atracción a largo alcance*).
@@ -108,17 +99,17 @@ Como ejemplo de comportamiento multi-agente, consideremos el **[Flocking](https:
 
 Puedes ejecutar el ejemplo de flocking y observar el comportamiento. También puedes ajustar parámetros, como el *grado de separación* o el *rango de visión*, que define qué tan lejos puede ver cada pájaro. Ten en cuenta que si reduces el rango de visión a 0, todos los pájaros se vuelven ciegos y el flocking se detiene. Si reduces la separación a 0, todos los pájaros se agrupan en una línea recta.
 
-> ✅ Cambia a la pestaña **Code** y observa dónde se implementan las tres reglas de flocking (alineación, cohesión y separación) en el código. Nota cómo solo nos referimos a aquellos agentes que están a la vista.
+> ✅ Cambia a la pestaña **Code** y observa dónde se implementan en el código las tres reglas de flocking (alineación, cohesión y separación). Nota cómo solo nos referimos a aquellos agentes que están a la vista.
 
 ### Otros Modelos para Ver
 
 Hay algunos modelos más interesantes que puedes experimentar:
 
-* **Art → Fireworks** muestra cómo un fuego artificial puede considerarse un comportamiento colectivo de corrientes individuales de fuego.
-* **Social Science → Traffic Basic** y **Social Science → Traffic Grid** muestran el modelo de tráfico urbano en una cuadrícula 1D y 2D con o sin semáforos. Cada coche en la simulación sigue las siguientes reglas:
+* **Art &rightarrow; Fireworks** muestra cómo un fuego artificial puede considerarse un comportamiento colectivo de corrientes individuales de fuego.
+* **Social Science &rightarrow; Traffic Basic** y **Social Science &rightarrow; Traffic Grid** muestran el modelo de tráfico urbano en una cuadrícula 1D y 2D con o sin semáforos. Cada coche en la simulación sigue las siguientes reglas:
    - Si el espacio frente a él está vacío, acelera (hasta una cierta velocidad máxima).
    - Si ve un obstáculo frente a él, frena (y puedes ajustar qué tan lejos puede ver un conductor).
-* **Social Science → Party** muestra cómo las personas se agrupan durante una fiesta de cóctel. Puedes encontrar la combinación de parámetros que conduce al aumento más rápido de la felicidad del grupo.
+* **Social Science &rightarrow; Party** muestra cómo las personas se agrupan durante una fiesta de cóctel. Puedes encontrar la combinación de parámetros que conduce al aumento más rápido de la felicidad del grupo.
 
 Como puedes ver en estos ejemplos, las simulaciones multi-agente pueden ser una forma bastante útil de entender el comportamiento de un sistema complejo compuesto por individuos que siguen la misma lógica o una lógica similar. También puede usarse para controlar agentes virtuales, como [NPCs](https://en.wikipedia.org/wiki/NPC) en videojuegos, o agentes en mundos animados en 3D.
 
@@ -126,7 +117,7 @@ Como puedes ver en estos ejemplos, las simulaciones multi-agente pueden ser una 
 
 Los agentes descritos anteriormente son muy simples, reaccionando a los cambios en el entorno utilizando algún tipo de algoritmo. Como tal, son **agentes reactivos**. Sin embargo, a veces los agentes pueden razonar y planificar sus acciones, en cuyo caso se les llama **deliberativos**.
 
-Un ejemplo típico sería un agente personal que recibe una instrucción de un humano para reservar un paquete de vacaciones. Supongamos que hay muchos agentes que viven en Internet y que pueden ayudarle. Entonces debería contactar a otros agentes para ver qué vuelos están disponibles, cuáles son los precios de los hoteles para diferentes fechas y tratar de negociar el mejor precio. Cuando el plan de vacaciones esté completo y confirmado por el propietario, puede proceder con la reserva.
+Un ejemplo típico sería un agente personal que recibe una instrucción de un humano para reservar un paquete de vacaciones. Supongamos que hay muchos agentes que viven en internet y que pueden ayudarle. Entonces debería contactar a otros agentes para ver qué vuelos están disponibles, cuáles son los precios de los hoteles para diferentes fechas y tratar de negociar el mejor precio. Cuando el plan de vacaciones esté completo y confirmado por el propietario, puede proceder con la reserva.
 
 Para hacer esto, los agentes necesitan **comunicarse**. Para una comunicación exitosa necesitan:
 
@@ -150,15 +141,15 @@ Todos tienden a centrarse en el comportamiento más simple de un agente individu
 
 ## 🚀 Desafío
 
-Lleva esta lección al mundo real e intenta conceptualizar un sistema multi-agente que pueda resolver un problema. ¿Qué, por ejemplo, necesitaría hacer un sistema multi-agente para optimizar la ruta de un autobús escolar? ¿Cómo podría funcionar en una panadería?
+Lleva esta lección al mundo real e intenta conceptualizar un sistema multi-agente que pueda resolver un problema. ¿Qué, por ejemplo, necesitaría hacer un sistema multi-agente para optimizar una ruta de autobús escolar? ¿Cómo podría funcionar en una panadería?
 
-## [Cuestionario posterior a la clase](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/223)
+## [Cuestionario posterior a la clase](https://ff-quizzes.netlify.app/en/ai/quiz/46)
 
-## Revisión y Estudio Personal
+## Revisión y Autoestudio
 
 Revisa el uso de este tipo de sistema en la industria. Elige un dominio como la manufactura o la industria de los videojuegos y descubre cómo los sistemas multi-agente pueden usarse para resolver problemas únicos.
 
 ## [Tarea de NetLogo](assignment.md)
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+---
+

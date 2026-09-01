@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a52f000089c1d8906a4daa4ab1169b",
-  "translation_date": "2025-08-26T07:25:04+00:00",
-  "source_file": "lessons/4-ComputerVision/README.md",
-  "language_code": "tr"
-}
--->
 # Bilgisayarlı Görü
 
-![Bilgisayarlı Görü içeriğinin bir çizim özeti](../../../../translated_images/ai-computervision.6506ebebac3fbf76cdb78989d7d3dfea87e88285c0feaade53aa7804a22b248f.tr.png)
+![Bilgisayarlı Görü içeriğinin bir çizim özeti](../../../../translated_images/tr/ai-computervision.6506ebebac3fbf76.webp)
 
 Bu bölümde şunları öğreneceğiz:
 

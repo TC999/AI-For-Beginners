@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-25T23:38:50+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "sr"
-}
--->
 # Мултимодалне мреже
 
 Након успеха трансформер модела у решавању задатака обраде природног језика (NLP), исте или сличне архитектуре примењене су и на задатке рачунарског вида. Расте интересовање за изградњу модела који би *комбиновали* могућности визије и природног језика. Један од таквих покушаја је направио OpenAI, а назива се CLIP и DALL.E.
@@ -15,7 +6,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Главна идеја CLIP-а је могућност поређења текстуалних упита са сликом и одређивање колико добро слика одговара упиту.
 
-![CLIP Архитектура](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.sr.png)
+![CLIP Архитектура](../../../../../translated_images/sr/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *Слика из [овог блога](https://openai.com/blog/clip/)*
 
@@ -29,7 +20,7 @@ CLIP модел/библиотека доступан је на [OpenAI GitHub](
 
 Претпоставимо да треба да класификујемо слике, рецимо, између мачака, паса и људи. У том случају, можемо моделу дати слику и низ текстуалних упита: "*слика мачке*", "*слика пса*", "*слика човека*". У резултујућем вектору од 3 вероватноће само треба изабрати индекс са највишом вредношћу.
 
-![CLIP за класификацију слика](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.sr.png)
+![CLIP за класификацију слика](../../../../../translated_images/sr/clip-class.3af42ef0b2b19369.webp)
 
 > *Слика из [овог блога](https://openai.com/blog/clip/)*
 
@@ -53,13 +44,13 @@ CLIP се такође може користити за **генерисање �
 
 Једна од важних разлика између VQGAN-а и традиционалног GAN-а је та што други може произвести пристојну слику из било ког улазног вектора, док VQGAN вероватно производи слику која није кохерентна. Због тога је потребно додатно усмеравати процес креирања слике, а то се може урадити помоћу CLIP-а.
 
-![VQGAN+CLIP Архитектура](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.sr.png)
+![VQGAN+CLIP Архитектура](../../../../../translated_images/sr/vqgan.5027fe05051dfa31.webp)
 
 Да бисмо генерисали слику која одговара текстуалном упиту, почињемо са неким насумичним вектором кодирања који се прослеђује кроз VQGAN да би се произвела слика. Затим се CLIP користи за креирање функције губитка која показује колико добро слика одговара текстуалном упиту. Циљ је затим минимизовати овај губитак, користећи уназадно ширење да би се прилагодили параметри улазног вектора.
 
 Одлична библиотека која имплементира VQGAN+CLIP је [Pixray](http://github.com/pixray/pixray).
 
-![Слика коју је произвео Pixray](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.sr.png) |  ![Слика коју је произвео Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.sr.png) | ![Слика коју је произвео Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.sr.png)
+![Слика коју је произвео Pixray](../../../../../translated_images/sr/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Слика коју је произвео Pixray](../../../../../translated_images/sr/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Слика коју је произвео Pixray](../../../../../translated_images/sr/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 Слика генерисана на основу упита *акварелски портрет младог мушког професора књижевности са књигом* | Слика генерисана на основу упита *уљани портрет младе женске професорке рачунарских наука са рачунаром* | Слика генерисана на основу упита *уљани портрет старог мушког професора математике испред табле*
 
@@ -75,7 +66,7 @@ DALL-E је верзија GPT-3 обучена за генерисање сли
 Главна разлика између DALL-E 1 и 2 је у томе што други генерише реалистичније слике и уметничка дела.
 
 Примери генерисања слика са DALL-E:
-![Слика коју је произвео Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.sr.png) |  ![Слика коју је произвео Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.sr.png) | ![Слика коју је произвео Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.sr.png)
+![Слика коју је произвео Pixray](../../../../../translated_images/sr/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Слика коју је произвео Pixray](../../../../../translated_images/sr/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Слика коју је произвео Pixray](../../../../../translated_images/sr/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 Слика генерисана на основу упита *акварелски портрет младог мушког професора књижевности са књигом* | Слика генерисана на основу упита *уљани портрет младе женске професорке рачунарских наука са рачунаром* | Слика генерисана на основу упита *уљани портрет старог мушког професора математике испред табле*
 

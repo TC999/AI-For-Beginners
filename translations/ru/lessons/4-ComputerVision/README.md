@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a52f000089c1d8906a4daa4ab1169b",
-  "translation_date": "2025-08-26T06:39:15+00:00",
-  "source_file": "lessons/4-ComputerVision/README.md",
-  "language_code": "ru"
-}
--->
 # Компьютерное зрение
 
-![Резюме по теме "Компьютерное зрение" в виде рисунка](../../../../translated_images/ai-computervision.6506ebebac3fbf76cdb78989d7d3dfea87e88285c0feaade53aa7804a22b248f.ru.png)
+![Резюме по теме "Компьютерное зрение" в виде рисунка](../../../../translated_images/ru/ai-computervision.6506ebebac3fbf76.webp)
 
 В этом разделе мы изучим:
 

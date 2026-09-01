@@ -1,47 +1,38 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1ddf651d7681b4449f9d09ea3b17911e",
-  "translation_date": "2025-08-25T23:20:56+00:00",
-  "source_file": "lessons/6-Other/23-MultiagentSystems/README.md",
-  "language_code": "hu"
-}
--->
-# Többügynökös rendszerek
+# Több-ügynökös rendszerek
 
-Az intelligencia elérésének egyik lehetséges módja az úgynevezett **emergens** (vagy **szinergikus**) megközelítés, amely azon az elven alapul, hogy sok viszonylag egyszerű ügynök együttes viselkedése a rendszer egészének összetettebb (vagy intelligensebb) viselkedését eredményezheti. Elméletileg ez a [Kollektív intelligencia](https://en.wikipedia.org/wiki/Collective_intelligence), az [Emergentizmus](https://en.wikipedia.org/wiki/Global_brain) és az [Evolúciós kibernetika](https://en.wikipedia.org/wiki/Global_brain) elvein alapul, amelyek szerint a magasabb szintű rendszerek valamilyen hozzáadott értéket nyernek, ha megfelelően kombinálják őket alacsonyabb szintű rendszerekből (az úgynevezett *metarendszer-átmenet elve*).
+Az intelligencia elérésének egyik lehetséges módja az úgynevezett **emergens** (vagy **szinergikus**) megközelítés, amely azon az elven alapul, hogy sok viszonylag egyszerű ügynök együttes viselkedése az egész rendszer összetettebb (vagy intelligensebb) viselkedését eredményezheti. Elméletileg ez a [Kollektív intelligencia](https://en.wikipedia.org/wiki/Collective_intelligence), az [Emergentizmus](https://en.wikipedia.org/wiki/Global_brain) és az [Evolúciós kibernetika](https://en.wikipedia.org/wiki/Global_brain) elveire épül, amelyek azt állítják, hogy a magasabb szintű rendszerek hozzáadott értéket nyernek, ha jól kombináljuk őket az alacsonyabb szintű rendszerekből (az úgynevezett *metarendszer-átmenet elve*).
 
-## [Előadás előtti kvíz](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/123)
+## [Előadás előtti kvíz](https://ff-quizzes.netlify.app/en/ai/quiz/45)
 
-A **többügynökös rendszerek** iránya az 1990-es években jelent meg a mesterséges intelligencia területén, válaszul az internet és az elosztott rendszerek növekedésére. Az egyik klasszikus mesterséges intelligencia tankönyv, az [Artificial Intelligence: A Modern Approach](https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach), a klasszikus mesterséges intelligencia szemléletét a többügynökös rendszerek nézőpontjából vizsgálja.
+A **Több-ügynökös rendszerek** irányvonala az 1990-es években jelent meg a mesterséges intelligenciában az internet és az elosztott rendszerek növekedésére válaszul. Egy klasszikus MI tankönyv, az [Artificial Intelligence: A Modern Approach](https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach), a klasszikus MI nézőpontját a több-ügynökös rendszerek szemszögéből tárgyalja.
 
-A többügynökös megközelítés központi eleme az **ügynök** fogalma – egy olyan entitás, amely egy bizonyos **környezetben** él, amelyet érzékelni tud, és amelyre hatással lehet. Ez egy nagyon tág definíció, és számos különböző típusú és osztályozású ügynök létezhet:
+A több-ügynökös megközelítés központi fogalma az **ügynök** – egy olyan entitás, amely egy **környezetben** él, amelyet érzékelni és befolyásolni képes. Ez egy nagyon tág meghatározás, és sokféle típusú és osztályozású ügynök létezhet:
 
-* Az érvelési képességük alapján:
-   - **Reaktív** ügynökök általában egyszerű kérés-válasz típusú viselkedést mutatnak
-   - **Deliberatív** ügynökök valamilyen logikai érvelési és/vagy tervezési képességet alkalmaznak
-* Az alapján, hogy hol futtatják a kódjukat:
-   - **Statikus** ügynökök egy dedikált hálózati csomóponton működnek
-   - **Mobil** ügynökök képesek a kódjukat hálózati csomópontok között mozgatni
-* A viselkedésük alapján:
-   - **Passzív ügynökök** nem rendelkeznek konkrét célokkal. Ezek az ügynökök reagálhatnak külső ingerekre, de maguktól nem kezdeményeznek cselekvést.
-   - **Aktív ügynökök** rendelkeznek bizonyos célokkal, amelyeket követnek
-   - **Kognitív ügynökök** összetett tervezést és érvelést alkalmaznak
+* Észlelőképességük alapján:
+   - A **reaktív** ügynökök általában egyszerű kérés-válasz típusú viselkedést mutatnak
+   - A **megfontolt** ügynökök valamilyen logikai érvelést és/vagy tervezési képességet alkalmaznak
+* Az alapján, hogy hol fut az ügynök kódja:
+   - A **statikus** ügynökök dedikált hálózati csomóponton dolgoznak
+   - A **mobil** ügynökök képesek mozgatni a kódjukat a hálózati csomópontok között
+* Viselkedésük alapján:
+   - A **passzív ügynököknek** nincsenek speciális céljaik. Ilyen ügynökök reagálhatnak külső ingerekre, de nem kezdeményeznek önállóan semmilyen akciót.
+   - Az **aktív ügynököknek** vannak céljaik, amelyeket követnek
+   - A **kognitív ügynökök** bonyolult tervezést és érvelést foglalnak magukban
 
-A többügynökös rendszereket manapság számos alkalmazásban használják:
+Manapság a több-ügynökös rendszerek számos alkalmazásban használatosak:
 
-* Játékokban sok nem játékos karakter (NPC) valamilyen mesterséges intelligenciát alkalmaz, és intelligens ügynöknek tekinthető
-* Videógyártásban a komplex 3D jelenetek renderelése, amelyek tömegeket tartalmaznak, tipikusan többügynökös szimulációval történik
-* Rendszermodellezésben a többügynökös megközelítést használják egy komplex modell viselkedésének szimulálására. Például a többügynökös megközelítést sikeresen alkalmazták a COVID-19 betegség globális terjedésének előrejelzésére. Hasonló megközelítés alkalmazható egy város forgalmának modellezésére, és annak vizsgálatára, hogyan reagál a forgalmi szabályok változásaira.
-* Komplex automatizálási rendszerekben minden eszköz független ügynökként működhet, ami az egész rendszert kevésbé monolitikussá és robusztusabbá teszi.
+* Játékokban sok nem játékos karakter valamilyen mesterséges intelligenciát alkalmaz, és intelligens ügynöknek tekinthetők
+* Videógyártásban összetett 3D jelenetek renderelésénél, amelyek tömegeket ábrázolnak, általában több-ügynökös szimulációt használnak
+* Rendszermodellezésben a több-ügynökös megközelítés egy összetett modell viselkedésének szimulálására szolgál. Például a több-ügynökös megközelítést sikeresen alkalmazták a COVID-19 világméretű terjedésének előrejelzésére. Hasonló megközelítés használható a városi forgalom modellezésére és annak vizsgálatára, hogyan reagál a közlekedési szabályok változásaira.
+* Összetett automatizálási rendszerekben minden eszköz önálló ügynökként működhet, ami robosztusabbá és kevésbé monolitikussá teszi az egész rendszert.
 
-Nem fogunk mélyen belemenni a többügynökös rendszerek részleteibe, de megvizsgálunk egy példát a **többügynökös modellezésre**.
+Nem fogunk mélyen belemenni a több-ügynökös rendszerekbe, de megnézünk egy példát a **Több-ügynökös modellezésre**.
 
 ## NetLogo
 
-A [NetLogo](https://ccl.northwestern.edu/netlogo/) egy többügynökös modellezési környezet, amely a [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) programozási nyelv módosított változatán alapul. Ezt a nyelvet eredetileg a programozási koncepciók tanítására fejlesztették ki gyerekek számára, és lehetővé teszi egy **teknős** nevű ügynök irányítását, amely mozoghat, és nyomot hagyhat maga után. Ez lehetővé teszi komplex geometriai alakzatok létrehozását, ami vizuális módon segíti az ügynök viselkedésének megértését.
+A [NetLogo](https://ccl.northwestern.edu/netlogo/) egy több-ügynökös modellező környezet, amely a [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) programozási nyelv módosított változatán alapul. Ezt a nyelvet programozási koncepciók tanítására fejlesztették ki gyerekek számára, és lehetővé teszi egy **turtle** nevű ügynök irányítását, amely mozog, és nyomot hagy maga után. Ez lehetővé teszi összetett geometriai alakzatok létrehozását, ami nagyon szemléletes módja az ügynök viselkedésének megértésére.
 
-A NetLogo-ban sok teknőst hozhatunk létre a `create-turtles` parancs segítségével. Ezután utasíthatjuk az összes teknőst, hogy végezzen el bizonyos műveleteket (az alábbi példában - mozogjon előre 10 egységet):
+A NetLogo-ban sok teknőst hozhatunk létre a `create-turtles` parancs használatával. Ezután parancsot adhatunk az összes teknősnek valamilyen cselekvésre (az alábbi példában - 10 ponttal előre):
 
 ```
 create-turtles 10
@@ -50,39 +41,39 @@ ask turtles [
 ]
 ```
 
-Természetesen nem túl érdekes, ha minden teknős ugyanazt csinálja, ezért a `ask` parancs segítségével csoportokat is utasíthatunk, például azokat, amelyek egy bizonyos pont közelében vannak. Különböző *fajtájú* teknősöket is létrehozhatunk a `breed [cats cat]` paranccsal. Itt a `cat` a fajta neve, és meg kell adnunk az egyes és többes számú alakot is, mert a különböző parancsok az érthetőség érdekében különböző formákat használnak.
+Természetesen nem érdekes, ha az összes teknős ugyanazt csinálja, ezért kérhetjük teknőscsoportok (például egy bizonyos pont közelében lévők) parancsait. A `breed [cats cat]` paranccsal különböző *fajt* is létrehozhatunk teknősökből. Itt a `cat` a fajta neve, és meg kell adni mind az egyes, mind a többes számot, mert a különböző parancsok érthetőség miatt eltérő formákat használnak.
 
-> ✅ Nem fogunk belemenni a NetLogo nyelv tanulásába – ha érdekel, látogasd meg a kiváló [Beginner's Interactive NetLogo Dictionary](https://ccl.northwestern.edu/netlogo/bind/) oldalt.
+> ✅ Nem fogunk mélyebben belemenni a NetLogo nyelv megtanulásába – ha érdekel, látogass el a remek [Kezdő interaktív NetLogo szótárba](https://ccl.northwestern.edu/netlogo/bind/).
 
-A NetLogo-t [letöltheted](https://ccl.northwestern.edu/netlogo/download.shtml) és telepítheted, hogy kipróbáld.
+Letöltheted és telepítheted a NetLogo-t, hogy kipróbáld: [download](https://ccl.northwestern.edu/netlogo/download.shtml).
 
 ### Modellek könyvtára
 
-A NetLogo egyik nagyszerű tulajdonsága, hogy tartalmaz egy működő modellekből álló könyvtárat, amelyeket kipróbálhatsz. Lépj a **File → Models Library** menüpontra, és számos modellkategória közül választhatsz.
+A NetLogo nagyszerűsége, hogy tartalmaz egy könyvtár működő modellekkel, amelyeket kipróbálhatsz. Nyisd meg a **File &rightarrow; Models Library** menüpontot, ahol sokféle modellt találsz.
 
-<img alt="NetLogo Models Library" src="images/NetLogo-ModelLib.png" width="60%"/>
+<img alt="NetLogo Models Library" src="../../../../../translated_images/hu/NetLogo-ModelLib.efe023afb4763c05.webp" width="60%"/>
 
-> Dmitry Soshnikov által készített képernyőkép a modellek könyvtáráról
+> Dmitry Soshnikov képernyőképe a modellek könyvtáráról
 
-Megnyithatsz egy modellt, például **Biology → Flocking**.
+Megnyithatsz egy modellt, például a **Biology &rightarrow; Flocking** modellt.
 
-### Főbb elvek
+### Fő elvek
 
-A modell megnyitása után a NetLogo fő képernyőjére kerülsz. Itt egy minta modell, amely a farkasok és juhok populációját írja le véges erőforrások (fű) mellett.
+A modell megnyitása után a fő NetLogo képernyőre jutsz. Itt egy minta modell, amely a farkasok és juhok populációját írja le véges erőforrások (fű) mellett.
 
-![NetLogo Main Screen](../../../../../translated_images/NetLogo-Main.32653711ec1a01b3cab22ec0b148e64193d0b979b055285bef329d5e3d6958c5.hu.png)
+![NetLogo Főképernyő](../../../../../translated_images/hu/NetLogo-Main.32653711ec1a01b3.webp)
 
-> Dmitry Soshnikov által készített képernyőkép
+> Dmitry Soshnikov képernyőképe
 
-Ezen a képernyőn láthatod:
+Ezen a képernyőn a következőket láthatod:
 
-* Az **Interfész** szekciót, amely tartalmazza:
-  - A fő mezőt, ahol az ügynökök élnek
+* Az **Interfész** rész, amely tartalmazza:
+  - A fő mezőt, ahol az összes ügynök él
   - Különböző vezérlőelemeket: gombokat, csúszkákat stb.
-  - Grafikonokat, amelyeken a szimuláció paramétereit jelenítheted meg
-* A **Kód** fület, amely tartalmazza a szerkesztőt, ahol a NetLogo programot írhatod
+  - Grafikonokat, amelyekkel megjelenítheted a szimuláció paramétereit
+* A **Kód** fület, amely szerkesztőt tartalmaz, ahol NetLogo programot írhatsz
 
-A legtöbb esetben az interfész tartalmaz egy **Setup** gombot, amely inicializálja a szimuláció állapotát, és egy **Go** gombot, amely elindítja a végrehajtást. Ezeket a megfelelő kezelők kezelik a kódban, amelyek így néznek ki:
+A legtöbb esetben az interfészen található egy **Setup** gomb, amely inicializálja a szimuláció állapotát, és egy **Go** gomb, amely elindítja a végrehajtást. Ezeket a kód megfelelő kezelői irányítják, amelyek így néznek ki:
 
 ```
 to go [
@@ -92,54 +83,77 @@ to go [
 
 A NetLogo világa a következő objektumokból áll:
 
-* **Ügynökök** (teknősök), amelyek mozoghatnak a mezőn, és végezhetnek valamilyen tevékenységet. Az ügynököket a `ask turtles [...]` szintaxissal utasíthatod, és a zárójelek közötti kódot minden ügynök *teknős módban* hajtja végre.
-* **Foltok** (patches), amelyek a mező négyzet alakú területei, ahol az ügynökök élnek. Hivatkozhatsz az ugyanazon a folton lévő összes ügynökre, vagy megváltoztathatod a foltok színét és egyéb tulajdonságait. A foltokat is utasíthatod a `ask patches` paranccsal.
-* **Megfigyelő** (observer), amely egy egyedi ügynök, és a világot irányítja. Az összes gombkezelő *megfigyelő módban* fut.
+* **Ügynökök** (teknősök), amelyek mozoghatnak a mezőn és cselekedhetnek. Az ügynököket a `ask turtles [...]` szintaxissal irányítod, és a zárójelben lévő kódot az összes ügynök végrehajtja *teknős módban*.
+* A **patch-ek** a mező négyzet alakú részei, ahol az ügynökök élnek. Hivatkozhatsz az összes ugyanazon patch-en lévő ügynökre, vagy megváltoztathatod a patch színeit és egyéb tulajdonságait. A `ask patches` parancsal is kérhetsz cselekvést.
+* Az **Observer** egy egyedi ügynök, amely irányítja a világot. Minden gombkezelő *observer módban* fut.
 
-> ✅ A többügynökös környezet szépsége abban rejlik, hogy a teknős módban vagy folt módban futó kódot az összes ügynök párhuzamosan hajtja végre. Így kevés kód megírásával és az egyes ügynökök viselkedésének programozásával komplex szimulációs rendszer viselkedését hozhatod létre.
+> ✅ Egy több-ügynökös környezet szépsége, hogy a teknős mód vagy patch mód kódot párhuzamosan, egyszerre hajtja végre az összes ügynök, így kis kóddal, egyéni viselkedés programozásával összetett viselkedést alakíthatsz ki az egész szimulációban.
 
-### Flocking
+### Fajcsapódás
 
-A többügynökös viselkedés példájaként vizsgáljuk meg a **[Flocking](https://en.wikipedia.org/wiki/Flocking_(behavior))** jelenséget. A Flocking egy összetett minta, amely nagyon hasonlít arra, ahogyan a madárrajok repülnek. Ha figyeled őket, azt gondolhatod, hogy valamilyen kollektív algoritmust követnek, vagy hogy valamilyen *kollektív intelligenciával* rendelkeznek. Azonban ez az összetett viselkedés akkor jön létre, amikor minden egyes ügynök (ebben az esetben egy *madár*) csak a közvetlen közelében lévő ügynököket figyeli, és három egyszerű szabályt követ:
+A több-ügynökös viselkedés példájaként nézzük meg a **[Flocking](https://en.wikipedia.org/wiki/Flocking_(behavior))**-et. A flocking egy összetett minta, amely nagyon hasonlít a madárcsoportok repülési mintázatához. Repülésüket figyelve azt gondolhatod, hogy valamilyen kollektív algoritmust követnek, vagy hogy valamilyen *kollektív intelligenciával* rendelkeznek. Ez az összetett viselkedés akkor keletkezik, amikor az egyes ügynök (itt *madár*) csak a rövid távolságra lévő más ügynököket figyeli, és három egyszerű szabályt követ:
 
-* **Igazodás** – az ügynök a szomszédos ügynökök átlagos irányába fordul
-* **Kohézió** – az ügynök a szomszédok átlagos pozíciója felé próbál haladni (*hosszú távú vonzás*)
-* **Elválás** – ha túl közel kerül más madarakhoz, távolodni próbál (*rövid távú taszítás*)
+* **Igazodás** - a szomszédos ügynökök átlagos irányába tart
+* **Összetartás** - a szomszédok átlagos pozíciója felé tart (*hosszútávú vonzás*)
+* **Elválasztás** - ha túl közel kerül más madarakhoz, elmozog (*rövid távú taszítás*)
 
-Futtathatod a flocking példát, és megfigyelheted a viselkedést. Állíthatod a paramétereket is, például az *elválás mértékét* vagy a *látótávolságot*, amely meghatározza, hogy egy madár milyen messzire lát. Figyeld meg, hogy ha a látótávolságot 0-ra csökkented, minden madár megvakul, és a flocking megszűnik. Ha az elválást 0-ra csökkented, minden madár egy egyenes vonalba gyűlik.
+Lefuttathatod a flocking példát és megfigyelheted a viselkedést. Beállíthatsz paramétereket is, például az *elválasztás mértékét* vagy a *látótávolságot*, amely meghatározza, milyen messzire lát a madár. Ha a látótávolságot 0-ra csökkented, a madarak megvakulnak, és a flocking megszűnik. Ha az elválasztást 0-ra állítod, a madarak egy egyenes vonalba gyűlnek össze.
 
-> ✅ Válts a **Kód** fülre, és nézd meg, hol vannak a flocking három szabálya (igazodás, kohézió és elválás) a kódban megvalósítva. Figyeld meg, hogy csak azokra az ügynökökre hivatkozunk, amelyek a látótávolságon belül vannak.
+> ✅ Váltasz a **Kód** fülre és nézd meg, hol vannak megvalósítva a flocking három szabálya (igazodás, összetartás és elválasztás). Figyeld meg, hogy csak azokat az ügynököket veszi figyelembe, amelyek látótávolságon belül vannak.
 
-### Egyéb modellek, amelyeket érdemes megnézni
+### Egyéb modellek megtekintése
 
-Van néhány további érdekes modell, amelyeket kipróbálhatsz:
+Van néhány érdekes modell, amellyel kísérletezhetsz:
 
-* **Art → Fireworks** bemutatja, hogyan tekinthető egy tűzijáték az egyes tűzcsóvák kollektív viselkedésének
-* **Social Science → Traffic Basic** és **Social Science → Traffic Grid** bemutatja a városi forgalom modelljét 1D-ben és 2D rácson, lámpákkal vagy anélkül. Minden autó a következő szabályokat követi:
-   - Ha az előtte lévő hely üres – gyorsít (egy bizonyos maximális sebességig)
-   - Ha akadályt lát maga előtt – fékez (és állíthatod, hogy milyen messzire lát a sofőr)
-* **Social Science → Party** bemutatja, hogyan csoportosulnak az emberek egy koktélpartin. Megtalálhatod azokat a paraméterkombinációkat, amelyek a csoport boldogságának leggyorsabb növekedéséhez vezetnek.
+* **Art &rightarrow; Fireworks** bemutatja, hogyan tekinthetjük a tűzijátékot egyéni tűzáramok kollektív viselkedésének
+* **Social Science &rightarrow; Traffic Basic** és **Social Science &rightarrow; Traffic Grid** modellezik a városi forgalmat 1D és 2D hálózaton, közlekedési lámpákkal vagy anélkül. A szimulációban minden autó a következő szabályokat követi:
+   - Ha előtte üres hely van - gyorsít (egy megadott maximális sebességig)
+   - Ha akadályt lát előtte - fékez (szabályozhatod, milyen messzire lát a sofőr)
+* **Social Science &rightarrow; Party** bemutatja, hogyan csoportosulnak az emberek egy koktélpartin. Megtalálhatod azokat a paraméterkombinációkat, amelyek a leggyorsabb boldogság-növekedést eredményezik a csoportban.
 
-Amint ezekből a példákból láthatod, a többügynökös szimulációk nagyon hasznosak lehetnek egy olyan komplex rendszer viselkedésének megértéséhez, amely egyénekből áll, akik ugyanazt vagy hasonló logikát követik. Használhatók virtuális ügynökök, például [NPC-k](https://en.wikipedia.org/wiki/NPC) irányítására számítógépes játékokban, vagy ügynökök irányítására 3D animált világokban.
+Ahogy ezekből a példákból láthatod, a több-ügynökös szimulációk igen hasznosak lehetnek összetett rendszerek viselkedésének megértésében, ahol az egyéni részek ugyanazt vagy hasonló logikát követnek. Használhatók virtuális ügynökök irányítására is, például [NPC-k](https://en.wikipedia.org/wiki/NPC) számítógépes játékokban vagy ügynökök 3D animált világokban.
 
-## Deliberatív ügynökök
+## Megfontolt ügynökök
 
-A fent leírt ügynökök nagyon egyszerűek, és valamilyen algoritmus segítségével reagálnak a környezet változásaira. Ezeket **reaktív ügynököknek** nevezzük. Azonban néha az ügynökök képesek érvelni és megtervezni a cselekvéseiket, ebben az esetben **deliberatív ügynököknek** nevezzük őket.
+A fent ismertetett ügynökök nagyon egyszerűek, környezetváltozásokra reagálnak valamilyen algoritmussal. Ezek az úgynevezett **reaktív ügynökök**. Ugyanakkor néha az ügynökök képesek érvelni és tervezni, amely esetben **megfontolt** ügynököknek hívjuk őket.
 
-Egy tipikus példa lehet egy személyes ügynök, amely egy embertől kapott utasítást, hogy foglaljon le egy nyaralási utat. Tegyük fel, hogy az interneten sok ügynök él, akik segíthetnek neki. Az ügynöknek kapcsolatba kell lépnie más ügynökökkel, hogy megtudja, milyen járatok érhetők el, milyen árakon érhetők el a szállodák különböző időpontokban, és meg kell próbálnia a legjobb árat kialkudni. Amikor a nyaralási terv elkészül és a tulajdonos jóváhagyja, az ügynök folytathatja a foglalást.
+Egy tipikus példa lehet egy személyes ügynök, amely emberi utasítást kap egy nyaralási túra lefoglalására. Tegyük fel, hogy az interneten sok más ügynök él, akik segíthetnek. Kapcsolatba kell lépnie más ügynökökkel, hogy megtudja, milyen járatok elérhetők, mennyibe kerülnek a hotelek különböző időpontokban, és megpróbálja a legjobb árat kialkudni. Amikor a nyaralási terv elkészül és a tulajdonos megerősíti, tovább léphet a foglalásra.
 
 Ehhez az ügynököknek **kommunikálniuk** kell. A sikeres kommunikációhoz szükségük van:
 
-* Valamilyen **szabványos nyelvre a tudás cseréjéhez**, például [Knowledge Interchange Format](https://en.wikipedia.org/wiki/Knowledge_Interchange_Format) (KIF) és [Knowledge Query and Manipulation Language](https://en.wikipedia.org/wiki/Knowledge_Query_and_Manipulation_Language) (KQML). Ezeket a nyelveket a [beszédaktus-elmélet](https://en.wikipedia.org/wiki/Speech_act) alapján tervezték.
-* Ezeknek a nyelveknek tartalmazniuk kell valamilyen **tárgyalási protokollokat**, amelyek különböző **aukciótípusokon** alapulnak.
-* Egy **közös ontológiára**, hogy ugyanazokra a fogalmakra hivatkozzanak, ismerve azok szemantikáját
-* Egy módra, hogy **felfedezzék**, mit tudnak tenni a különböző ügynökök, szintén valamilyen ontológia alapján
+* Néhány **szabványos nyelvre a tudáscseréhez**, mint például a [Knowledge Interchange Format](https://en.wikipedia.org/wiki/Knowledge_Interchange_Format) (KIF) és a [Knowledge Query and Manipulation Language](https://en.wikipedia.org/wiki/Knowledge_Query_and_Manipulation_Language) (KQML). Ezeket a nyelveket a [Beszédaktus-elmélet](https://en.wikipedia.org/wiki/Speech_act) alapján tervezték.
+* Ezeknek a nyelveknek tartalmazniuk kell **tárgyalási protokollokat**, különböző **aukciótípusok** alapján.
+* Egy **közös ontológiára** van szükség, hogy ugyanazokat a fogalmakat használják, ismerve azok jelentését
+* Olyan módra, amellyel **feltérképezhetik**, hogy mit tudnak a különböző ügynökök, szintén ontológia alapján
 
-A deliberatív ügynökök sokkal összetettebbek, mint a reaktívak, mert nemcsak a környezet változásaira reagálnak, hanem képesek *kezdeményezni* is cselekvéseket. Az egyik javasolt architektúra a deliberatív ügynökökhöz az úgynevezett Hiedelem-Vágy-Szándék (Belief-Desire-Intention, BDI) ügynök:
+A megfontolt ügynökök sokkal összetettebbek a reaktívaknál, mert nem csak a környezetváltozásokra reagálnak, hanem képesnek kell lenniük az *akciók kezdeményezésére* is. Az egyik javasolt architektúra egy megfontolt ügynökre a Belief-Desire-Intention (BDI) modell:
 
-* **Hiedelmek** alkotják az ügynök környezetéről szóló tudásbázist. Ez lehet egy tudásbázis vagy szabályok halmaza, amelyeket az ügynök alkalmazhat egy adott helyzetre.
-* **Vágyak** határozzák meg, hogy mit akar az ügynök elérni, azaz a céljait. Például a fent említett személyes asszisztens ügynök célja egy utazás lefoglalása, míg egy szállodai ügynök célja a profit maximalizálása.
-* **Szándékok** azok a konkrét cselekvések, amelyeket az ügynök a céljai eléréséhez tervez. A cselekvések általában megváltoztatják a környezetet,
+* A **Hiedelmek** alkotnak egy tudásbázist az ügynök környezetéről. Ez lehet egy tudásbázis vagy szabálygyűjtemény, amelyet az ügynök alkalmazhat a környezet adott helyzetére.
+* A **Vágyak** meghatározzák, mit akar az ügynök, azaz a céljait. Például a személyes asszisztens ügynök célja egy túra lefoglalása, a hotel ügynök célja a profit maximalizálása.
+* A **Szándékok** azok a konkrét cselekvések, amelyeket az ügynök tervez, hogy elérje céljait. Ezek a cselekvések általában megváltoztatják a környezetet, és kommunikációt indítanak más ügynökökkel.
 
-**Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+Több-ügynökös rendszerek építéséhez elérhetők platformok, mint például a [JADE](https://jade.tilab.com/). [Ez a tanulmány](https://arxiv.org/ftp/arxiv/papers/2007/2007.08961.pdf) áttekintést ad a több-ügynökös platformokról, továbbá rövid történelemről és különböző felhasználási esetekről.
+
+## Összefoglalás
+
+A több-ügynökös rendszerek sokféle formát ölthetnek, és sokféle alkalmazásban használhatók.
+Mindegyik az egyéni ügynök egyszerűbb viselkedésére összpontosít, és a rendszer egészének összetettebb viselkedése a **szinergikus hatás** eredménye.
+
+## 🚀 Kihívás
+
+Vidd ki ezt a leckét a valós világba, és próbálj meg elképzelni egy olyan több-ügynökös rendszert, amely megold egy problémát. Mit kellene például egy több-ügynökös rendszernek tennie egy iskolabusz útvonalának optimalizálásához? Hogyan működhetne egy pékségben?
+
+## [Előadás utáni kvíz](https://ff-quizzes.netlify.app/en/ai/quiz/46)
+
+## Áttekintés és önálló tanulás
+
+Nézd át az ilyen rendszerek ipari alkalmazását. Válassz egy területet, mint például a gyártás vagy a videojáték-ipar, és fedezd fel, hogyan használhatók a több-ügynökös rendszerek egyedi problémák megoldására.
+
+## [NetLogo feladat](assignment.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi nyilatkozat**:
+Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javasolunk. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely ebből a fordításból ered.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

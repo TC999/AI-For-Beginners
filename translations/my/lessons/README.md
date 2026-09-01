@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5fef1a0b22498d7188959e2a2cb08af7",
-  "translation_date": "2025-08-25T21:23:39+00:00",
-  "source_file": "lessons/README.md",
-  "language_code": "my"
-}
--->
 # အကျဉ်းချုပ်
 
-![အကျဉ်းချုပ်ကို ရေးဆွဲထားသော ပုံ](../../../translated_images/ai-overview.0857791951d19500d0ef8b803d77110c738dcafc52306e6d68724742cd4af167.my.png)
+![အကျဉ်းချုပ်ကို ရေးဆွဲထားသော ပုံ](https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/sketchnotes/ai-overview.png)
 
 > [Tomomi Imura](https://twitter.com/girlie_mac) မှ ရေးဆွဲထားသော Sketchnote
 

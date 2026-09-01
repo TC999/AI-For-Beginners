@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7df19702b8d2d3f7c4238c51bec2c8fc",
-  "translation_date": "2025-08-26T00:38:02+00:00",
-  "source_file": "lessons/0-course-setup/how-to-run.md",
-  "language_code": "my"
-}
--->
-# ကုဒ်ကို အလုပ်လုပ်စေခြင်း
+# ကုဒ်ကို run လုပ်နည်း
 
-ဒီသင်ခန်းစာမှာ သင်လုပ်ဆောင်လိုတဲ့ အလုပ်လုပ်နိုင်တဲ့ နမူနာများနဲ့ လက်တွေ့လေ့ကျင့်ခန်းများ ပါဝင်ပါတယ်။ ဒါကို အလုပ်လုပ်စေဖို့အတွက် Python ကုဒ်ကို Jupyter Notebooks မှာ အလုပ်လုပ်နိုင်ဖို့ လိုအပ်ပါတယ်။ သင့်မှာ ကုဒ်ကို အလုပ်လုပ်စေဖို့ အနည်းဆုံး အောက်ပါနည်းလမ်းများ ရှိပါတယ်:
+ဒီသင်ရိုးတွင် run လုပ်လိုစိတ်ရှိမယ့် executable ဥပမာနဲ့ စမ်းသပ်မှုတွေ များပြားနေပါတယ်။ ဒါကိုလုပ်ဖို့အတွက်, သင်ရိုးအချက်အချာတွင်ပါဝင်တဲ့ Jupyter Notebooks ဂြိုဟ်တွင် Python ကုဒ်ကို run လုပ်နိုင်စွမ်းလိုအပ်ပါတယ်။ Run လုပ်ရာမှာတော့ ရွေးချယ်စရာစုံရှိပါတယ်။
 
-## သင့်ကွန်ပျူတာမှာ တိုက်ရိုက် အလုပ်လုပ်စေခြင်း
+## ကိုယ့်ကွန်ပျူတာပေါ်မှာ locally run လုပ်ခြင်း
 
-သင့်ကွန်ပျူတာမှာ တိုက်ရိုက် အလုပ်လုပ်စေဖို့ Python ရဲ့ အချို့သော version တစ်ခုခုကို ထည့်သွင်းထားဖို့ လိုအပ်ပါတယ်။ **[miniconda](https://conda.io/en/latest/miniconda.html)** ကို ထည့်သွင်းဖို့ အကြံပြုပါတယ် - ဒါဟာ `conda` package manager ကို အသုံးပြုနိုင်တဲ့ Python **virtual environments** အတွက် အလွန်ပေါ့ပါးတဲ့ installation ဖြစ်ပါတယ်။
+ကိုယ့်ကွန်ပျူတာပေါ်မှာ locally run လုပ်ဖို့ Python installation လိုအပ်ပါတယ်။ တစ်ခုအကြံပြုချင်တာက **[miniconda](https://conda.io/en/latest/miniconda.html)** ကို install လုပ်တာပါ - ဒါက လွယ်ကူဘဲ 설치 ဖြစ်ပြီး Python နဲ့အမျိုးမျိုးသော **virtual environments** အတွက် `conda` package manager ကို support လုပ်ပါတယ်။
 
-miniconda ကို ထည့်သွင်းပြီးနောက် သင့်မှာ repository ကို clone လုပ်ပြီး ဒီသင်ခန်းစာအတွက် အသုံးပြုမယ့် virtual environment ကို ဖန်တီးဖို့ လိုအပ်ပါတယ်:
+miniconda install လုပ်ပြီးတဲ့နောက်, repository ကို clone လုပ်ပြီး သင်တန်းအတွက် အသုံးပြုမယ့် virtual environment တစ်ခုကို တည်ဆောက်ပါ။
 
 ```bash
 git clone http://github.com/microsoft/ai-for-beginners
@@ -24,53 +15,57 @@ conda env create --name ai4beg --file .devcontainer/environment.yml
 conda activate ai4beg
 ```
 
-### Visual Studio Code နဲ့ Python Extension ကို အသုံးပြုခြင်း
+### Visual Studio Code ကို Python Extension နှင့် သုံးခြင်း
 
-ဒီသင်ခန်းစာကို အသုံးပြုဖို့ အကောင်းဆုံးနည်းလမ်းက [Visual Studio Code](http://code.visualstudio.com/?WT.mc_id=academic-77998-cacaste) ကို [Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python&WT.mc_id=academic-77998-cacaste) နဲ့ ဖွင့်ခြင်းဖြစ်ပါတယ်။
+ဒီသင်ရိုးကို အကောင်းဆုံးအသုံးပြုဖို့အတွက် [Visual Studio Code](http://code.visualstudio.com/?WT.mc_id=academic-77998-cacaste) ကို [Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python&WT.mc_id=academic-77998-cacaste) နဲ့ကောင်းကောင်းဖွင့်သုံးပါ။
 
-> **Note**: သင် repository ကို clone လုပ်ပြီး VS Code မှာ directory ကို ဖွင့်တဲ့အခါ Python extensions ကို ထည့်သွင်းဖို့ အလိုအလျောက် အကြံပြုပါလိမ့်မယ်။ Miniconda ကို အထက်မှာ ဖော်ပြထားတဲ့အတိုင်း ထည့်သွင်းဖို့လည်း လိုအပ်ပါတယ်။
+> **မှတ်ချက်**: repository ကို clone လုပ်ပြီး VS Code မှာဖွင့်မယ်ဆိုရင် Python extensions ကို install လုပ်ဖို့ အလိုအလျောက် sugesst လုပ်ပါလိမ့်မယ်။ အထက်ဖေါ်ပြခဲ့တဲ့အတိုင်း miniconda ကိုလည်း install လုပ်ထားဖို့လိုပါပဲ။
 
-> **Note**: VS Code က repository ကို container မှာ ပြန်ဖွင့်ဖို့ အကြံပြုလျှင်၊ local Python installation ကို အသုံးပြုဖို့ container ကို ဖွင့်ခြင်းကို ငြင်းပယ်ဖို့ လိုအပ်ပါတယ်။
+> **မှတ်ချက်**: VS Code က repository ကို container တစ်ခုအဖြစ်ပြန်ဖွင့်ဖို့ sugesst လုပ်လာရင် local Python installation သုံးဖို့ အဲ့ဒီတောင်းဆိုမှုကို ပယ်ချသင့်ပါတယ်။
 
-### Browser မှာ Jupyter ကို အသုံးပြုခြင်း
+### Browser မှ Jupyter သုံးခြင်း
 
-သင့်ကွန်ပျူတာမှာ Browser မှာ Jupyter environment ကို အသုံးပြုနိုင်ပါတယ်။ အမှန်အားဖြင့် classical Jupyter နဲ့ Jupyter Hub နှစ်ခုလုံးမှာ auto-completion, code highlighting စတဲ့ အဆင်ပြေတဲ့ development environment တွေ ရှိပါတယ်။
+ကိုယ့်ကိုယ်ပိုင်ကွန်ပျူတာပေါ်မှာ browser ကနေ Jupyter environment ကိုသုံးနိုင်ပါတယ်။ classic Jupyter နဲ့ JupyterHub ဖွင့်တဲ့အခါမှာ auto-completion, code highlighting စတာတွေပါဝင်တဲ့ ထောက်ပံ့ရေးကောင်းတဲ့ဖွံ့ဖြိုးရေး အခြေအနေကိုရရှိပါတယ်။
 
-Jupyter ကို locally စတင်ဖို့ သင့်သင်ခန်းစာ directory ကို သွားပြီး အောက်ပါ command ကို အလုပ်လုပ်စေပါ:
+Jupyter ကို locally စလိုချင်ရင် သင်တန်းဖိုင်ရှိတဲ့ directory ကို သွားပြီး အောက်ပါ command ကို run လုပ်ပါ -
 
 ```bash
 jupyter notebook
-```  
-or  
+```
+or
 ```bash
 jupyterhub
-```  
-ပြီးရင် `.ipynb` ဖိုင်တွေကို သွားပြီး ဖွင့်ပြီး အလုပ်လုပ်နိုင်ပါပြီ။
+```
+ပြီးရင် `.ipynb` ဖိုင်တွေကိုရွေးပြီးဖွင့်နိုင်ပါပြီ၊ မိမိလုပ်ဆောင်စတင်နိုင်ပါပြီ။
 
-### Container မှာ အလုပ်လုပ်စေခြင်း
+### Container ထဲမှာ run လုပ်ခြင်း
 
-Python installation ကို အစားထိုးတဲ့ နည်းလမ်းတစ်ခုက container မှာ အလုပ်လုပ်စေခြင်းဖြစ်ပါတယ်။ ကျွန်တော်တို့ရဲ့ repository မှာ `.devcontainer` folder ပါဝင်ပြီး ဒီ repo အတွက် container ကို ဘယ်လို build လုပ်မလဲဆိုတာကို သတ်မှတ်ထားပါတယ်။ ဒါကြောင့် VS Code က code ကို container မှာ ပြန်ဖွင့်ဖို့ အကြံပြုပါလိမ့်မယ်။ ဒါကို အသုံးပြုဖို့ Docker installation လိုအပ်ပြီး အနည်းငယ် ပိုရှုပ်ထွေးပါတယ်၊ ဒါကြောင့် အတွေ့အကြုံရှိတဲ့ အသုံးပြုသူများအတွက် အကြံပြုပါတယ်။
+Python installation အစား container ထဲ run လုပ်နိုင်ပါတယ်။ ကျွန်တော်တို့ repo မှာ `.devcontainer` ဆိုတဲ့ folder တစ်ခု ထည့်ထားပြီး container ပြုပြင်ဖွဲ့စည်းနည်း ဖော်ပြပေးထားတာကြောင့် VS Code မှာ container အဖြစ် အလွယ်တကူဖွင့်စီမံရန် အခွင့်အရေးပေးပါတယ်။ ဒါအတွက် Docker installation လိုအပ်ပြီး အနည်းငယ်ရှုပ်ထွေးတာကြောင့် အတွေ့အကြုံရှိသူတွေကို အကြံပြုပါတယ်။
 
-## Cloud မှာ အလုပ်လုပ်စေခြင်း
+## Cloud မှာ run လုပ်ခြင်း
 
-Python ကို locally ထည့်သွင်းချင်မရင်၊ Cloud resources ရှိရင် Cloud မှာ အလုပ်လုပ်စေဖို့ ကောင်းတဲ့ နည်းလမ်းတစ်ခုလည်း ရှိပါတယ်။ အောက်ပါနည်းလမ်းများကို အသုံးပြုနိုင်ပါတယ်:
+Python ကို ကိုယ့်ကွန်ပျူတာမှာ install မလုပ်ချင်ဘူးဆိုရင်နဲ့ cloud resource တွေကိုအသုံးချနိုင်တယ်ဆိုရင် cloud မှာ run လုပ်ရတာကောင်းသောရွေးချယ်စရာတခုဖြစ်ပါတယ်။ တွဲချိတ် run လုပ်နည်းအများအပြားရှိတယ် -
 
-* **[GitHub Codespaces](https://github.com/features/codespaces)** ကို အသုံးပြုခြင်း။ ဒါဟာ GitHub မှာ သင့်အတွက် ဖန်တီးထားတဲ့ virtual environment ဖြစ်ပြီး VS Code browser interface မှတစ်ဆင့် အသုံးပြုနိုင်ပါတယ်။ Codespaces ရှိရင် repo မှာ **Code** button ကို click လုပ်ပြီး codespace ကို စတင်နိုင်ပါတယ်၊ အချိန်မရွေး အလုပ်လုပ်နိုင်ပါပြီ။
-* **[Binder](https://mybinder.org/v2/gh/microsoft/ai-for-beginners/HEAD)** ကို အသုံးပြုခြင်း။ [Binder](https://mybinder.org) ဟာ GitHub မှာ code တွေကို စမ်းသပ်ဖို့ Cloud မှာ အခမဲ့ computing resources ပေးတဲ့ နည်းလမ်းဖြစ်ပါတယ်။ Repository ရဲ့ front page မှာ Binder ကို ဖွင့်ဖို့ button ရှိပါတယ် - ဒါဟာ binder site ကို အလွယ်တကူ ပို့ပြီး underlying container ကို build လုပ်ပြီး Jupyter web interface ကို seamless အဖြစ် စတင်ပေးပါလိမ့်မယ်။
+* **[GitHub Codespaces](https://github.com/features/codespaces)** ကိုသုံးခြင်း - GitHub ပေါ်မှာ virtual environment တစ်ခု ဖန်တီးပေးပြီး VS Code browser interface ကနေ ဝင်ရောက် အသုံးပြုနိုင်ပါတယ်။ Codespaces ကိုရနိုင်သူဆိုရင် repo မှာ **Code** ခလုတ်ကိုနှိပ်ပြီး codespace ကို စတင်၍ အချိန်မကုန် run လုပ်လို့ရပါတယ်။
+* **[Binder](https://mybinder.org/v2/gh/microsoft/ai-for-beginners/HEAD)** ကိုသုံးခြင်း။ [Binder](https://mybinder.org) က GitHub အတွက် cloud ပေါ်က ဝေစုစရင်းလွတ်လပ်သော computing resource ကို ပေးသည်။ Repo ကို Binder နှင့်ဖွင့်ရန် အရင်စာမျက်နှာမှာ ခလုတ်ရှိပြီး အဲ့ဒီနေရာကို ဦးတည်သွားသလို container တည်ဆောက်ပြီး Jupyter web interface ကို မည်သည့်အဆင်ပြေလွယ်ကူစွာ စတင်ပေးပါမယ်။
 
-> **Note**: Binder ဟာ အချို့ web resources ကို အသုံးချမှုကို ကန့်သတ်ထားပါတယ်။ ဒါဟာ public Internet မှာ models နဲ့ datasets တွေကို fetch လုပ်တဲ့ code တွေ အလုပ်မလုပ်နိုင်စေပါလိမ့်မယ်။ Workarounds တွေ ရှာဖွေရန် လိုအပ်နိုင်ပါတယ်။ Binder မှာ ပေးထားတဲ့ compute resources တွေက အခြေခံဖြစ်ပြီး training အလွန်နှေးပါလိမ့်မယ်၊ အထူးသဖြင့် နောက်ပိုင်းမှာ ရှုပ်ထွေးတဲ့ သင်ခန်းစာတွေမှာ။
+> **မှတ်ချက်**: မမှန်ကန်သင့်စွဲမှုများကို ကာကွယ်ရန် Binder မှ အချို့ web resource များကို ပိတ်ထားသည်။ ဒါက model များနဲ့ ဒေတာကို ပြင်ပ အင်တာနက်မှ ရယူတဲ့ ကုဒ်များ အလုပ်မလုပ်ပဲရပ်တန့်နိုင်သလို အခြားနည်းလမ်းရှာဖွေရန် လိုအပ်နိုင်ပါတယ်။ ထို့အပြင် Binder ကပေးတဲ့ တိုက္ခိုက်မှု resource များမကြာခဏမလုံလောက်ကြောင်းကြောင့် စိတ်ဝင်စားဖွယ် training တွေ အထူးသဖြင့် နောက်ပိုင်း ရှုပ်ထွေးတဲ့ သင်ခန်းစာတွင် နှေးကွေးတတ်ပါတယ်။
 
-## GPU ပါဝင်တဲ့ Cloud မှာ အလုပ်လုပ်စေခြင်း
+## GPU ပါရှိသည့် Cloud မှာ run လုပ်ခြင်း
 
-ဒီသင်ခန်းစာရဲ့ နောက်ပိုင်းမှာ GPU support ရှိရင် training အလွန်မြန်နိုင်ပါတယ်၊ မဟုတ်ရင် training အလွန်နှေးပါလိမ့်မယ်။ သင့်မှာ Cloud ကို [Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-77998-cacaste) သို့မဟုတ် သင့်အဖွဲ့အစည်းမှတစ်ဆင့် အသုံးပြုနိုင်ရင် အောက်ပါနည်းလမ်းများကို လိုက်နာနိုင်ပါတယ်:
+ဒီသင်ရိုးအချို့ နောက်ပိုင်းသင်ခန်းစာများအတွက် GPU support ရှိဖို့ အရေးကြီးပါတယ်။ နမူနာအတွက် model training က မဖြစ်မနေမြန်ကာတတ်ပါတယ်။ cloud ကို အသုံးပြုခြင်းအထူးသဖြင့် [Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-77998-cacaste) သို့မဟုတ် သင်တန်းတက်နေလို့ ရနိုင်တဲ့ အဖွဲ့အစည်းမှ cloud ကို မှတ်ပုံတင်ထားပြီးပိုမိုကောင်းမွန်သော အစီအစဉ်များအတွက် အောက်ပါနည်းလမ်းများ ရှိပါတယ်။
 
-* [Data Science Virtual Machine](https://docs.microsoft.com/learn/modules/intro-to-azure-data-science-virtual-machine/?WT.mc_id=academic-77998-cacaste) ကို ဖန်တီးပြီး Jupyter မှတစ်ဆင့် ချိတ်ဆက်ပါ။ Repo ကို machine မှာ တိုက်ရိုက် clone လုပ်ပြီး သင့်သင်ခန်းစာကို စတင်နိုင်ပါတယ်။ NC-series VMs တွေမှာ GPU support ရှိပါတယ်။
+* [Data Science Virtual Machine](https://docs.microsoft.com/learn/modules/intro-to-azure-data-science-virtual-machine/?WT.mc_id=academic-77998-cacaste) တစ်ခု ဖန်တီးပြီး Jupyter နဲ့ချိတ်ဆက်ပါ။ အဲဒီအခြေအနေမှာ repo ကို တိုက်ရိုက် machine ထဲ clone လုပ်ပြီး သင်ယူစတင်နိုင်ပါတယ်။ NC-series VM များတွင် GPU support ပါဝင်သည်။
 
-> **Note**: Azure for Students အပါအဝင် subscription အချို့မှာ GPU support ကို အလိုအလျောက် မပေးထားပါဘူး။ GPU cores အပိုတောင်းဖို့ technical support request တင်ဖို့ လိုအပ်နိုင်ပါတယ်။
+> **မှတ်ချက်**: Azure for Students အပါအဝင် အချို့ subscription များတွင် GPU support ကို ပူးတွဲပေးခြင်း မရှိနိုင်ပါ။ အပို GPU core များရရန် နည်းပညာဆိုင်ရာ မေးခွန်းတင်ရန် လိုအပ်တတ်ပါသည်။
 
-* [Azure Machine Learning Workspace](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-77998-cacaste) ကို ဖန်တီးပြီး Notebook feature ကို အသုံးပြုပါ။ [ဒီဗီဒီယို](https://azure-for-academics.github.io/quickstart/azureml-papers/) မှာ Azure ML notebook မှာ repository ကို clone လုပ်ပြီး အသုံးပြုပုံကို ပြထားပါတယ်။
+* [Azure Machine Learning Workspace](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-77998-cacaste) တည်ဆောက်ပြီး အဲဒီမှာ Notebook အပြင်ဆင်ချက်ကို အသုံးပြုနိုင်သည်။ [ဒီဗွီဒီယို](https://azure-for-academics.github.io/quickstart/azureml-papers/) မှာ Azure ML notebook တွင် repository ကို clone လုပ်ပြီး သုံးပုံပြပေးထားပါတယ်။
 
-Google Colab ကိုလည်း အသုံးပြုနိုင်ပြီး အခမဲ့ GPU support ပါဝင်ပါတယ်၊ Jupyter Notebooks တွေကို upload လုပ်ပြီး တစ်ခုချင်းစီကို အလုပ်လုပ်စေပါ။
+Google Colab ကိုလည်း အသုံးပြုနိုင်ပြီး ဒါဟာ အခမဲ့ GPU မှာရှိ၊ Jupyter Notebooks ကို တစ်ခါတိုင်းတင်ပြီး run လုပ်နိုင်ပါတယ်။
 
-**အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် ရှုလေ့လာသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားယူမှားမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ပြောကြားချက်**
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ စက်ကိရိယာဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အဖြစ် သတ်မှတ်သင့်သည်။ အရေးကြီးသည့် သတင်းအချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်သူဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုကွာခြားမှုများ သို့မဟုတ် မမှန်ကန်သော အသုံးပြုမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

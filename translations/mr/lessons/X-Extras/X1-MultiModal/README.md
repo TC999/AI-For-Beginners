@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-26T10:19:31+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "mr"
-}
--->
 # मल्टी-मोडल नेटवर्क्स
 
 NLP कार्यांसाठी ट्रान्सफॉर्मर मॉडेल्सच्या यशानंतर, त्याच किंवा तत्सम आर्किटेक्चर संगणकीय दृष्टिकोन कार्यांसाठी लागू करण्यात आले. व्हिजन आणि नैसर्गिक भाषा क्षमता *एकत्र* करण्यासाठी मॉडेल्स तयार करण्याची वाढती आवड आहे. अशा प्रयत्नांपैकी एक OpenAI ने केला आहे, ज्याला CLIP आणि DALL.E म्हणतात.
@@ -15,7 +6,7 @@ NLP कार्यांसाठी ट्रान्सफॉर्मर �
 
 CLIP ची मुख्य कल्पना म्हणजे टेक्स्ट प्रॉम्प्ट्सची प्रतिमा सोबत तुलना करणे आणि प्रतिमा प्रॉम्प्टशी किती चांगली जुळते हे ठरवणे.
 
-![CLIP आर्किटेक्चर](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.mr.png)
+![CLIP आर्किटेक्चर](../../../../../translated_images/mr/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *[या ब्लॉग पोस्ट](https://openai.com/blog/clip/) मधून चित्र*
 
@@ -31,7 +22,7 @@ CLIP मॉडेल/लायब्ररी [OpenAI GitHub](https://github.com
 
 समजा आपल्याला प्रतिमा वर्गीकृत करायच्या आहेत, जसे की मांजरी, कुत्रे आणि माणसे. अशा परिस्थितीत, आपण मॉडेलला एक प्रतिमा आणि टेक्स्ट प्रॉम्प्ट्सची मालिका देऊ शकतो: "*मांजरीचे चित्र*", "*कुत्र्याचे चित्र*", "*माणसाचे चित्र*". परिणामी 3 संभाव्यतेच्या व्हेक्टरमध्ये आपल्याला फक्त सर्वाधिक मूल्य असलेल्या निर्देशांक निवडायचा आहे.
 
-![प्रतिमा वर्गीकरणासाठी CLIP](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.mr.png)
+![प्रतिमा वर्गीकरणासाठी CLIP](../../../../../translated_images/mr/clip-class.3af42ef0b2b19369.webp)
 
 > *[या ब्लॉग पोस्ट](https://openai.com/blog/clip/) मधून चित्र*
 
@@ -55,13 +46,13 @@ VQGAN बद्दल अधिक जाणून घेण्यासाठ�
 
 VQGAN आणि पारंपरिक GAN मधील एक महत्त्वाचा फरक म्हणजे पारंपरिक GAN कोणत्याही इनपुट व्हेक्टरवरून चांगली प्रतिमा तयार करू शकते, तर VQGAN कदाचित सुसंगत प्रतिमा तयार करणार नाही. त्यामुळे, प्रतिमा निर्मिती प्रक्रियेला पुढे मार्गदर्शन करणे आवश्यक आहे, आणि ते CLIP वापरून केले जाऊ शकते.
 
-![VQGAN+CLIP आर्किटेक्चर](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.mr.png)
+![VQGAN+CLIP आर्किटेक्चर](../../../../../translated_images/mr/vqgan.5027fe05051dfa31.webp)
 
 टेक्स्ट प्रॉम्प्टशी संबंधित प्रतिमा तयार करण्यासाठी, आपण काही रँडम एन्कोडिंग व्हेक्टरसह सुरुवात करतो जो VQGAN द्वारे प्रतिमा तयार करण्यासाठी पास केला जातो. नंतर CLIP चा वापर लॉस फंक्शन तयार करण्यासाठी केला जातो जो प्रतिमा टेक्स्ट प्रॉम्प्टशी किती चांगली जुळते हे दर्शवतो. त्यानंतर उद्दिष्ट म्हणजे हा लॉस कमी करणे, बॅक प्रोपोगेशन वापरून इनपुट व्हेक्टर पॅरामीटर्स समायोजित करणे.
 
 VQGAN+CLIP लागू करणारी एक उत्कृष्ट लायब्ररी [Pixray](http://github.com/pixray/pixray) आहे.
 
-![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.mr.png) |  ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.mr.png) | ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.mr.png)
+![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/mr/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/mr/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/mr/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 प्रॉम्प्ट *साहित्याच्या तरुण पुरुष शिक्षकाचा जलरंग पोर्ट्रेट जवळून* वरून तयार केलेले चित्र | प्रॉम्प्ट *संगणक विज्ञानाच्या तरुण महिला शिक्षकाचा तेल पोर्ट्रेट जवळून* वरून तयार केलेले चित्र | प्रॉम्प्ट *गणिताच्या वृद्ध पुरुष शिक्षकाचा तेल पोर्ट्रेट जवळून* वरून तयार केलेले चित्र
 
@@ -77,7 +68,7 @@ CLIP च्या विपरीत, DALL-E टेक्स्ट आणि प
 DALL.E 1 आणि 2 मधील मुख्य फरक म्हणजे DALL-E 2 अधिक वास्तववादी प्रतिमा आणि कला तयार करते.
 
 DALL-E सह प्रतिमा निर्मितीचे उदाहरण:
-![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.mr.png) |  ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.mr.png) | ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.mr.png)
+![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/mr/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/mr/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Pixray द्वारे तयार केलेले चित्र](../../../../../translated_images/mr/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 प्रॉम्प्ट *साहित्याच्या तरुण पुरुष शिक्षकाचा जलरंग पोर्ट्रेट जवळून* वरून तयार केलेले चित्र | प्रॉम्प्ट *संगणक विज्ञानाच्या तरुण महिला शिक्षकाचा तेल पोर्ट्रेट जवळून* वरून तयार केलेले चित्र | प्रॉम्प्ट *गणिताच्या वृद्ध पुरुष शिक्षकाचा तेल पोर्ट्रेट जवळून* वरून तयार केलेले चित्र
 

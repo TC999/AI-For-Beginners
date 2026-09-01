@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a52f000089c1d8906a4daa4ab1169b",
-  "translation_date": "2025-08-26T09:02:54+00:00",
-  "source_file": "lessons/4-ComputerVision/README.md",
-  "language_code": "mr"
-}
--->
 # संगणकीय दृष्टिकोन
 
-![संगणकीय दृष्टिकोन विषयाची रेखाचित्रात संक्षिप्त माहिती](../../../../translated_images/ai-computervision.6506ebebac3fbf76cdb78989d7d3dfea87e88285c0feaade53aa7804a22b248f.mr.png)
+![संगणकीय दृष्टिकोन विषयाची रेखाचित्रात संक्षिप्त माहिती](../../../../translated_images/mr/ai-computervision.6506ebebac3fbf76.webp)
 
 या विभागात आपण शिकणार आहोत:
 

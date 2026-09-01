@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a52f000089c1d8906a4daa4ab1169b",
-  "translation_date": "2025-08-24T20:49:24+00:00",
-  "source_file": "lessons/4-ComputerVision/README.md",
-  "language_code": "fr"
-}
--->
 # Vision par ordinateur
 
-![Résumé du contenu sur la vision par ordinateur sous forme de dessin](../../../../translated_images/ai-computervision.6506ebebac3fbf76cdb78989d7d3dfea87e88285c0feaade53aa7804a22b248f.fr.png)
+![Résumé du contenu sur la vision par ordinateur sous forme de dessin](../../../../translated_images/fr/ai-computervision.6506ebebac3fbf76.webp)
 
 Dans cette section, nous allons apprendre :
 

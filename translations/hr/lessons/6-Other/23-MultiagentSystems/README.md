@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1ddf651d7681b4449f9d09ea3b17911e",
-  "translation_date": "2025-08-25T23:25:21+00:00",
-  "source_file": "lessons/6-Other/23-MultiagentSystems/README.md",
-  "language_code": "hr"
-}
--->
-# Višestruki agentski sustavi
+# Višeagentski sustavi
 
-Jedan od mogućih načina postizanja inteligencije je takozvani **emergentni** (ili **sinergijski**) pristup, koji se temelji na činjenici da kombinirano ponašanje mnogih relativno jednostavnih agenata može rezultirati ukupno složenijim (ili inteligentnijim) ponašanjem sustava u cjelini. Teoretski, ovo se temelji na principima [Kolektivne inteligencije](https://en.wikipedia.org/wiki/Collective_intelligence), [Emergentizma](https://en.wikipedia.org/wiki/Global_brain) i [Evolucijske kibernetike](https://en.wikipedia.org/wiki/Global_brain), koji tvrde da sustavi višeg nivoa dobivaju neku vrstu dodane vrijednosti kada se pravilno kombiniraju iz sustava nižeg nivoa (tzv. *princip prijelaza metasustava*).
+Jedan od mogućih načina postizanja inteligencije je takozvani **emergentni** (ili **sinergijski**) pristup, koji se temelji na činjenici da kombinirano ponašanje mnogih relativno jednostavnih agenata može rezultirati ukupno složenijim (ili inteligentnijim) ponašanjem sustava u cjelini. Teoretski, ovo se temelji na principima [kolektivne inteligencije](https://en.wikipedia.org/wiki/Collective_intelligence), [emergentizma](https://en.wikipedia.org/wiki/Global_brain) i [evolucijske kibernetike](https://en.wikipedia.org/wiki/Global_brain), koji tvrde da sustavi višeg nivoa dobivaju neku vrstu dodane vrijednosti kada se pravilno kombiniraju iz sustava nižeg nivoa (tzv. *princip prijelaza metasustava*).
 
-## [Kviz prije predavanja](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/123)
+## [Kviz prije predavanja](https://ff-quizzes.netlify.app/en/ai/quiz/45)
 
-Smjer **Višestrukih agentskih sustava** pojavio se u AI-u 1990-ih kao odgovor na rast Interneta i distribuiranih sustava. Jedan od klasičnih udžbenika o AI-u, [Artificial Intelligence: A Modern Approach](https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach), fokusira se na pogled klasičnog AI-a iz perspektive višestrukih agentskih sustava.
+Smjer **višeagentskih sustava** pojavio se u AI-u 1990-ih kao odgovor na rast Interneta i distribuiranih sustava. Jedan od klasičnih udžbenika o AI-u, [Artificial Intelligence: A Modern Approach](https://en.wikipedia.org/wiki/Artificial_Intelligence:_A_Modern_Approach), fokusira se na klasični pogled na AI iz perspektive višeagentskih sustava.
 
-Središnji pojam višestrukog agentskog pristupa je pojam **Agent** - entitet koji živi u nekom **okruženju**, koje može percipirati i na koje može djelovati. Ovo je vrlo široka definicija, i može postojati mnogo različitih vrsta i klasifikacija agenata:
+Središnji pojam višeagentskog pristupa je **agent** - entitet koji živi u nekom **okruženju**, koje može opažati i na njega djelovati. Ovo je vrlo široka definicija, i može postojati mnogo različitih vrsta i klasifikacija agenata:
 
 * Prema sposobnosti zaključivanja:
    - **Reaktivni** agenti obično imaju jednostavno ponašanje tipa zahtjev-odgovor
@@ -28,18 +19,18 @@ Središnji pojam višestrukog agentskog pristupa je pojam **Agent** - entitet ko
    - **Aktivni agenti** imaju neke ciljeve koje slijede
    - **Kognitivni agenti** uključuju složeno planiranje i zaključivanje
 
-Višestruki agentski sustavi danas se koriste u brojnim aplikacijama:
+Višeagentski sustavi danas se koriste u brojnim aplikacijama:
 
 * U igrama, mnogi likovi koji nisu igrači koriste neku vrstu AI-a i mogu se smatrati inteligentnim agentima
-* U video produkciji, renderiranje složenih 3D scena koje uključuju gužve obično se radi pomoću simulacije višestrukih agenata
-* U modeliranju sustava, višestruki agentski pristup koristi se za simulaciju ponašanja složenog modela. Na primjer, višestruki agentski pristup uspješno se koristio za predviđanje širenja bolesti COVID-19 diljem svijeta. Sličan pristup može se koristiti za modeliranje prometa u gradu i promatranje kako reagira na promjene u prometnim pravilima.
+* U video produkciji, renderiranje složenih 3D scena koje uključuju gužve obično se radi pomoću simulacije više agenata
+* U modeliranju sustava, višeagentski pristup koristi se za simulaciju ponašanja složenog modela. Na primjer, višeagentski pristup uspješno se koristio za predviđanje širenja bolesti COVID-19 diljem svijeta. Sličan pristup može se koristiti za modeliranje prometa u gradu i promatranje kako reagira na promjene prometnih pravila.
 * U složenim automatizacijskim sustavima, svaki uređaj može djelovati kao neovisni agent, što čini cijeli sustav manje monolitnim i robusnijim.
 
-Nećemo trošiti puno vremena na duboko proučavanje višestrukih agentskih sustava, već ćemo razmotriti jedan primjer **modeliranja višestrukih agenata**.
+Nećemo trošiti puno vremena na duboko proučavanje višeagentskih sustava, ali razmotrit ćemo jedan primjer **modeliranja više agenata**.
 
 ## NetLogo
 
-[NetLogo](https://ccl.northwestern.edu/netlogo/) je okruženje za modeliranje višestrukih agenata temeljeno na modificiranoj verziji programskog jezika [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)). Ovaj jezik razvijen je za podučavanje koncepta programiranja djeci, i omogućuje vam kontrolu agenta zvanog **kornjača**, koji se može kretati ostavljajući trag iza sebe. Ovo omogućuje stvaranje složenih geometrijskih figura, što je vrlo vizualan način za razumijevanje ponašanja agenta.
+[NetLogo](https://ccl.northwestern.edu/netlogo/) je okruženje za modeliranje više agenata temeljeno na modificiranoj verziji programskog jezika [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)). Ovaj jezik razvijen je za podučavanje programskih koncepata djeci, i omogućuje vam kontrolu agenta zvanog **kornjača**, koji se može kretati ostavljajući trag iza sebe. To omogućuje stvaranje složenih geometrijskih figura, što je vrlo vizualan način za razumijevanje ponašanja agenta.
 
 U NetLogu možemo stvoriti mnogo kornjača pomoću naredbe `create-turtles`. Zatim možemo zapovjediti svim kornjačama da izvrše neke radnje (u primjeru ispod - pomaknu se 10 točaka naprijed):
 
@@ -50,27 +41,27 @@ ask turtles [
 ]
 ```
 
-Naravno, nije zanimljivo kada sve kornjače rade istu stvar, pa možemo `ask` grupama kornjača, npr. onima koje su u blizini određene točke. Također možemo stvoriti kornjače različitih *vrsta* pomoću naredbe `breed [cats cat]`. Ovdje je `cat` naziv vrste, i moramo specificirati i jedninu i množinu riječi, jer različite naredbe koriste različite oblike radi jasnoće.
+Naravno, nije zanimljivo kada sve kornjače rade istu stvar, pa možemo `ask` grupama kornjača, npr. onima koje su u blizini određene točke. Također možemo stvoriti kornjače različitih *vrsta* pomoću naredbe `breed [cats cat]`. Ovdje je `cat` naziv vrste, a moramo navesti i jedninu i množinu riječi, jer različite naredbe koriste različite oblike radi jasnoće.
 
-> ✅ Nećemo ulaziti u učenje samog jezika NetLogo - možete posjetiti izvrsni [Interaktivni rječnik za početnike NetLogo](https://ccl.northwestern.edu/netlogo/bind/) ako ste zainteresirani za više informacija.
+> ✅ Nećemo ulaziti u učenje samog jezika NetLogo - možete posjetiti izvrsni [Interaktivni rječnik za početnike NetLogo](https://ccl.northwestern.edu/netlogo/bind/) ako ste zainteresirani za detaljnije učenje.
 
 Možete [preuzeti](https://ccl.northwestern.edu/netlogo/download.shtml) i instalirati NetLogo kako biste ga isprobali.
 
 ### Biblioteka modela
 
-Sjajna stvar kod NetLoga je da sadrži biblioteku radnih modela koje možete isprobati. Idite na **File → Models Library**, i imate mnogo kategorija modela za odabrati.
+Sjajna stvar kod NetLoga je da sadrži biblioteku radnih modela koje možete isprobati. Idite na **File &rightarrow; Models Library**, i imate mnogo kategorija modela za odabir.
 
-<img alt="NetLogo Models Library" src="images/NetLogo-ModelLib.png" width="60%"/>
+<img alt="NetLogo Models Library" src="../../../../../translated_images/hr/NetLogo-ModelLib.efe023afb4763c05.webp" width="60%"/>
 
 > Snimka zaslona biblioteke modela Dmitryja Soshnikova
 
-Možete otvoriti jedan od modela, na primjer **Biology → Flocking**.
+Možete otvoriti jedan od modela, na primjer **Biology &rightarrow; Flocking**.
 
 ### Glavni principi
 
-Nakon otvaranja modela, dolazite na glavni ekran NetLoga. Evo uzorka modela koji opisuje populaciju vukova i ovaca, uz ograničene resurse (trava).
+Nakon otvaranja modela, dolazite na glavni ekran NetLoga. Evo uzorka modela koji opisuje populaciju vukova i ovaca, s obzirom na ograničene resurse (trava).
 
-![NetLogo Main Screen](../../../../../translated_images/NetLogo-Main.32653711ec1a01b3cab22ec0b148e64193d0b979b055285bef329d5e3d6958c5.hr.png)
+![NetLogo Main Screen](../../../../../translated_images/hr/NetLogo-Main.32653711ec1a01b3.webp)
 
 > Snimka zaslona Dmitryja Soshnikova
 
@@ -82,7 +73,7 @@ Na ovom ekranu možete vidjeti:
   - Grafove koje možete koristiti za prikaz parametara simulacije
 * Karticu **Code** koja sadrži editor, gdje možete pisati NetLogo program
 
-U većini slučajeva sučelje će imati gumb **Setup**, koji inicijalizira stanje simulacije, i gumb **Go** koji pokreće izvršavanje. Oni se obrađuju odgovarajućim handlerima u kodu koji izgledaju ovako:
+U većini slučajeva sučelje bi imalo gumb **Setup**, koji inicijalizira stanje simulacije, i gumb **Go** koji pokreće izvršenje. Njima upravljaju odgovarajući rukovatelji u kodu koji izgledaju ovako:
 
 ```
 to go [
@@ -90,17 +81,17 @@ to go [
 ]
 ```
 
-Svijet NetLoga sastoji se od sljedećih objekata:
+NetLogo svijet sastoji se od sljedećih objekata:
 
 * **Agenti** (kornjače) koji se mogu kretati po polju i nešto raditi. Agentima zapovijedate pomoću sintakse `ask turtles [...]`, a kod u zagradama izvršavaju svi agenti u *načinu rada kornjače*.
-* **Pločice** su kvadratna područja polja na kojima agenti žive. Možete se referirati na sve agente na istoj pločici, ili možete mijenjati boje pločica i neka druga svojstva. Također možete `ask patches` da nešto učine.
-* **Promatrač** je jedinstveni agent koji kontrolira svijet. Svi handleri gumba izvršavaju se u *načinu rada promatrača*.
+* **Patches** su kvadratna područja polja na kojima agenti žive. Možete se referirati na sve agente na istom patchu, ili možete mijenjati boje patcha i neka druga svojstva. Također možete `ask patches` da nešto učine.
+* **Promatrač** je jedinstveni agent koji kontrolira svijet. Svi rukovatelji gumba izvršavaju se u *načinu rada promatrača*.
 
-> ✅ Ljepota višestrukog agentskog okruženja je u tome što se kod koji se izvršava u načinu rada kornjače ili pločice istovremeno izvršava od strane svih agenata paralelno. Dakle, pisanjem malo koda i programiranjem ponašanja pojedinog agenta, možete stvoriti složeno ponašanje simulacijskog sustava u cjelini.
+> ✅ Ljepota okruženja više agenata je u tome što se kod koji se izvršava u načinu rada kornjače ili patcha istovremeno izvršava od strane svih agenata paralelno. Dakle, pisanjem malo koda i programiranjem ponašanja pojedinog agenta, možete stvoriti složeno ponašanje simulacijskog sustava u cjelini.
 
 ### Flocking
 
-Kao primjer višestrukog agentskog ponašanja, razmotrimo **[Flocking](https://en.wikipedia.org/wiki/Flocking_(behavior))**. Flocking je složen uzorak koji je vrlo sličan načinu na koji jata ptica lete. Promatrajući njihov let možete pomisliti da slijede neku vrstu kolektivnog algoritma ili da posjeduju neku formu *kolektivne inteligencije*. Međutim, ovo složeno ponašanje nastaje kada svaki pojedini agent (u ovom slučaju, *ptica*) samo promatra neke druge agente na kratkoj udaljenosti od sebe i slijedi tri jednostavna pravila:
+Kao primjer ponašanja više agenata, razmotrimo **[Flocking](https://en.wikipedia.org/wiki/Flocking_(behavior))**. Flocking je složen uzorak koji je vrlo sličan načinu na koji jata ptica lete. Promatrajući njihov let, možete pomisliti da slijede neku vrstu kolektivnog algoritma ili da posjeduju neku formu *kolektivne inteligencije*. Međutim, ovo složeno ponašanje nastaje kada svaki pojedini agent (u ovom slučaju, *ptica*) promatra samo neke druge agente na kratkoj udaljenosti od sebe i slijedi tri jednostavna pravila:
 
 * **Poravnanje** - usmjerava se prema prosječnom smjeru susjednih agenata
 * **Kohezija** - pokušava se usmjeriti prema prosječnom položaju susjeda (*dugoročna privlačnost*)
@@ -114,13 +105,13 @@ Možete pokrenuti primjer flockinga i promatrati ponašanje. Također možete pr
 
 Postoji još nekoliko zanimljivih modela koje možete eksperimentirati:
 
-* **Art → Fireworks** prikazuje kako se vatromet može smatrati kolektivnim ponašanjem pojedinih struja vatre
-* **Social Science → Traffic Basic** i **Social Science → Traffic Grid** prikazuju model gradskog prometa u 1D i 2D mreži s ili bez semafora. Svaki automobil u simulaciji slijedi sljedeća pravila:
+* **Art &rightarrow; Fireworks** prikazuje kako se vatromet može smatrati kolektivnim ponašanjem pojedinih struja vatre
+* **Social Science &rightarrow; Traffic Basic** i **Social Science &rightarrow; Traffic Grid** prikazuju model gradskog prometa u 1D i 2D mreži s ili bez semafora. Svaki automobil u simulaciji slijedi sljedeća pravila:
    - Ako je prostor ispred njega prazan - ubrzaj (do određenog maksimalnog brzine)
    - Ako vidi prepreku ispred - koči (i možete prilagoditi koliko daleko vozač može vidjeti)
-* **Social Science → Party** prikazuje kako se ljudi grupiraju tijekom koktel zabave. Možete pronaći kombinaciju parametara koja vodi do najbržeg povećanja sreće grupe.
+* **Social Science &rightarrow; Party** prikazuje kako se ljudi grupiraju tijekom koktel zabave. Možete pronaći kombinaciju parametara koja dovodi do najbržeg povećanja sreće grupe.
 
-Kao što možete vidjeti iz ovih primjera, simulacije višestrukih agenata mogu biti vrlo koristan način za razumijevanje ponašanja složenog sustava koji se sastoji od pojedinaca koji slijede istu ili sličnu logiku. Također se može koristiti za kontrolu virtualnih agenata, poput [NPC-a](https://en.wikipedia.org/wiki/NPC) u računalnim igrama ili agenata u 3D animiranim svjetovima.
+Kao što možete vidjeti iz ovih primjera, simulacije više agenata mogu biti vrlo koristan način za razumijevanje ponašanja složenog sustava koji se sastoji od pojedinaca koji slijede istu ili sličnu logiku. Također se može koristiti za kontrolu virtualnih agenata, poput [NPC-a](https://en.wikipedia.org/wiki/NPC) u računalnim igrama ili agenata u 3D animiranim svjetovima.
 
 ## Promišljeni agenti
 
@@ -130,35 +121,35 @@ Tipičan primjer bio bi osobni agent koji prima instrukciju od čovjeka da rezer
 
 Da bi to učinili, agenti moraju **komunicirati**. Za uspješnu komunikaciju potrebni su im:
 
-* Neki **standardni jezici za razmjenu znanja**, poput [Knowledge Interchange Format](https://en.wikipedia.org/wiki/Knowledge_Interchange_Format) (KIF) i [Knowledge Query and Manipulation Language](https://en.wikipedia.org/wiki/Knowledge_Query_and_Manipulation_Language) (KQML). Ti jezici su dizajnirani na temelju [Teorije govornog čina](https://en.wikipedia.org/wiki/Speech_act).
+* Neki **standardni jezici za razmjenu znanja**, poput [Knowledge Interchange Format](https://en.wikipedia.org/wiki/Knowledge_Interchange_Format) (KIF) i [Knowledge Query and Manipulation Language](https://en.wikipedia.org/wiki/Knowledge_Query_and_Manipulation_Language) (KQML). Ti jezici su dizajnirani na temelju [teorije govornog čina](https://en.wikipedia.org/wiki/Speech_act).
 * Ti jezici također trebaju uključivati neke **protokole za pregovore**, temeljene na različitim **vrstama aukcija**.
-* **Zajednička ontologija** koju koriste, kako bi se referirali na iste pojmove poznavajući njihovu semantiku
+* **Zajednička ontologija** koju koriste, kako bi se referirali na iste pojmove poznajući njihovu semantiku
 * Način za **otkrivanje** što različiti agenti mogu učiniti, također temeljen na nekoj vrsti ontologije
 
-Promišljeni agenti su mnogo složeniji od reaktivnih, jer ne samo da reagiraju na promjene u okruženju, već također trebaju biti sposobni *inicirati* radnje. Jedna od predloženih arhitektura za promišljene agente je tzv. agent Vjerovanje-Želja-Namjera (BDI):
+Promišljeni agenti su mnogo složeniji od reaktivnih, jer ne samo da reagiraju na promjene u okruženju, već također moraju biti sposobni *inicirati* radnje. Jedna od predloženih arhitektura za promišljene agente je tzv. agent vjerovanja-želje-namjere (BDI):
 
-* **Vjerovanja** čine skup znanja o okruženju agenta. To može biti strukturirano kao baza znanja ili skup pravila koje agent može primijeniti na specifičnu situaciju u okruženju.
-* **Želje** definiraju što agent želi učiniti, tj. njegove ciljeve. Na primjer, cilj osobnog asistenta agenta gore je rezervirati putovanje, a cilj agenta hotela je maksimizirati profit.
-* **Namjere** su specifične radnje koje agent planira kako bi postigao svoje ciljeve. Radnje obično mijenjaju okruženje i uzrokuju komunikaciju s drugim agentima.
+* **Vjerovanja** čine skup znanja o okruženju agenta. To može biti strukturirano kao baza znanja ili skup pravila koje agent može primijeniti na određenu situaciju u okruženju.
+* **Želje** definiraju što agent želi učiniti, tj. njegove ciljeve. Na primjer, cilj osobnog asistenta gore je rezervirati aranžman, a cilj agenta hotela je maksimizirati profit.
+* **Namjere** su specifične radnje koje agent planira poduzeti kako bi postigao svoje ciljeve. Radnje obično mijenjaju okruženje i uzrokuju komunikaciju s drugim agentima.
 
-Postoje neke platforme dostupne za izgradnju višestrukih agentskih sustava, poput [JADE](https://jade.tilab.com/). [Ovaj rad](https://arxiv.org/ftp/arxiv/papers/2007/2007.08961.pdf) sadrži pregled višestrukih agentskih platformi, zajedno s kratkom poviješću višestrukih agentskih sustava i njihovim različitim scenarijima korištenja.
+Postoje neke platforme dostupne za izgradnju višeagentskih sustava, poput [JADE](https://jade.tilab.com/). [Ovaj rad](https://arxiv.org/ftp/arxiv/papers/2007/2007.08961.pdf) sadrži pregled platformi za višeagentske sustave, zajedno s kratkom poviješću višeagentskih sustava i njihovim različitim scenarijima uporabe.
 
 ## Zaključak
 
-Višestruki agentski sustavi mogu poprimiti vrlo različite oblike i koristiti se u mnogim različitim aplikacijama. 
+Višeagentski sustavi mogu poprimiti vrlo različite oblike i koristiti se u mnogim različitim aplikacijama. 
 Svi oni teže fokusiranju na jednostavnije ponašanje pojedinog agenta i postizanju složenijeg ponašanja cijelog sustava zbog **sinergijskog učinka**.
 
 ## 🚀 Izazov
 
-Primijenite ovu lekciju u stvarnom svijetu i pokušajte konceptualizirati višestruki agentski sustav koji može riješiti problem. Što bi, na primjer, višestruki agentski sustav trebao učiniti kako bi optimizirao rutu školskog autobusa? Kako bi mogao funkcionirati u pekarnici?
+Primijenite ovu lekciju u stvarnom svijetu i pokušajte konceptualizirati višeagentski sustav koji može riješiti problem. Što bi, na primjer, višeagentski sustav trebao učiniti kako bi optimizirao rutu školskog autobusa? Kako bi mogao funkcionirati u pekarnici?
 
-## [Kviz nakon predavanja](https://red-field-0a6ddfd03.1.azurestaticapps.net/quiz/223)
+## [Kviz nakon predavanja](https://ff-quizzes.netlify.app/en/ai/quiz/46)
 
 ## Pregled i samostalno učenje
 
-Pregledajte upotrebu ove vrste sustava u industriji. Odaberite područje poput proizvodnje ili industrije videoigara i otkrijte kako se višestruki agentski sustavi mogu koristiti za rješavanje jedinstvenih problema.
+Pregledajte uporabu ove vrste sustava u industriji. Odaberite područje poput proizvodnje ili industrije videoigara i otkrijte kako se višeagentski sustavi mogu koristiti za rješavanje jedinstvenih problema.
 
 ## [Zadatak NetLogo](assignment.md)
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+---
+

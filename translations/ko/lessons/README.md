@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5fef1a0b22498d7188959e2a2cb08af7",
-  "translation_date": "2025-08-24T21:23:05+00:00",
-  "source_file": "lessons/README.md",
-  "language_code": "ko"
-}
--->
 # 개요
 
-![낙서로 그린 개요](../../../translated_images/ai-overview.0857791951d19500d0ef8b803d77110c738dcafc52306e6d68724742cd4af167.ko.png)
+![낙서로 그린 개요](https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/sketchnotes/ai-overview.png)
 
 > 스케치노트: [Tomomi Imura](https://twitter.com/girlie_mac)
 

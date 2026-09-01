@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5fef1a0b22498d7188959e2a2cb08af7",
-  "translation_date": "2025-08-26T07:57:09+00:00",
-  "source_file": "lessons/README.md",
-  "language_code": "ur"
-}
--->
 # جائزہ
 
-![ڈوڈل میں جائزہ](../../../translated_images/ai-overview.0857791951d19500d0ef8b803d77110c738dcafc52306e6d68724742cd4af167.ur.png)
+![ڈوڈل میں جائزہ](https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/sketchnotes/ai-overview.png)
 
 > اسکیچ نوٹ از [Tomomi Imura](https://twitter.com/girlie_mac)
 

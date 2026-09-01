@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-29T12:17:33+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "vi"
-}
--->
 # Mạng Đa Phương Thức
 
 Sau thành công của các mô hình transformer trong việc giải quyết các nhiệm vụ NLP, các kiến trúc tương tự đã được áp dụng cho các nhiệm vụ thị giác máy tính. Ngày càng có nhiều sự quan tâm đến việc xây dựng các mô hình có thể *kết hợp* khả năng xử lý hình ảnh và ngôn ngữ tự nhiên. Một trong những nỗ lực đó được thực hiện bởi OpenAI, được gọi là CLIP và DALL.E.
@@ -15,7 +6,7 @@ Sau thành công của các mô hình transformer trong việc giải quyết c�
 
 Ý tưởng chính của CLIP là có thể so sánh các gợi ý văn bản với một hình ảnh và xác định mức độ phù hợp của hình ảnh với gợi ý đó.
 
-![Kiến trúc CLIP](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.vi.png)
+![Kiến trúc CLIP](../../../../../translated_images/vi/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *Hình ảnh từ [bài viết blog này](https://openai.com/blog/clip/)*
 
@@ -29,7 +20,7 @@ Khi mô hình này đã được huấn luyện trước, chúng ta có thể cu
 
 Giả sử chúng ta cần phân loại hình ảnh giữa, ví dụ, mèo, chó và con người. Trong trường hợp này, chúng ta có thể cung cấp cho mô hình một hình ảnh và một loạt các gợi ý văn bản: "*một bức ảnh của một con mèo*", "*một bức ảnh của một con chó*", "*một bức ảnh của một con người*". Trong vector kết quả gồm 3 xác suất, chúng ta chỉ cần chọn chỉ số có giá trị cao nhất.
 
-![CLIP cho Phân loại Hình ảnh](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.vi.png)
+![CLIP cho Phân loại Hình ảnh](../../../../../translated_images/vi/clip-class.3af42ef0b2b19369.webp)
 
 > *Hình ảnh từ [bài viết blog này](https://openai.com/blog/clip/)*
 
@@ -53,13 +44,13 @@ Tìm hiểu thêm về VQGAN tại trang web [Taming Transformers](https://compv
 
 Một trong những khác biệt quan trọng giữa VQGAN và GAN truyền thống là GAN truyền thống có thể tạo ra một hình ảnh khá tốt từ bất kỳ vector đầu vào nào, trong khi VQGAN có thể tạo ra một hình ảnh không nhất quán. Do đó, chúng ta cần hướng dẫn thêm quá trình tạo hình ảnh, và điều này có thể được thực hiện bằng cách sử dụng CLIP.
 
-![Kiến trúc VQGAN+CLIP](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.vi.png)
+![Kiến trúc VQGAN+CLIP](../../../../../translated_images/vi/vqgan.5027fe05051dfa31.webp)
 
 Để tạo ra một hình ảnh tương ứng với một gợi ý văn bản, chúng ta bắt đầu với một vector mã hóa ngẫu nhiên được đưa qua VQGAN để tạo ra một hình ảnh. Sau đó, CLIP được sử dụng để tạo ra một hàm mất mát cho biết mức độ phù hợp của hình ảnh với gợi ý văn bản. Mục tiêu sau đó là giảm thiểu hàm mất mát này, sử dụng lan truyền ngược để điều chỉnh các tham số vector đầu vào.
 
 Một thư viện tuyệt vời triển khai VQGAN+CLIP là [Pixray](http://github.com/pixray/pixray)
 
-![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.vi.png) |  ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.vi.png) | ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.vi.png)
+![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/vi/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/vi/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/vi/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 Hình ảnh được tạo từ gợi ý *một bức chân dung cận cảnh bằng màu nước của một giáo viên văn học trẻ tuổi với một cuốn sách* | Hình ảnh được tạo từ gợi ý *một bức chân dung cận cảnh bằng sơn dầu của một giáo viên khoa học máy tính trẻ tuổi với một chiếc máy tính* | Hình ảnh được tạo từ gợi ý *một bức chân dung cận cảnh bằng sơn dầu của một giáo viên toán học lớn tuổi trước bảng đen*
 
@@ -75,7 +66,7 @@ Không giống như CLIP, DALL-E nhận cả văn bản và hình ảnh dưới 
 Sự khác biệt chính giữa DALL.E 1 và 2 là DALL.E 2 tạo ra các hình ảnh và tác phẩm nghệ thuật chân thực hơn.
 
 Ví dụ về hình ảnh được tạo bởi DALL-E:
-![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.vi.png) |  ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.vi.png) | ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.vi.png)
+![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/vi/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/vi/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Hình ảnh được tạo bởi Pixray](../../../../../translated_images/vi/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 Hình ảnh được tạo từ gợi ý *một bức chân dung cận cảnh bằng màu nước của một giáo viên văn học trẻ tuổi với một cuốn sách* | Hình ảnh được tạo từ gợi ý *một bức chân dung cận cảnh bằng sơn dầu của một giáo viên khoa học máy tính trẻ tuổi với một chiếc máy tính* | Hình ảnh được tạo từ gợi ý *một bức chân dung cận cảnh bằng sơn dầu của một giáo viên toán học lớn tuổi trước bảng đen*
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9c592c26aca16ca085d268c732284187",
-  "translation_date": "2025-08-29T11:46:59+00:00",
-  "source_file": "lessons/X-Extras/X1-MultiModal/README.md",
-  "language_code": "ms"
-}
--->
 # Rangkaian Multi-Mod
 
 Selepas kejayaan model transformer dalam menyelesaikan tugas NLP, seni bina yang sama atau serupa telah digunakan untuk tugas penglihatan komputer. Terdapat minat yang semakin meningkat untuk membina model yang dapat *menggabungkan* keupayaan penglihatan dan bahasa semula jadi. Salah satu usaha tersebut dilakukan oleh OpenAI, dan ia dikenali sebagai CLIP dan DALL.E.
@@ -15,7 +6,7 @@ Selepas kejayaan model transformer dalam menyelesaikan tugas NLP, seni bina yang
 
 Idea utama CLIP adalah untuk membandingkan arahan teks dengan imej dan menentukan sejauh mana imej tersebut sesuai dengan arahan.
 
-![Seni Bina CLIP](../../../../../translated_images/clip-arch.b3dbf20b4e8ed8be1c38e2bc6100fd3cc257c33cda4692b301be91f791b13ea7.ms.png)
+![Seni Bina CLIP](../../../../../translated_images/ms/clip-arch.b3dbf20b4e8ed8be.webp)
 
 > *Gambar dari [catatan blog ini](https://openai.com/blog/clip/)*
 
@@ -29,7 +20,7 @@ Setelah model ini dilatih awal, kita boleh memberikannya sekumpulan imej dan sek
 
 Katakan kita perlu mengklasifikasikan imej antara, contohnya, kucing, anjing dan manusia. Dalam kes ini, kita boleh memberikan model imej, dan satu siri arahan teks: "*gambar seekor kucing*", "*gambar seekor anjing*", "*gambar seorang manusia*". Dalam vektor kebarangkalian yang dihasilkan, kita hanya perlu memilih indeks dengan nilai tertinggi.
 
-![CLIP untuk Klasifikasi Imej](../../../../../translated_images/clip-class.3af42ef0b2b19369a633df5f20ddf4f5a01d6c8ffa181e9d3a0572c19f919f72.ms.png)
+![CLIP untuk Klasifikasi Imej](../../../../../translated_images/ms/clip-class.3af42ef0b2b19369.webp)
 
 > *Gambar dari [catatan blog ini](https://openai.com/blog/clip/)*
 
@@ -53,13 +44,13 @@ Ketahui lebih lanjut tentang VQGAN di laman web [Taming Transformers](https://co
 
 Salah satu perbezaan penting antara VQGAN dan GAN tradisional ialah yang terakhir boleh menghasilkan imej yang baik daripada sebarang vektor input, manakala VQGAN cenderung menghasilkan imej yang tidak koheren. Oleh itu, kita perlu membimbing proses penciptaan imej dengan lebih lanjut, dan itu boleh dilakukan menggunakan CLIP.
 
-![Seni Bina VQGAN+CLIP](../../../../../translated_images/vqgan.5027fe05051dfa3101950cfa930303f66e6478b9bd273e83766731796e462d9b.ms.png)
+![Seni Bina VQGAN+CLIP](../../../../../translated_images/ms/vqgan.5027fe05051dfa31.webp)
 
 Untuk menghasilkan imej yang sepadan dengan arahan teks, kita bermula dengan beberapa vektor pengekodan rawak yang dihantar melalui VQGAN untuk menghasilkan imej. Kemudian CLIP digunakan untuk menghasilkan fungsi kehilangan yang menunjukkan sejauh mana imej tersebut sesuai dengan arahan teks. Matlamatnya kemudian adalah untuk meminimumkan kehilangan ini, menggunakan propagasi balik untuk menyesuaikan parameter vektor input.
 
 Pustaka hebat yang melaksanakan VQGAN+CLIP ialah [Pixray](http://github.com/pixray/pixray).
 
-![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d09dc96de938b9f95bde8a7e1c721f48f286a7795bf16d56c7.ms.png) |  ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a439077e1c32cc8afdf714e634fe24dc78dc5aa45fd2f560b0ed5.ms.png) | ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683b9d36a613b364deb7454760cd39205623fc1e3938fa133c0.ms.png)
+![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/ms/a_closeup_watercolor_portrait_of_young_male_teacher_of_literature_with_a_book.2384968e9db8a0d0.webp) |  ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/ms/a_closeup_oil_portrait_of_young_female_teacher_of_computer_science_with_a_computer.e0b6495f210a4390.webp) | ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/ms/a_closeup_oil_portrait_of_old_male_teacher_of_math.5362e67aa7fc2683.webp)
 ----|----|----
 Gambar yang dihasilkan daripada arahan *potret closeup cat air guru lelaki muda dalam bidang kesusasteraan dengan sebuah buku* | Gambar yang dihasilkan daripada arahan *potret closeup minyak guru wanita muda dalam bidang sains komputer dengan sebuah komputer* | Gambar yang dihasilkan daripada arahan *potret closeup minyak guru lelaki tua dalam bidang matematik di hadapan papan hitam*
 
@@ -75,7 +66,7 @@ Berbeza dengan CLIP, DALL-E menerima kedua-dua teks dan imej sebagai satu aliran
 Perbezaan utama antara DALL.E 1 dan 2 ialah ia menghasilkan imej dan seni yang lebih realistik.
 
 Contoh penjanaan imej dengan DALL-E:
-![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.ms.png) |  ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.ms.png) | ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.ms.png)
+![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/ms/DALL·E%202023-06-20%2015.56.56%20-%20a%20closeup%20watercolor%20portrait%20of%20young%20male%20teacher%20of%20literature%20with%20a%20book.6c235e8271d9ed10ce985d86aeb241a58518958647973af136912116b9518fce.png) |  ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/ms/DALL·E%202023-06-20%2015.57.43%20-%20a%20closeup%20oil%20portrait%20of%20young%20female%20teacher%20of%20computer%20science%20with%20a%20computer.f21dc4166340b6c8b4d1cb57efd1e22127407f9b28c9ac7afe11344065369e64.png) | ![Gambar yang dihasilkan oleh Pixray](../../../../../translated_images/ms/DALL·E%202023-06-20%2015.58.42%20-%20%20a%20closeup%20oil%20portrait%20of%20old%20male%20teacher%20of%20mathematics%20in%20front%20of%20blackboard.d331c2dfbdc3f7c46aa65c0809066f5e7ed4b49609cd259852e760df21051e4a.png)
 ----|----|----
 Gambar yang dihasilkan daripada arahan *potret closeup cat air guru lelaki muda dalam bidang kesusasteraan dengan sebuah buku* | Gambar yang dihasilkan daripada arahan *potret closeup minyak guru wanita muda dalam bidang sains komputer dengan sebuah komputer* | Gambar yang dihasilkan daripada arahan *potret closeup minyak guru lelaki tua dalam bidang matematik di hadapan papan hitam*
 

@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "58a52f000089c1d8906a4daa4ab1169b",
-  "translation_date": "2025-08-24T21:07:51+00:00",
-  "source_file": "lessons/4-ComputerVision/README.md",
-  "language_code": "ja"
-}
--->
 # コンピュータビジョン
 
-![コンピュータビジョンの内容をまとめたイラスト](../../../../translated_images/ai-computervision.6506ebebac3fbf76cdb78989d7d3dfea87e88285c0feaade53aa7804a22b248f.ja.png)
+![コンピュータビジョンの内容をまとめたイラスト](../../../../translated_images/ja/ai-computervision.6506ebebac3fbf76.webp)
 
 このセクションでは以下について学びます:
 
